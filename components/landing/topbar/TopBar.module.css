@@ -1,0 +1,76 @@
+/* Top Offer Bar Styles */
+
+.topBar {
+  background: #343C57;
+  color: white;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  position: relative;
+  z-index: 1001;
+}
+
+.topBarText {
+  margin: 0;
+  color: #fefefe;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+}
+.topbarTitle{
+  font-weight: 800;
+  margin-right: 1rem;
+}
+.closeButton {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.closeIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .topBar {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .closeButton {
+    right: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .topBar {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+  }
+  
+  .topBarText {
+    font-size: 0.75rem;
+  }
+  
+  .closeButton {
+    right: 0.5rem;
+  }
+}

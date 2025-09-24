@@ -1,0 +1,348 @@
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--spacing-6, 24px);
+  background: var(--surface-primary, #ffffff);
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid var(--border-primary, #e5e7eb);
+}
+
+.header {
+  margin-bottom: var(--spacing-8, 32px);
+}
+
+.optionalNote {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3, 12px);
+  padding: var(--spacing-4, 16px);
+  background: var(--status-warning-alpha-5, #fef3c7);
+  border: 1px solid var(--status-warning-alpha-20, #fbbf24);
+  border-radius: var(--radius-md, 8px);
+}
+
+.optionalNoteIcon {
+  color: var(--status-warning, #f59e0b);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.optionalNoteContent {
+  flex: 1;
+}
+
+.optionalNoteText {
+  margin: 0;
+  font-size: var(--font-sm, 14px);
+  line-height: 1.5;
+  color: var(--text-secondary, #6b7280);
+}
+
+.optionalNoteText strong {
+  color: var(--status-warning, #f59e0b);
+  font-weight: var(--font-semibold, 600);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8, 32px);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4, 16px);
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2, 8px);
+  margin: 0;
+  font-size: var(--font-lg, 18px);
+  font-weight: var(--font-semibold, 600);
+  color: var(--text-primary, #111827);
+  padding-bottom: var(--spacing-2, 8px);
+  border-bottom: 1px solid var(--border-secondary, #e5e7eb);
+}
+
+.sectionIcon {
+  color: var(--brand-primary, #3b82f6);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2, 8px);
+  margin-bottom: 0;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1, 4px);
+  font-size: var(--font-sm, 14px);
+  font-weight: var(--font-medium, 500);
+  color: var(--text-primary, #111827);
+  margin-bottom: var(--spacing-1, 4px);
+}
+
+.labelIcon {
+  color: var(--text-secondary, #6b7280);
+}
+
+.input {
+  padding: var(--spacing-3, 12px);
+  border: 1px solid var(--border-secondary, #e5e7eb);
+  border-radius: var(--radius-md, 8px);
+  font-size: var(--font-sm, 14px);
+  font-family: var(--font-system, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif);
+  background: var(--surface-primary, #ffffff);
+  color: var(--text-primary, #111827);
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  font-weight: var(--font-medium, 500);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--brand-primary, #3b82f6);
+  box-shadow: 0 0 0 3px var(--brand-primary-alpha-10, rgba(59, 130, 246, 0.1));
+}
+
+.input::placeholder {
+  color: var(--text-tertiary, #9ca3af);
+}
+
+.inputWarning {
+  border-color: var(--status-warning);
+}
+
+.inputWarning:focus {
+  border-color: var(--status-warning);
+  box-shadow: 0 0 0 3px var(--status-warning-alpha-10);
+}
+
+.inputWithSuffix {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputWithSuffix .input {
+  padding-right: 60px !important;
+}
+
+.inputSuffix {
+  position: absolute;
+  right: var(--spacing-3, 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--font-sm, 14px);
+  color: var(--text-tertiary, #9ca3af);
+  font-weight: var(--font-normal, 400);
+  pointer-events: none;
+  background: transparent;
+  padding: 0;
+  min-width: auto;
+  text-align: right;
+}
+
+.textarea {
+  padding: var(--spacing-3, 12px);
+  border: 1px solid var(--border-secondary, #e5e7eb);
+  border-radius: var(--radius-md, 8px);
+  font-size: var(--font-sm, 14px);
+  font-family: var(--font-system, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif);
+  background: var(--surface-primary, #ffffff);
+  color: var(--text-primary, #111827);
+  resize: vertical;
+  min-height: 100px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--brand-primary, #3b82f6);
+  box-shadow: 0 0 0 3px var(--brand-primary-alpha-10, rgba(59, 130, 246, 0.1));
+}
+
+.textarea::placeholder {
+  color: var(--text-tertiary, #9ca3af);
+}
+
+.warningText {
+  font-size: var(--font-xs);
+  color: var(--status-warning);
+  margin-top: var(--spacing-1);
+}
+
+/* Revenue Grid */
+.revenueGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-5, 20px);
+}
+
+.metricCard {
+  background: var(--surface-secondary, #f9fafb);
+  border: 1px solid var(--border-secondary, #e5e7eb);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--spacing-4, 16px);
+  transition: all 0.2s ease;
+}
+
+.metricCard:hover {
+  border-color: var(--brand-primary-alpha-20, rgba(59, 130, 246, 0.2));
+  box-shadow: 0 2px 8px var(--shadow-sm, rgba(0, 0, 0, 0.05));
+}
+
+.calculatedMetric {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3);
+  background: var(--brand-primary-alpha-5);
+  border: 1px solid var(--brand-primary-alpha-20);
+  border-radius: var(--radius-md);
+  margin-top: var(--spacing-2);
+}
+
+.calculatedIcon {
+  color: var(--brand-primary);
+  flex-shrink: 0;
+}
+
+.calculatedLabel {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+}
+
+.calculatedLabel strong {
+  color: var(--brand-primary);
+  font-weight: var(--font-semibold);
+}
+
+/* Operational Grid */
+.operationalGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-5, 20px);
+}
+
+/* Peak Hours */
+.peakHoursGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-3, 12px);
+}
+
+.peakHourItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2, 8px);
+  padding: var(--spacing-3, 12px);
+  background: var(--surface-secondary, #f9fafb);
+  border: 1px solid var(--border-secondary, #e5e7eb);
+  border-radius: var(--radius-md, 8px);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.peakHourItem:hover {
+  background: var(--surface-tertiary, #f3f4f6);
+  border-color: var(--brand-primary-alpha-30, rgba(59, 130, 246, 0.3));
+}
+
+.peakHourCheckbox {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--brand-primary, #3b82f6);
+}
+
+.peakHourLabel {
+  font-size: var(--font-sm, 14px);
+  color: var(--text-primary, #111827);
+  flex: 1;
+}
+
+/* Seasonal Factors */
+.seasonalGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-4, 16px);
+}
+
+.seasonalCard {
+  background: var(--surface-secondary, #f9fafb);
+  border: 1px solid var(--border-secondary, #e5e7eb);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--spacing-4, 16px);
+  transition: all 0.2s ease;
+}
+
+.seasonalCard:hover {
+  border-color: var(--brand-primary-alpha-20, rgba(59, 130, 246, 0.2));
+  box-shadow: 0 2px 8px var(--shadow-sm, rgba(0, 0, 0, 0.05));
+}
+
+.seasonalNote {
+  margin-top: var(--spacing-3, 12px);
+  padding: var(--spacing-3, 12px);
+  background: var(--surface-secondary, #f9fafb);
+  border: 1px solid var(--border-secondary, #e5e7eb);
+  border-radius: var(--radius-md, 8px);
+}
+
+.seasonalNoteText {
+  margin: 0;
+  font-size: var(--font-xs, 12px);
+  color: var(--text-secondary, #6b7280);
+  line-height: 1.4;
+}
+
+.seasonalNoteText strong {
+  color: var(--text-primary, #111827);
+  font-weight: var(--font-medium, 500);
+}
+
+/* Additional Notes */
+.additionalNotesCard {
+  background: var(--surface-secondary, #f9fafb);
+  border: 1px solid var(--border-secondary, #e5e7eb);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--spacing-4, 16px);
+  transition: all 0.2s ease;
+}
+
+.additionalNotesCard:hover {
+  border-color: var(--brand-primary-alpha-20, rgba(59, 130, 246, 0.2));
+  box-shadow: 0 2px 8px var(--shadow-sm, rgba(0, 0, 0, 0.05));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-4);
+  }
+
+  .revenueGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .operationalGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .peakHoursGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .seasonalGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

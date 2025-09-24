@@ -1,0 +1,197 @@
+/* Staff Form Styling */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+  margin: 0;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-foreground);
+}
+
+.sectionIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.sectionNote {
+  margin-bottom: 1.5rem;
+  color: var(--color-muted-foreground);
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+/* Form Grid */
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+
+.formGridTwo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.formGridFour {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-foreground);
+  margin-bottom: 0.25rem;
+}
+
+
+/* Checkbox */
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.checkbox {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid var(--brand-primary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.checkboxLabel {
+  font-weight: 500;
+  color: var(--color-foreground);
+  cursor: pointer;
+}
+
+.warningText {
+  font-size: 0.875rem;
+  color: var(--warning);
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Days Off Selection */
+.daysContainer {
+  margin-top: 0.5rem;
+}
+
+.daysGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.dayButton {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-border);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.dayButton:hover {
+  border-color: var(--brand-primary);
+  background-color: rgba(5, 150, 105, 0.05);
+}
+
+.dayButtonSelected {
+  background-color: var(--brand-primary);
+  color: white;
+  border-color: var(--brand-primary);
+}
+
+/* Error Message */
+.errorMessage {
+  color: var(--error);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Form Actions */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Button styles removed - using centralized components */
+
+.hiddenCheckbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .formGridTwo,
+  .formGridFour {
+    grid-template-columns: 1fr;
+  }
+  
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .actions {
+    flex-direction: column;
+  }
+  
+  .section {
+    padding: 1.5rem;
+  }
+  
+  .daysGrid {
+    justify-content: center;
+  }
+}

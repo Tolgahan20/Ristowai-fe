@@ -1,0 +1,329 @@
+.featuresSection {
+  background: #f7f8fa;
+  padding: 4.5rem 0 2.5rem 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.7rem;
+  font-weight: 800;
+  color: #23272f;
+  margin-bottom: 2.8rem;
+  letter-spacing: -0.01em;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 2.2rem 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  background: #fff;
+  border-radius: 1.25rem;
+  box-shadow: 0 2px 16px rgba(80,0,120,0.06);
+  padding: 1.35rem 1.6rem;
+  min-height: 90px;
+}
+
+.icon {
+  font-size: 1.8rem;
+  background: #f3f4f6;
+  border-radius: 0.7rem;
+  width: 2.7rem;
+  height: 2.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.2rem;
+  color: #7c3aed;
+}
+
+.featureTitle {
+  font-size: 1.13rem;
+  font-weight: 700;
+  color: #23272f;
+  margin-bottom: 0.18rem;
+}
+
+.featureDesc {
+  font-size: 0.98rem;
+  color: #6b7280;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.tabsBorder {
+  border: 1px solid #ececf1;
+  border-radius: 2.2rem;
+  background: #f7f8fa;
+  margin: 3.5rem auto 0 auto;
+  max-width: 1000px;
+  padding: 2.5rem 0 2.2rem 0;
+  box-sizing: border-box;
+  box-shadow: 0 2px 24px 0 rgba(80,0,120,0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tabsRow {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.1rem;
+  margin-bottom: 2.5rem;
+  max-width: 900px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.tabButton {
+  background: #fff;
+  color: #a084ee;
+  border: 2px solid #ececf1;
+  border-radius: 1.3rem;
+  padding: 1.3rem 1.3rem 1.3rem 1.3rem; /* reduced x padding */
+  cursor: pointer;
+  transition: border 0.18s, color 0.18s, background 0.18s, box-shadow 0.18s;
+  outline: none;
+  box-shadow: 0 1px 8px rgba(160,132,238,0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  flex: 1 1 0;
+  width: auto;
+  line-height: 1.25;
+  height: 80px;
+  position: relative;
+}
+
+.tabButtonActive {
+  background: #fff;
+  border: 2px solid #a084ee;
+  color: #a084ee;
+  box-shadow: 0 4px 24px 0 rgba(160, 132, 238, 0.13);
+  z-index: 2;
+}
+
+.tabButton:not(.tabButtonActive):hover {
+  border-color: #d1c4e9;
+  background: #f7f8fa;
+  color: #a084ee;
+}
+
+.tabLabel {
+  font-size: 1.13rem;
+  font-weight: 600;
+  color: inherit;
+  text-align: center;
+  line-height: 1.3;
+  margin-top: 0.1rem;
+}
+
+.tabContentRow {
+  display: flex;
+  gap: 2.5rem;
+  width: 900px;
+  max-width: 900px;
+  margin: 0 auto;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.tabCard, .tabImageCard {
+  min-width: 0;
+  max-width: 420px;
+  flex: 1 1 0;
+}
+
+.tabCard {
+  min-width: 420px;
+  max-width: 420px;
+  min-height: 340px;
+  background: #fff;
+  border-radius: 1.3rem;
+  box-shadow: 0 2px 16px rgba(160,132,238,0.06);
+  padding: 2.2rem 2.2rem 2.2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.tabBadge {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #a084ee;
+  border-radius: 1rem;
+  padding: 0.22rem 1.1rem;
+  margin-bottom: 1.2rem;
+  background: #f3e8ff;
+  letter-spacing: 0.01em;
+}
+
+.tabBadgeAI {
+  color: #a084ee;
+  font-weight: 600;
+  font-size: 0.95em;
+  margin-left: 0.3em;
+}
+
+.tabTitle {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #23272f;
+  margin-bottom: 1.1rem;
+  letter-spacing: -0.01em;
+}
+
+.tabDesc {
+  font-size: 1.13rem;
+  color: #6b7280;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.tabImageCard {
+  flex: 1 1 420px;
+  min-width: 420px;
+  max-width: 420px;
+  background: #f6edff;
+  border-radius: 1.3rem;
+  box-shadow: 0 2px 16px rgba(160,132,238,0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.tabImage {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 1.1rem;
+  box-shadow: 0 2px 16px rgba(160,132,238,0.06);
+  margin-bottom: 1.2rem;
+}
+
+.tabImageCaption {
+  text-align: center;
+  font-size: 1.08rem;
+  color: #23272f;
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+/* New grid for banners/cards */
+.bannersGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr)); /* wider cards */
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.4rem 2.2rem;
+  justify-content: center;
+  align-items: stretch;
+  margin: 2.8rem auto 0 auto;
+  max-width: 1100px; /* wider grid */
+  width: 100%;
+  padding: 0 1rem;
+}
+
+/* Improved banner/card style */
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: 700;
+  font-size: 1.18rem;
+  border-radius: 0.9rem; /* less border radius */
+  padding: 1.1rem 2.2rem 1.1rem 1.3rem; /* more horizontal padding */
+  /* No border */
+
+  letter-spacing: 0.01em;
+  transition: box-shadow 0.18s, background 0.18s;
+  min-height: 64px;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.bannerDot {
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  margin-right: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff; /* white circle */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  flex-shrink: 0;
+  position: relative;
+}
+.bannerDot::after {
+  content: "";
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: currentColor;
+  margin: auto;
+}
+
+/* Remove old .bannersRow margin/gap if present */
+.bannersRow {
+  display: none;
+}
+
+/* Responsive for mobile/tablet */
+@media (max-width: 900px) {
+  .bannersGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1.1rem 1.1rem;
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .bannersGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 0.8rem 0;
+    padding: 0 0.2rem;
+  }
+  .banner {
+    font-size: 1.05rem;
+    padding: 0.9rem 1.1rem 0.9rem 0.9rem;
+  }
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .tabsBorder {
+    max-width: 100%;
+  }
+  .tabsRow,
+  .tabContentRow {
+    max-width: 100%;
+    width: 100%;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .tabCard, .tabImageCard {
+    max-width: 100%;
+    min-width: 0;
+  }
+}

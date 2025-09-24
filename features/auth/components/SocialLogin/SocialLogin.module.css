@@ -1,0 +1,25 @@
+/* Social Login Container */
+.socialLogin {
+  width: 100%;
+}
+
+.socialButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+/* Social Button - minimal overrides */
+.socialButton {
+  width: 100%;
+}
+
+/* Icon sizing handled by Button component leftIcon */
+
+/* Mobile responsiveness */
+@media (max-width: 640px) {
+  .socialButtons {
+    gap: 0.5rem;
+  }
+}

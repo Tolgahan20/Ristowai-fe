@@ -1,0 +1,112 @@
+/* VenueDetailsStep Styles - Minimal custom styling */
+.container {
+  width: 100%;
+  padding: var(--spacing-6, 24px);
+}
+
+.header {
+  margin-bottom: var(--spacing-8, 32px);
+}
+
+.venueNote {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm, 8px);
+  padding: var(--spacing-sm, 8px) 0;
+  color: var(--text-secondary, #6b7280);
+}
+
+.venueNoteIcon {
+  color: var(--text-tertiary, #9ca3af);
+  flex-shrink: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8, 32px);
+  max-width: 100%;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6, 24px);
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2, 8px);
+  margin: 0;
+  font-size: var(--font-lg, 18px);
+  font-weight: var(--font-semibold, 600);
+  color: var(--text-primary, #111827);
+  padding-bottom: var(--spacing-2, 8px);
+  border-bottom: 1px solid var(--border-secondary, #f3f4f6);
+}
+
+.sectionIcon {
+  color: var(--brand-primary);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2, 8px);
+  margin-bottom: var(--spacing-4, 16px);
+}
+
+
+.addressRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr 120px;
+  gap: var(--spacing-6, 24px);
+  margin-bottom: var(--spacing-6, 24px);
+}
+
+.contactRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-6, 24px);
+  margin-bottom: var(--spacing-6, 24px);
+}
+
+.regionalRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--spacing-6, 24px);
+  margin-bottom: var(--spacing-6, 24px);
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .addressRow {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-4, 16px);
+  }
+  
+  .regionalRow {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-4, 16px);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-4);
+  }
+
+  .addressRow {
+    grid-template-columns: 1fr;
+  }
+
+  .contactRow {
+    grid-template-columns: 1fr;
+  }
+
+  .regionalRow {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,400 @@
+/* Sheet Component - Smart Shifts Design System */
+
+/* Base Sheet Content */
+.sheetContent {
+  position: fixed;
+  z-index: 50;
+  background: var(--surface-primary);
+  border: 1px solid var(--border-medium);
+  box-shadow: var(--shadow-lg);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.sheetContentInner {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-lg);
+}
+
+/* Side Variants */
+.sheetRight {
+  top: 0;
+  right: 0;
+  height: 100vh;
+  border-left: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+}
+
+.sheetLeft {
+  top: 0;
+  left: 0;
+  height: 100vh;
+  border-right: 1px solid var(--border-medium);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+
+.sheetTop {
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid var(--border-medium);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.sheetBottom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+/* Size Variants */
+.sheetSm {
+  max-width: 300px;
+}
+
+.sheetMd {
+  max-width: 400px;
+}
+
+.sheetLg {
+  max-width: 500px;
+}
+
+.sheetXl {
+  max-width: 600px;
+}
+
+.sheetFull {
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  border-radius: 0;
+  border: none;
+}
+
+/* Top/Bottom specific sizes */
+.sheetTop.sheetSm,
+.sheetBottom.sheetSm {
+  max-height: 200px;
+  max-width: none;
+}
+
+.sheetTop.sheetMd,
+.sheetBottom.sheetMd {
+  max-height: 300px;
+  max-width: none;
+}
+
+.sheetTop.sheetLg,
+.sheetBottom.sheetLg {
+  max-height: 400px;
+  max-width: none;
+}
+
+.sheetTop.sheetXl,
+.sheetBottom.sheetXl {
+  max-height: 500px;
+  max-width: none;
+}
+
+/* Style Variants */
+.sheetModal {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  backdrop-filter: blur(8px);
+}
+
+.sheetDrawer {
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.sheetDrawer.sheetTop {
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.sheetOverlay {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+}
+
+/* Sheet Close Button */
+.sheetClose {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: var(--surface-secondary);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.sheetClose:hover {
+  background: var(--surface-tertiary);
+  color: var(--text-primary);
+  transform: scale(1.05);
+}
+
+.sheetClose:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+}
+
+.sheetCloseIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sheetRight,
+  .sheetLeft {
+    width: 100vw;
+    max-width: none;
+    border-radius: 0;
+  }
+  
+  .sheetSm,
+  .sheetMd,
+  .sheetLg,
+  .sheetXl {
+    max-width: none;
+  }
+  
+  .sheetTop,
+  .sheetBottom {
+    max-height: 70vh;
+  }
+}
+
+/* Animation Classes */
+.sheetContent[data-state="open"] {
+  animation: sheetSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sheetContent[data-state="closed"] {
+  animation: sheetSlideOut 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes sheetSlideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes sheetSlideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.sheetLeft[data-state="open"] {
+  animation: sheetSlideInLeft 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sheetLeft[data-state="closed"] {
+  animation: sheetSlideOutLeft 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes sheetSlideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes sheetSlideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.sheetTop[data-state="open"] {
+  animation: sheetSlideInTop 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sheetTop[data-state="closed"] {
+  animation: sheetSlideOutTop 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes sheetSlideInTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes sheetSlideOutTop {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.sheetBottom[data-state="open"] {
+  animation: sheetSlideInBottom 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sheetBottom[data-state="closed"] {
+  animation: sheetSlideOutBottom 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes sheetSlideInBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes sheetSlideOutBottom {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+/* Dark Mode Support */
+.dark .sheetContent {
+  background: var(--surface-secondary);
+  border-color: var(--border-strong);
+}
+
+.dark .sheetClose {
+  background: var(--surface-tertiary);
+  color: var(--text-primary);
+}
+
+.dark .sheetClose:hover {
+  background: var(--surface-primary);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .sheetContent,
+  .sheetClose {
+    animation: none;
+    transition: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .sheetContent {
+    border-width: 2px;
+  }
+  
+  .sheetClose {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Print styles */
+@media print {
+  .sheetContent {
+    position: static;
+    box-shadow: none;
+    border: 1px solid black;
+    page-break-inside: avoid;
+  }
+  
+  .sheetClose {
+    display: none;
+  }
+}
+
+/* RTL Support */
+[dir="rtl"] .sheetRight {
+  right: auto;
+  left: 0;
+  border-left: none;
+  border-right: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+}
+
+[dir="rtl"] .sheetLeft {
+  left: auto;
+  right: 0;
+  border-right: none;
+  border-left: 1px solid var(--border-medium);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+
+[dir="rtl"] .sheetClose {
+  right: auto;
+  left: var(--spacing-md);
+}
+
+/* Custom properties for dynamic sizing */
+.sheetContent {
+  --sheet-width: 400px;
+  --sheet-height: auto;
+  
+  width: var(--sheet-width);
+  height: var(--sheet-height);
+}
+
+.sheetSm {
+  --sheet-width: 300px;
+}
+
+.sheetMd {
+  --sheet-width: 400px;
+}
+
+.sheetLg {
+  --sheet-width: 500px;
+}
+
+.sheetXl {
+  --sheet-width: 600px;
+}
+
+.sheetFull {
+  --sheet-width: 100vw;
+  --sheet-height: 100vh;
+}

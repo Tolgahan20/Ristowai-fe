@@ -1,0 +1,559 @@
+/* Staff List Layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon {
+  color: var(--brand-primary);
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+  margin: 0;
+}
+
+.count {
+  background-color: var(--color-secondary);
+  color: var(--color-secondary-foreground);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Filters Section */
+.filters {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.searchContainer {
+  position: relative;
+  flex: 0 0 300px;
+  max-width: 300px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-muted-foreground);
+  width: 1rem;
+  height: 1rem;
+}
+
+.searchInput {
+  width: 100%;
+  padding-left: 2.5rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.2);
+}
+
+.filterControls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+  min-width: fit-content;
+}
+
+.filterIcon {
+  color: var(--color-muted-foreground);
+
+}
+
+/* Select styles removed - using centralized EnhancedSelect component */
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--color-foreground);
+  margin-left: 0.25rem;
+}
+
+/* Checkbox styles removed - using centralized Checkbox component */
+
+/* Loading States */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.loadingItem {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.loadingContent {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.loadingAvatar {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--color-muted);
+  border-radius: 50%;
+}
+
+.loadingText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.loadingLine {
+  background-color: var(--color-muted);
+  border-radius: var(--radius-sm);
+}
+
+.loadingLineShort {
+  height: 1rem;
+  width: 25%;
+}
+
+.loadingLineMedium {
+  height: 0.75rem;
+  width: 33%;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+/* Staff Grid */
+.staffGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Staff Item */
+.staffItem {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  background-color: var(--color-card);
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.staffItem:hover {
+  border-color: var(--brand-primary);
+  box-shadow: 0 8px 25px rgba(5, 150, 105, 0.15);
+  transform: translateY(-2px);
+}
+
+.staffItemInactive {
+  background-color: var(--color-muted);
+  opacity: 0.75;
+}
+
+.staffItemContent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.staffInfo {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.avatarContainer {
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.avatarActive {
+  background: linear-gradient(135deg, var(--brand-primary), var(--brand-primary-dark));
+}
+
+.avatarInactive {
+  background: linear-gradient(135deg, var(--color-muted-foreground), var(--color-muted));
+}
+
+.staffDetails {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.staffHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.badgeContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+
+.staffName {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+  cursor: pointer;
+  margin: 0;
+  transition: color 0.2s ease-in-out;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3;
+}
+
+.staffName:hover {
+  color: var(--brand-primary);
+}
+
+.staffMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.roleName {
+  font-weight: 600;
+  color: var(--color-foreground);
+  font-size: 0.875rem;
+}
+
+.hoursInfo {
+  font-weight: 500;
+  color: var(--color-muted-foreground);
+  font-size: 0.875rem;
+}
+
+
+
+.contactInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: var(--color-muted-foreground);
+  flex-wrap: wrap;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--color-muted);
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+}
+
+.contactIcon {
+  width: 0.875rem;
+  height: 0.875rem;
+  color: var(--color-muted-foreground);
+  flex-shrink: 0;
+}
+
+.staffActions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.badgeInactive {
+  background-color: var(--color-secondary);
+  color: var(--color-secondary-foreground);
+}
+
+.badgeMinor {
+  background-color: rgb(254 240 138);
+  color: rgb(133 77 14);
+}
+
+.badgeFullTime {
+  background-color: var(--color-secondary);
+  color: var(--color-secondary-foreground);
+}
+
+.badgePartTime {
+  background-color: var(--color-secondary);
+  color: var(--color-secondary-foreground);
+}
+
+.badgeTemporary {
+  background-color: var(--color-secondary);
+  color: var(--color-secondary-foreground);
+}
+
+.badgeFreelance {
+  background-color: var(--color-secondary);
+  color: var(--color-secondary-foreground);
+}
+
+.badgeIntern {
+  background-color: var(--color-secondary);
+  color: var(--color-secondary-foreground);
+}
+
+.badgeContract {
+  background-color: var(--brand-primary);
+  color: white;
+  padding: 0.25rem 0.375rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  white-space: nowrap;
+}
+
+.badgeAccessEnabled {
+  background-color: var(--brand-primary);
+  color: white;
+}
+
+/* Additional Info Row */
+.additionalInfo {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8125rem;
+  color: var(--color-muted-foreground);
+}
+
+.infoGrid {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--color-muted);
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+}
+
+.infoIcon {
+  width: 0.875rem;
+  height: 0.875rem;
+  color: var(--color-muted-foreground);
+  flex-shrink: 0;
+}
+
+/* Empty State */
+.emptyStateCard {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.emptyStateContent {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.emptyIconContainer {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, var(--brand-primary-light), var(--brand-primary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.15);
+}
+
+.emptyIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: white;
+}
+
+.emptyTitle {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+  letter-spacing: -0.025em;
+}
+
+.emptyDescription {
+  font-size: 0.9375rem;
+  color: var(--color-muted-foreground);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.emptyActions {
+  margin-top: 0;
+}
+
+/* Staff List */
+.staffList {
+  display: grid;
+  gap: 1rem;
+}
+
+
+.emptyTitle {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-foreground);
+  margin: 0 0 0.25rem;
+}
+
+.emptyText {
+  font-size: 0.875rem;
+  color: var(--color-muted-foreground);
+  margin: 0 0 1.5rem;
+}
+
+/* Error State */
+.errorState {
+  padding: 2rem;
+  text-align: center;
+}
+
+.errorText {
+  color: var(--color-destructive);
+  margin: 0 0 1rem;
+}
+
+/* Button Icons */
+/* ButtonIcon styles removed - using centralized components */
+
+/* Delete Action */
+.deleteAction {
+  color: var(--error);
+}
+
+.deleteAction:hover {
+  background-color: rgba(220, 38, 38, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .staffItemContent {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  
+  .staffInfo {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+  
+  .staffMeta,
+  .contactInfo {
+    justify-content: center;
+  }
+  
+  .staffActions {
+    justify-content: center;
+  }
+  
+  .additionalInfo {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  
+  .infoGrid {
+    justify-content: center;
+  }
+}

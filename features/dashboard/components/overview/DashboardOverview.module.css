@@ -1,0 +1,165 @@
+
+
+
+/* Setup Section Styles */
+.setupSection {
+  margin-top: var(--spacing-3xl);
+}
+
+.setupTitle {
+  color: var(--foreground);
+  margin: 0 0 var(--spacing-sm);
+}
+
+.setupSubtitle {
+  color: var(--muted-foreground);
+  margin: 0 0 var(--spacing-2xl);
+}
+
+.setupGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+  align-items: stretch;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure all grid items have consistent styling */
+.setupGrid > * {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Setup card styles moved to SetupCard component */
+
+/* Responsive setup section */
+@media (max-width: 1024px) {
+  .setupGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .setupSection {
+    margin-top: var(--spacing-2xl);
+  }
+
+  .setupTitle {
+    font-size: var(--text-xl);
+  }
+
+  .setupGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+}
+
+/* Setup card styles handled by SetupCard component */
+
+@media (max-width: 480px) {
+  .setupCardFooter {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-sm);
+  }
+
+  .setupCardButton {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Modal content - minimal styling since Dialog component handles most of it */
+.modalContent {
+  padding: 0;
+}
+
+.modalText {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.sessionInfo {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background: var(--surface-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: 0.75rem;
+  position: relative;
+}
+
+.sessionInfo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--brand-primary), var(--brand-primary-light));
+  border-radius: 0.75rem 0.75rem 0 0;
+}
+
+.sessionDetail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.sessionDetail:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.sessionDetail:first-child {
+  padding-top: 0;
+}
+
+.sessionDetail strong {
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.sessionDetail span {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.modalActions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.resumeButton {
+  min-width: 120px;
+  font-weight: 500;
+}
+
+.cancelButton {
+  min-width: 120px;
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .modalActions {
+    flex-direction: column;
+  }
+
+  .resumeButton,
+  .cancelButton {
+    width: 100%;
+    min-width: auto;
+  }
+}

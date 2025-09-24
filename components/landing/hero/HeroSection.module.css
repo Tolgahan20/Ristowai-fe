@@ -1,0 +1,52 @@
+.heroSection {
+  min-height: 100vh; /* was 100vh, now smaller */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Updated gradient: vibrant magenta to blue, softer angle */
+  background: linear-gradient(115deg, #c471f5 0%, #6a7ff9 55%, #49a7f9 100%);
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-custom) !important;
+
+}
+
+.heroContent {
+  width: 100%;
+  max-width: 700px;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem; /* was 2.5rem */
+  margin: 0 auto;
+  padding-top: 4rem; /* was 7rem */
+  padding-bottom: 4rem; /* was 7rem */
+  position: relative;
+  z-index: 1;
+}
+
+.heroWave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 110px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem; /* was 1rem */
+  border-radius: 1.5rem;
+  padding: 0.25rem 1rem; /* was 0.35rem 1.25rem */
+  margin-bottom: 1rem; /* was 1.5rem */
+  letter-spacing: 0.01em;
+  backdrop-filter: blur(4px);
+}

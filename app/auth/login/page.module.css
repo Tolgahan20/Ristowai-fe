@@ -1,0 +1,118 @@
+/* Ultra Clean Login Page */
+.loginPage {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Left Panel - Enhanced Brand */
+.brandPanel {
+  background: var(--brand-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-5xl) var(--spacing-3xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.brandPanel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.brandContent {
+  text-align: center;
+  color: var(--white);
+  max-width: 420px;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Right Panel - Clean Form */
+.formPanel {
+  background: var(--surface-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-5xl) var(--spacing-3xl) var(--spacing-4xl);
+  position: relative;
+}
+
+.formPanel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 90% 10%, rgba(5, 150, 105, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.formContainer {
+  width: 100%;
+  max-width: 380px;
+  position: relative;
+  z-index: 2;
+}
+
+.formHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+  margin-top: var(--spacing-xl);
+}
+
+/* Typography handled by Typography components */
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .loginPage {
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+  }
+  
+  .brandPanel {
+    display: none;
+  }
+  
+  .formPanel {
+    padding: var(--spacing-3xl) var(--spacing-2xl);
+  }
+  
+  .formHeader {
+    margin-bottom: var(--spacing-2xl);
+  }
+}
+
+@media (max-width: 640px) {
+  .formPanel {
+    padding: var(--spacing-2xl) var(--spacing-xl);
+  }
+    
+  .formHeader {
+    margin-bottom: var(--spacing-xl);
+  }
+}

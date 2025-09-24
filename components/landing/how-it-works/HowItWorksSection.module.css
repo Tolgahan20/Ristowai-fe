@@ -1,0 +1,186 @@
+.sectionWrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+.container {
+  background: radial-gradient(ellipse at top left, #200950 0%, #000002 100%);
+  border-radius: 3rem;
+  margin: 3.5rem auto 0 auto;
+  max-width: 1200px;
+  width: 95%;
+  padding: 4.5rem 2.5rem 3.5rem 2.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.title {
+  color: #fff;
+  font-size: 3.2rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3.2rem;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.stepsRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto 1.8rem auto;
+}
+
+.step {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1.5px solid #444;
+  background: rgba(0,0,0,0.2);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.3rem;
+  transition: 
+    border 0.18s,
+    background 0.18s,
+    color 0.18s,
+    box-shadow 0.18s;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+/* Highlight the middle step (step 2) */
+
+.circle:hover {
+  background: #fff;
+  color: #111;
+  border: 1.5px solid #fff;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+}
+
+.desc {
+  color: #e5e7eb;
+  font-size: 1.18rem;
+  font-weight: 500;
+  line-height: 1.6;
+  max-width: 340px;
+}
+
+.ctaRow {
+  margin-top: 2.2rem;
+  text-align: center;
+}
+
+.ctaLink {
+  color: #b6baff;
+  font-size: 1.08rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.18s;
+}
+.ctaLink:hover {
+  color: #fff;
+}
+
+.ctaJoin {
+  color: #fff;
+  font-weight: 700;
+  margin-left: 0.18em;
+  text-decoration: underline;
+}
+
+.ctaButton {
+  display: inline-block;
+  background: #fff;
+  color: #23272f;
+  font-size: 1.18rem;
+  font-weight: 700;
+  padding: 1.1rem 2.2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(80,0,120,0.10);
+  text-decoration: none;
+  transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+}
+
+.ctaButton:hover {
+  background: transparent;
+  border: .1px solid #fff;
+  color: #fff;
+}
+
+.stepTitle {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  margin-top: -0.3rem;
+  letter-spacing: -0.01em;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .container {
+    padding: 3rem 1.2rem 2.5rem 1.2rem;
+  }
+  .stepsRow {
+    gap: 1.2rem;
+    max-width: 100%;
+  }
+  .desc {
+    font-size: 1.05rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    border-radius: 1.5rem;
+    padding: 2.2rem 0.5rem 1.5rem 0.5rem;
+  }
+  .title {
+    font-size: 2.1rem;
+    margin-bottom: 2rem;
+  }
+  .stepsRow {
+    flex-direction: column;
+    gap: 2.2rem;
+    align-items: stretch;
+  }
+  .step {
+    align-items: center;
+    text-align: center;
+  }
+  .circle {
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+}

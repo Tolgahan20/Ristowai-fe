@@ -1,0 +1,57 @@
+/* Theme Toggle Styles */
+.themeToggle {
+  color: var(--muted-foreground);
+  transition: all 0.2s ease;
+}
+
+.themeToggle:hover {
+  color: var(--foreground);
+  background: var(--accent);
+}
+
+.themeToggle:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.icon {
+  transition: transform 0.2s ease;
+}
+
+.themeToggle:hover .icon {
+  transform: rotate(15deg) scale(1.1);
+}
+
+/* Skeleton for SSR */
+.skeleton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skeletonButton {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--muted);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Dark mode specific adjustments */
+.dark .themeToggle {
+  color: var(--muted-foreground);
+}
+
+.dark .themeToggle:hover {
+  color: var(--foreground);
+  background: var(--accent);
+}

@@ -1,0 +1,18 @@
+.heroSubtitle {
+  color: #e0e3ea; /* more muted */
+  font-size: 1.05rem; /* was larger */
+  margin-bottom: 1.1rem; /* less space below */
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .heroSubtitle {
+    font-size: 1.25rem;
+  }
+}
+

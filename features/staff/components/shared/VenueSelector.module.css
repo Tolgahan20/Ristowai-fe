@@ -1,0 +1,112 @@
+/* VenueSelector Component Styles */
+
+.loadingState {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border-light);
+  border-radius: 0.5rem;
+  background: var(--surface-secondary);
+}
+
+.loadingIcon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--brand-primary);
+}
+
+.loadingSpinnerContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.loadingSpinner {
+  width: 0.75rem;
+  height: 0.75rem;
+  color: var(--brand-primary);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.errorState {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid var(--color-error);
+  border-radius: 0.5rem;
+  background: rgba(var(--color-error-rgb), 0.05);
+}
+
+.errorIcon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--color-error);
+}
+
+.autoSelectContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.autoSelectDisplay {
+  padding: 0.75rem;
+  border: 1px solid var(--border-light);
+  border-radius: 0.5rem;
+  background: var(--surface-secondary);
+}
+
+.venueName {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.addressContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.addressIcon {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.autoAssignedText {
+  margin-top: 0.25rem;
+  color: var(--brand-primary);
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.addressDisplay {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+}
+
+.addressDisplayIcon {
+  width: 0.75rem;
+  height: 0.75rem;
+}

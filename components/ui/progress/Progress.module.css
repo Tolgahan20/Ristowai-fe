@@ -1,0 +1,453 @@
+/* Progress Component - Smart Shifts Design System */
+
+/* Progress Wrapper */
+.progressWrapper {
+  width: 100%;
+}
+
+/* Progress Header */
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.progressLabel {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--text-primary);
+}
+
+.progressValue {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--text-secondary);
+}
+
+/* Base Progress */
+.progress {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--surface-tertiary);
+  border-radius: var(--radius-full);
+  transition: all 0.2s ease;
+}
+
+.progress:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+/* Progress Indicator */
+.progressIndicator {
+  height: 100%;
+  width: 100%;
+  background: var(--brand-primary);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Size Variants */
+.progressSm {
+  height: 0.5rem;
+}
+
+.progressMd {
+  height: 0.75rem;
+}
+
+.progressLg {
+  height: 1rem;
+}
+
+/* Shape Variants */
+.progressSquare {
+  border-radius: var(--radius-sm);
+}
+
+.progressPill {
+  border-radius: var(--radius-full);
+}
+
+/* Color Variants */
+.progressSuccess .progressIndicator {
+  background: var(--success);
+}
+
+.progressWarning .progressIndicator {
+  background: var(--warning);
+}
+
+.progressError .progressIndicator {
+  background: var(--error);
+}
+
+.progressInfo .progressIndicator {
+  background: var(--info);
+}
+
+.progressGradient .progressIndicator {
+  background: var(--brand-gradient);
+}
+
+/* Animated Progress */
+.progressAnimated .progressIndicator::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: progressShine 2s infinite;
+}
+
+@keyframes progressShine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Striped Progress */
+.progressStriped .progressIndicator::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem 1rem;
+}
+
+.progressStriped.progressAnimated .progressIndicator::before {
+  animation: progressStripes 1s linear infinite;
+}
+
+@keyframes progressStripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1rem 0;
+  }
+}
+
+/* Circular Progress */
+.circularProgress {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circularProgressSvg {
+  transform: rotate(-90deg);
+}
+
+.circularProgressTrack {
+  fill: none;
+  stroke: var(--surface-tertiary);
+}
+
+.circularProgressIndicator {
+  fill: none;
+  stroke: var(--brand-primary);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.circularProgressValue {
+  position: absolute;
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+}
+
+/* Circular Progress Variants */
+.circularProgressSuccess {
+  stroke: var(--success);
+}
+
+.circularProgressWarning {
+  stroke: var(--warning);
+}
+
+.circularProgressError {
+  stroke: var(--error);
+}
+
+.circularProgressInfo {
+  stroke: var(--info);
+}
+
+.circularProgressGradient {
+  stroke: url(#progressGradient);
+}
+
+/* Progress with steps */
+.progressSteps {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.progressStep {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.progressStepIndicator {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: var(--surface-tertiary);
+  border: 2px solid var(--border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  transition: all 0.2s ease;
+}
+
+.progressStep[data-completed="true"] .progressStepIndicator {
+  background: var(--success);
+  border-color: var(--success);
+  color: white;
+}
+
+.progressStep[data-active="true"] .progressStepIndicator {
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: white;
+}
+
+.progressStep[data-completed="true"],
+.progressStep[data-active="true"] {
+  color: var(--text-primary);
+}
+
+/* Progress with buffer */
+.progressBuffer {
+  position: relative;
+}
+
+.progressBuffer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: rgba(var(--brand-primary-rgb), 0.3);
+  border-radius: inherit;
+  transition: width 0.3s ease;
+}
+
+/* Determinate vs Indeterminate */
+.progressIndeterminate .progressIndicator {
+  animation: progressIndeterminate 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes progressIndeterminate {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Dark Mode Support */
+.dark .progress {
+  background: var(--surface-primary);
+}
+
+.dark .circularProgressTrack {
+  stroke: var(--surface-primary);
+}
+
+.dark .progressStepIndicator {
+  background: var(--surface-primary);
+  border-color: var(--border-strong);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .progressIndicator,
+  .circularProgressIndicator,
+  .progressStepIndicator {
+    transition: none;
+  }
+  
+  .progressAnimated .progressIndicator::after,
+  .progressStriped.progressAnimated .progressIndicator::before,
+  .progressIndeterminate .progressIndicator {
+    animation: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .progress {
+    border: 2px solid currentColor;
+  }
+  
+  .progressIndicator {
+    background: black;
+  }
+  
+  .circularProgressIndicator {
+    stroke: black;
+  }
+}
+
+/* Print styles */
+@media print {
+  .progress {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+  
+  .progressAnimated .progressIndicator::after,
+  .progressStriped .progressIndicator::before {
+    display: none;
+  }
+}
+
+/* RTL Support */
+[dir="rtl"] .progressIndicator {
+  transform-origin: right;
+}
+
+[dir="rtl"] .progressHeader {
+  flex-direction: row-reverse;
+}
+
+/* Mini progress variant */
+.progressMini {
+  height: 0.25rem;
+}
+
+.progressMini .progressHeader {
+  margin-bottom: var(--spacing-xs);
+}
+
+.progressMini .progressLabel,
+.progressMini .progressValue {
+  font-size: var(--text-xs);
+}
+
+/* Large progress variant */
+.progressXl {
+  height: 1.25rem;
+}
+
+/* Progress with text inside */
+.progressWithText .progressIndicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+}
+
+/* Multi-step progress */
+.progressMultiStep {
+  display: flex;
+  background: var(--surface-tertiary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.progressMultiStepItem {
+  flex: 1;
+  height: 0.75rem;
+  background: transparent;
+  border-right: 1px solid var(--surface-primary);
+  transition: background 0.3s ease;
+}
+
+.progressMultiStepItem:last-child {
+  border-right: none;
+}
+
+.progressMultiStepItem[data-completed="true"] {
+  background: var(--success);
+}
+
+.progressMultiStepItem[data-active="true"] {
+  background: var(--brand-primary);
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .progressHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+  }
+  
+  .progressSteps {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Animation variants */
+.progressPulse .progressIndicator {
+  animation: progressPulse 2s infinite;
+}
+
+@keyframes progressPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.progressGlow .progressIndicator {
+  box-shadow: 0 0 10px currentColor;
+}
+
+/* Custom properties for dynamic theming */
+.progress {
+  --progress-height: 0.75rem;
+  --progress-bg: var(--surface-tertiary);
+  --progress-fill: var(--brand-primary);
+  
+  height: var(--progress-height);
+  background: var(--progress-bg);
+}
+
+.progressIndicator {
+  background: var(--progress-fill);
+}

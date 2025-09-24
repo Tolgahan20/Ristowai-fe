@@ -1,0 +1,147 @@
+/* Skeleton Component - Smart Shifts Design System */
+
+/* Base Skeleton */
+.skeleton {
+  background: var(--surface-tertiary);
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animation Variants */
+.skeletonPulse {
+  animation: skeletonPulse 2s ease-in-out infinite;
+}
+
+@keyframes skeletonPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.skeletonWave {
+  background: linear-gradient(90deg, var(--surface-tertiary) 25%, var(--surface-secondary) 50%, var(--surface-tertiary) 75%);
+  background-size: 200% 100%;
+  animation: skeletonWave 2s ease-in-out infinite;
+}
+
+@keyframes skeletonWave {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.skeletonShimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: skeletonShimmer 2s infinite;
+}
+
+@keyframes skeletonShimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.skeletonNoAnimation {
+  animation: none;
+}
+
+/* Speed Variants */
+.skeletonSlow { animation-duration: 3s; }
+.skeletonFast { animation-duration: 1s; }
+
+/* Shape Variants */
+.skeletonText {
+  height: 1rem;
+  width: 100%;
+  border-radius: var(--radius-sm);
+}
+
+.skeletonAvatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+.skeletonCard {
+  height: 200px;
+  width: 100%;
+  border-radius: var(--radius-lg);
+}
+
+.skeletonImage {
+  height: 150px;
+  width: 100%;
+  border-radius: var(--radius-md);
+}
+
+.skeletonButton {
+  height: 2.5rem;
+  width: 100px;
+  border-radius: var(--radius-md);
+}
+
+/* Layout Components */
+.skeletonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.profileSkeleton {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.profileSkeletonContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  flex: 1;
+}
+
+.postSkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+}
+
+.postSkeletonActions {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.tableSkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.tableSkeletonRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+}
+
+/* Dark Mode */
+.dark .skeleton {
+  background: var(--surface-primary);
+}
+
+.dark .skeletonWave {
+  background: linear-gradient(90deg, var(--surface-primary) 25%, var(--surface-tertiary) 50%, var(--surface-primary) 75%);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .skeleton, .skeletonPulse, .skeletonWave, .skeletonShimmer {
+    animation: none;
+  }
+}

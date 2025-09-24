@@ -1,0 +1,724 @@
+/* Member List Styles */
+.container {
+  width: 100%;
+  background: var(--color-background);
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.headerLeft {
+  flex: 1;
+}
+
+.headerInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.headerIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--brand-primary);
+  flex-shrink: 0;
+}
+
+/* Header typography handled by Heading and Caption components */
+.headerTitle {
+  margin: 0 0 0.25rem 0;
+}
+
+.headerCount {
+  margin: 0;
+}
+
+/* Invite button styling handled by PrimaryButton component */
+.inviteButton {
+  /* Custom styles can be added here if needed */
+}
+
+.titleSection {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.titleIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--brand-primary);
+}
+
+/* Title styling handled by Heading component */
+.title {
+  margin: 0;
+}
+
+.count {
+  background: var(--color-secondary);
+  color: var(--color-secondary-foreground);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.headerRight {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Invite button styling handled by PrimaryButton component - removed redundant styles */
+
+.buttonIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Search */
+.searchSection {
+  margin-bottom: 1.5rem;
+}
+
+.searchInputContainer {
+  position: relative;
+  max-width: 24rem;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  color: var(--color-muted-foreground);
+  pointer-events: none;
+}
+
+.searchContainer {
+  margin-bottom: 1.5rem;
+}
+
+.searchInputWrapper {
+  position: relative;
+  max-width: 400px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  color: var(--color-muted-foreground);
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+.searchInput::placeholder {
+  color: var(--color-muted-foreground);
+}
+
+/* Loading State */
+.loadingState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+}
+
+.loadingSpinner {
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid var(--color-border);
+  border-top: 3px solid var(--brand-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error State */
+.errorState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+}
+
+.errorIcon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--error, #ef4444);
+  margin-bottom: 1rem;
+}
+
+/* Empty State */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+}
+
+.emptyIcon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--color-muted-foreground);
+  margin-bottom: 1rem;
+}
+
+/* Empty state typography handled by Heading and Body components */
+.emptyTitle {
+  margin: 0 0 0.5rem 0;
+}
+
+.emptyDescription {
+  margin: 0 0 1.5rem 0;
+}
+
+/* Empty action button styling handled by PrimaryButton component */
+.emptyActionButton {
+  gap: 0.5rem;
+}
+
+/* Members List */
+.membersList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.memberItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.memberItem:hover {
+  border-color: var(--brand-primary);
+  box-shadow: 0 8px 25px rgba(5, 150, 105, 0.15);
+  transform: translateY(-2px);
+}
+
+.memberContent {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+/* Avatar */
+.memberAvatar {
+  flex-shrink: 0;
+}
+
+.avatarImage {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatarPlaceholder {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: white;
+}
+
+.avatarActive {
+  background: var(--brand-primary);
+}
+
+.avatarInactive {
+  background: var(--color-muted-foreground);
+}
+
+/* Member Info */
+.memberInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Member name typography handled by Heading component */
+.memberName {
+  margin: 0;
+}
+
+.memberDetails {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.memberEmail {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  color: var(--color-muted-foreground);
+}
+
+.memberVenues {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  color: var(--color-muted-foreground);
+}
+
+.detailIcon {
+  width: 0.875rem;
+  height: 0.875rem;
+  flex-shrink: 0;
+}
+
+.memberMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Badge styling handled by Badge component */
+.roleBadge,
+.statusBadge {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.375rem !important;
+  padding: 0.375rem 0.75rem !important;
+}
+
+/* Role badge colors */
+.role-owner {
+  background: var(--brand-primary-light);
+  color: var(--brand-primary);
+  border: 1px solid var(--brand-primary);
+}
+
+.role-manager {
+  background: var(--color-secondary);
+  color: var(--color-secondary-foreground);
+  border: 1px solid var(--color-border);
+}
+
+/* Status badge colors */
+.status-active {
+  background: var(--success-light, #f0f9ff);
+  color: var(--success, #10b981);
+  border: 1px solid var(--success, #10b981);
+}
+
+.status-pending {
+  background: var(--warning-light, #fef3cd);
+  color: var(--warning, #f59e0b);
+  border: 1px solid var(--warning, #f59e0b);
+}
+
+.status-suspended {
+  background: var(--error-light, #fef2f2);
+  color: var(--error, #ef4444);
+  border: 1px solid var(--error, #ef4444);
+}
+
+.status-removed {
+  background: var(--color-muted);
+  color: var(--color-muted-foreground);
+  border: 1px solid var(--color-border);
+}
+
+.statusIcon {
+  width: 0.875rem;
+  height: 0.875rem;
+  flex-shrink: 0;
+}
+
+.memberActions {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.dropdown {
+  position: relative;
+}
+
+/* Dropdown trigger styling handled by IconButton component */
+.dropdownTrigger {
+  width: 2rem;
+  height: 2rem;
+}
+
+.dropdownIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.dropdownBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 20;
+  min-width: 10rem;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  text-align: left;
+  color: var(--color-foreground);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+}
+
+.dropdownItem:hover {
+  background: var(--color-muted);
+}
+
+.dropdownItemDanger {
+  color: var(--error);
+}
+
+.dropdownItemDanger:hover {
+  background: var(--error-light);
+}
+
+.dropdownItemIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+
+
+/* Role badge styling handled by Badge component */
+
+.rolepurple { background: var(--color-secondary); color: var(--color-secondary-foreground); }
+.roleblue { background: var(--color-accent); color: var(--color-accent-foreground); }
+.rolegreen { background: var(--brand-primary-light); color: var(--brand-primary-dark); }
+.roleorange { background: var(--color-muted); color: var(--color-muted-foreground); }
+.rolegray { background: var(--color-secondary); color: var(--color-secondary-foreground); }
+
+.metaSeparator {
+  color: var(--color-muted-foreground);
+}
+
+.venueAccess {
+  color: var(--color-muted-foreground);
+}
+
+/* Status */
+.memberStatus {
+  flex-shrink: 0;
+}
+
+/* Status badge styling handled by Badge component */
+
+.statusIcon {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.statusyellow { background: #fef3c7; color: #92400e; }
+.statusgreen { background: #d1fae5; color: #065f46; }
+.statusgray { background: var(--color-muted); color: var(--color-muted-foreground); }
+.statusred { background: #fee2e2; color: #991b1b; }
+
+/* Actions */
+.memberActions {
+  flex-shrink: 0;
+  position: relative;
+}
+
+.actionDropdown {
+  position: relative;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  border-radius: 0.375rem;
+  color: var(--color-muted-foreground);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionButton:hover {
+  background: var(--color-muted);
+  color: var(--color-foreground);
+}
+
+.actionIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 50;
+  min-width: 160px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  color: var(--color-foreground);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.dropdownItem:hover {
+  background: var(--color-muted);
+}
+
+.dropdownItemDanger {
+  color: var(--error);
+}
+
+.dropdownItemDanger:hover {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.dropdownIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.dropdownSeparator {
+  height: 1px;
+  background: var(--color-border);
+  margin: 0.5rem 0;
+}
+
+.dropdownOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+}
+
+/* States */
+.loadingState,
+.errorState,
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-muted-foreground);
+}
+
+.loadingSpinner {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid var(--color-border);
+  border-top-color: var(--brand-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.emptyIcon,
+.errorIcon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--color-muted-foreground);
+  margin-bottom: 1rem;
+}
+
+.errorIcon {
+  color: var(--error);
+}
+
+.emptyTitle,
+.errorTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+  margin: 0 0 0.5rem 0;
+}
+
+.emptyDescription,
+.errorDescription {
+  font-size: 1rem;
+  color: var(--color-muted-foreground);
+  margin: 0 0 1.5rem 0;
+  max-width: 400px;
+  text-align: center;
+}
+
+.emptyActionButton {
+  /* Custom styles can be added here if needed */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .headerRight {
+    width: 100%;
+  }
+
+  .inviteButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .searchInputWrapper {
+    max-width: none;
+  }
+
+  .memberContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .memberInfo {
+    width: 100%;
+  }
+
+  .memberActions {
+    align-self: flex-end;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .memberItem {
+    padding: 1rem;
+  }
+
+  .titleSection {
+    flex-wrap: wrap;
+  }
+
+  .emptyState,
+  .errorState,
+  .loadingState {
+    padding: 2rem 1rem;
+  }
+}

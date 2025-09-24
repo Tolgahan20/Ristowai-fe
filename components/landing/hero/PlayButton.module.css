@@ -1,0 +1,46 @@
+.playButtonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.13);
+  border-radius: 2rem;
+  padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+  box-shadow: 0 2px 8px rgba(80, 0, 120, 0.08);
+  width: fit-content;
+}
+
+.playButton {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.2s, background 0.2s;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.13);
+}
+
+.playButton:hover {
+  background: #f3f4f6;
+}
+
+.playIcon {
+  width: 1.2rem;
+  height: 1.2rem;
+  color: #a084ee;
+}
+
+.playText {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  opacity: 0.92;
+}

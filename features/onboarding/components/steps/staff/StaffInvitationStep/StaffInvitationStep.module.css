@@ -1,0 +1,230 @@
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--spacing-6, 24px);
+  background: var(--surface-primary, #ffffff);
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid var(--border-primary, #e5e7eb);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8, 32px);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4, 16px);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-4, 16px);
+  margin-bottom: var(--spacing-6, 24px);
+}
+
+.headerIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--brand-primary);
+  border-radius: var(--radius-lg, 12px);
+  color: white;
+  flex-shrink: 0;
+}
+
+.headerContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2, 8px);
+}
+
+
+/* Guidance Message */
+.guidanceBanner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3, 12px);
+  padding: var(--spacing-4, 16px);
+  background: rgba(var(--brand-primary-rgb, 34, 197, 94), 0.05);
+  border: 1px solid rgba(var(--brand-primary-rgb, 34, 197, 94), 0.2);
+  border-radius: var(--radius-md, 8px);
+  margin-top: var(--spacing-4, 16px);
+}
+
+.guidanceIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: var(--brand-primary);
+  border-radius: var(--radius-sm, 6px);
+  color: white;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.guidanceContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1, 4px);
+}
+
+.guidanceTitle {
+  margin: 0;
+  color: var(--text-primary, #111827);
+}
+
+.guidanceText {
+  margin: 0;
+  color: var(--text-secondary, #6b7280);
+  line-height: 1.4;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rolesCard {
+  margin: var(--spacing-2, 8px) 0;
+}
+
+.rolesList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--spacing-3, 12px);
+}
+
+.roleChip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-1-5, 6px);
+  padding: var(--spacing-3, 12px) var(--spacing-4, 16px);
+  background: linear-gradient(135deg, var(--brand-50), var(--brand-100));
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg, 12px);
+  font-size: var(--font-sm, 14px);
+  transition: all 0.2s ease;
+}
+
+.roleName {
+  font-weight: var(--font-semibold, 600);
+  color: var(--brand-700);
+  text-align: center;
+}
+
+
+
+.readyMessage {
+  margin-top: var(--spacing-3, 12px);
+  margin: 0;
+}
+
+.warningMessage {
+  margin-top: var(--spacing-3, 12px);
+  margin: 0;
+}
+
+.staffList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4, 16px);
+}
+
+.staffCard {
+  background: var(--surface-primary, white);
+  border: 1px solid var(--border-primary, #e5e7eb);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--spacing-5, 20px);
+  transition: border-color 0.2s ease;
+}
+
+.staffCard:hover {
+  border-color: var(--brand-200);
+}
+
+.staffCardError {
+  border-color: var(--error-primary);
+  background: var(--error-50);
+}
+
+.staffCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-4, 16px);
+}
+
+.staffNumber {
+  font-size: var(--font-sm, 14px);
+  font-weight: var(--font-semibold, 600);
+  color: var(--text-secondary, #6b7280);
+}
+
+
+.staffForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4, 16px);
+}
+
+.nameRow,
+.contactRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-4, 16px);
+}
+
+.roleRow {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 768px) {
+  .nameRow,
+  .contactRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1, 4px);
+}
+
+
+.summaryStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--spacing-5, 20px);
+}
+
+.stat {
+  text-align: center;
+}
+
+.statNumber {
+  display: block;
+  font-size: var(--font-2xl, 24px);
+  font-weight: var(--font-bold, 700);
+  color: var(--brand-primary);
+  margin-bottom: var(--spacing-1, 4px);
+}
+
+.statLabel {
+  font-size: var(--font-sm, 14px);
+  color: var(--text-secondary, #6b7280);
+}

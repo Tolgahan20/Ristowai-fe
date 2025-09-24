@@ -1,0 +1,322 @@
+/* Button Styles for Landing Page */
+
+/* Base Button Styles */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.button:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Primary Button */
+.primary {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 4px 14px 0 rgba(139, 92, 246, 0.3);
+}
+
+.primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  box-shadow: 0 6px 20px 0 rgba(139, 92, 246, 0.4);
+  transform: translateY(-1px);
+}
+
+.primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px 0 rgba(139, 92, 246, 0.3);
+}
+
+/* Secondary Button */
+.secondary {
+  background: white;
+  color: #8b5cf6;
+  border: 2px solid #8b5cf6;
+  padding: 0.75rem 1.5rem;
+}
+
+.secondary:hover:not(:disabled) {
+  background: #8b5cf6;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px 0 rgba(139, 92, 246, 0.2);
+}
+
+.secondary:active {
+  transform: translateY(0);
+}
+
+/* Outline Button */
+.outline {
+  background: transparent;
+  color: #4a4a4a;
+  border: 2px solid #e5e7eb;
+  padding: 0.75rem 1.5rem;
+}
+
+.outline:hover:not(:disabled) {
+  background: #f9fafb;
+  border-color: #8b5cf6;
+  color: #8b5cf6;
+  transform: translateY(-1px);
+}
+
+.outline:active {
+  transform: translateY(0);
+}
+
+/* Ghost Button */
+.ghost {
+  background: transparent;
+  color: #4a4a4a;
+  padding: 0.75rem 1.5rem;
+}
+
+.ghost:hover:not(:disabled) {
+  background: #f9fafb;
+  color: #8b5cf6;
+}
+
+/* Dark Button */
+.dark {
+  background: #1a1a1a;
+  color: white;
+  border: 2px solid #1a1a1a;
+  padding: 0.75rem 1.5rem;
+}
+
+.dark:hover:not(:disabled) {
+  background: #2a2a2a;
+  border-color: #2a2a2a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.2);
+}
+
+.dark:active {
+  transform: translateY(0);
+}
+
+/* White Button */
+.white {
+  background: white;
+  color: #1a1a1a;
+  border: 2px solid white;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1);
+}
+
+.white:hover:not(:disabled) {
+  background: #f9fafb;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+.white:active {
+  transform: translateY(0);
+}
+
+/* Button Sizes */
+.small {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.large {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+.xlarge {
+  padding: 1.25rem 2.5rem;
+  font-size: 1.25rem;
+}
+
+/* Circular Button */
+.circular {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circularLarge {
+  width: 4rem;
+  height: 4rem;
+}
+
+.circularSmall {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* Play Button */
+.playButton {
+  background: white;
+  color: #8b5cf6;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.playButton:hover:not(:disabled) {
+  transform: scale(1.1);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.15);
+}
+
+.playButton:active {
+  transform: scale(1.05);
+}
+
+/* Watch Video Button */
+.watchVideo {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.watchVideo:hover:not(:disabled) {
+  background: white;
+  color: #1a1a1a;
+  transform: translateY(-1px);
+}
+
+.watchVideo:active {
+  transform: translateY(0);
+}
+
+/* Join Community Button */
+.joinCommunity {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+}
+
+.joinCommunity:hover:not(:disabled) {
+  background: white;
+  color: #1a1a1a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px 0 rgba(255, 255, 255, 0.2);
+}
+
+.joinCommunity:active {
+  transform: translateY(0);
+}
+
+/* Pricing Button */
+.pricing {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.pricing:hover:not(:disabled) {
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px 0 rgba(139, 92, 246, 0.4);
+}
+
+.pricing:active {
+  transform: translateY(0);
+}
+
+/* Loading State */
+.loading {
+  position: relative;
+  color: transparent;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1rem;
+  height: 1rem;
+  margin: -0.5rem 0 0 -0.5rem;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .button {
+    font-size: 0.875rem;
+  }
+  
+  .large {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .xlarge {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+  }
+  
+  .playButton {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .button {
+    font-size: 0.8rem;
+  }
+  
+  .large {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+  
+  .xlarge {
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
+  }
+}

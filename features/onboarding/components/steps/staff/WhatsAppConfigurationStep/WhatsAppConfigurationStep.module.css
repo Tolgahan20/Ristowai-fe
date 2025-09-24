@@ -1,0 +1,209 @@
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--spacing-6, 24px);
+  background: var(--surface-primary, #ffffff);
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid var(--border-primary, #e5e7eb);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8, 32px);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4, 16px);
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2, 8px);
+  margin: 0;
+  font-size: var(--font-lg, 18px);
+  font-weight: var(--font-semibold, 600);
+  color: var(--text-primary, #111827);
+  padding-bottom: var(--spacing-2, 8px);
+  border-bottom: 1px solid var(--border-secondary, #f3f4f6);
+}
+
+.sectionIcon {
+  color: var(--brand-primary);
+}
+
+.sectionDescription {
+  margin: 0;
+  font-size: var(--font-base, 14px);
+  color: var(--text-secondary, #6b7280);
+  line-height: 1.5;
+}
+
+.enableItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3, 12px);
+  cursor: pointer;
+  padding: var(--spacing-4, 16px);
+  border: 1px solid var(--border-primary, #e5e7eb);
+  border-radius: var(--radius-lg, 12px);
+  transition: all 0.2s ease;
+  background: var(--surface-primary, white);
+}
+
+.enableItem:hover {
+  background: var(--brand-25);
+  border-color: var(--brand-200);
+}
+
+.enableCheckbox {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--brand-primary);
+  cursor: pointer;
+}
+
+.enableContent {
+  flex: 1;
+}
+
+.enableLabel {
+  font-size: var(--font-base, 16px);
+  font-weight: var(--font-semibold, 600);
+  color: var(--text-primary, #111827);
+  display: block;
+  margin-bottom: var(--spacing-1, 4px);
+}
+
+.enableDescription {
+  font-size: var(--font-sm, 14px);
+  color: var(--text-secondary, #6b7280);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1, 4px);
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2, 8px);
+  font-size: var(--font-sm, 14px);
+  font-weight: var(--font-medium, 500);
+  color: var(--text-primary, #111827);
+  margin-bottom: var(--spacing-1-5, 6px);
+}
+
+.labelIcon {
+  color: var(--text-secondary, #6b7280);
+}
+
+.input {
+  padding: var(--spacing-2-5, 10px) var(--spacing-3, 12px);
+  border: 1px solid var(--border-primary, #e5e7eb);
+  border-radius: var(--radius-sm, 6px);
+  font-size: var(--font-sm, 14px);
+  color: var(--text-primary, #111827);
+  background: var(--surface-primary, white);
+  transition: border-color 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px var(--brand-50);
+}
+
+.inputError {
+  border-color: var(--error-primary);
+}
+
+.inputError:focus {
+  border-color: var(--error-primary);
+  box-shadow: 0 0 0 3px var(--error-50);
+}
+
+.helpText {
+  font-size: var(--font-xs, 12px);
+  color: var(--text-secondary, #6b7280);
+  margin: var(--spacing-1, 4px) 0 0 0;
+  line-height: 1.4;
+}
+
+.errorText {
+  font-size: var(--font-xs, 12px);
+  color: var(--error-primary);
+  margin: var(--spacing-1, 4px) 0 0 0;
+}
+
+
+/* Instructions */
+.instructionsCard {
+  background: var(--brand-25);
+  border: 1px solid var(--brand-200);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--spacing-4, 16px);
+}
+
+.instructionsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3, 12px);
+}
+
+.instructionStep {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3, 12px);
+}
+
+.stepNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: var(--brand-primary);
+  color: white;
+  border-radius: 50%;
+  font-size: var(--font-xs, 12px);
+  font-weight: var(--font-semibold, 600);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.stepText {
+  flex: 1;
+  font-size: var(--font-sm, 14px);
+  color: var(--text-primary, #111827);
+  line-height: 1.5;
+}
+
+.stepText code {
+  background: var(--brand-50);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm, 4px);
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: var(--font-xs, 12px);
+  color: var(--brand-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-4, 16px);
+  }
+  
+  .form {
+    gap: var(--spacing-6, 24px);
+  }
+}

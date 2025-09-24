@@ -1,0 +1,141 @@
+/* Avatar Dropdown Styles */
+.avatarButton {
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  padding: 4px;
+}
+
+.avatarButton:hover {
+  transform: scale(1.05);
+  background: var(--accent);
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--border);
+  transition: border-color 0.2s ease;
+}
+
+.avatarButton:hover .avatar {
+  border-color: var(--primary);
+}
+
+.avatarFallback {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+}
+
+.dropdownContent {
+  width: 240px;
+  padding: var(--spacing-sm);
+  margin-top: var(--spacing-xs);
+}
+
+.dropdownLabel {
+  padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-xs);
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.userName {
+  color: var(--foreground);
+  line-height: 1.2;
+}
+
+.userEmail {
+  color: var(--muted-foreground);
+  line-height: 1.2;
+  word-break: break-all;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: var(--text-sm);
+}
+
+.dropdownItem:hover {
+  background: var(--accent);
+}
+
+.dropdownItem:focus {
+  background: var(--accent);
+  outline: none;
+}
+
+.logoutItem {
+  color: var(--destructive);
+}
+
+.logoutItem:hover {
+  background: hsl(var(--destructive) / 0.1);
+  color: var(--destructive);
+}
+
+.logoutItem:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Skeleton for hydration */
+.avatarSkeleton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.skeletonAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--muted);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skeletonText {
+  color: var(--muted-foreground);
+  font-size: 10px;
+  font-weight: var(--font-medium);
+  opacity: 0.6;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .dropdownContent {
+    width: 200px;
+  }
+  
+  .userName {
+    font-size: var(--text-xs);
+  }
+  
+  .userEmail {
+    font-size: 11px;
+  }
+}

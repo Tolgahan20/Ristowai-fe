@@ -1,0 +1,56 @@
+/* Dialog Component - Smart Shifts Design System */
+
+.dialogContent {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 50;
+  transform: translate(-50%, -50%);
+  background: var(--surface-primary);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-xl);
+  width: calc(100% - 2rem);
+  max-width: 500px;
+  display: grid;
+  gap: var(--spacing-lg);
+  transition: all 0.2s ease;
+}
+
+.dialogSm { max-width: 400px; }
+.dialogMd { max-width: 500px; }
+.dialogLg { max-width: 600px; }
+.dialogXl { max-width: 800px; }
+.dialogFull { width: 100vw; height: 100vh; max-width: none; border-radius: 0; }
+
+.dialogAlert { border-left: 4px solid var(--error); }
+.dialogConfirm { border-left: 4px solid var(--warning); }
+.dialogModal { backdrop-filter: blur(8px); }
+
+.dialogClose {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: var(--surface-secondary);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dialogClose:hover {
+  background: var(--surface-tertiary);
+  color: var(--text-primary);
+}
+
+.dialogCloseIcon {
+  width: 1rem;
+  height: 1rem;
+}

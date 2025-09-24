@@ -1,0 +1,349 @@
+// Frontend enums matching the backend enums
+// Based on backend enum definitions
+
+// Schedule Status
+export enum ScheduleStatus {
+  DRAFT = 'DRAFT',
+  GENERATING = 'GENERATING',
+  GENERATED = 'GENERATED',
+  REVIEWING = 'REVIEWING',
+  PUBLISHED = 'PUBLISHED',
+  ARCHIVED = 'ARCHIVED',
+}
+
+// Request Status
+export enum RequestStatus {
+  PENDING = 'PENDING',
+  APPROVED = 'APPROVED',
+  DENIED = 'DENIED',
+  CANCELLED = 'CANCELLED',
+  AUTO_APPROVED = 'AUTO_APPROVED',
+  PROCESSING = 'PROCESSING',
+}
+
+// Request Type
+export enum RequestType {
+  TIME_OFF = 'TIME_OFF',
+  SHIFT_SWAP = 'SHIFT_SWAP',
+  OVERTIME = 'OVERTIME',
+  SCHEDULE_CHANGE = 'SCHEDULE_CHANGE',
+  EARLY_DEPARTURE = 'EARLY_DEPARTURE',
+  LATE_ARRIVAL = 'LATE_ARRIVAL',
+}
+
+// Incident Status
+export enum IncidentStatus {
+  OPEN = 'OPEN',
+  ACKNOWLEDGED = 'ACKNOWLEDGED',
+  IN_PROGRESS = 'IN_PROGRESS',
+  RESOLVED = 'RESOLVED',
+  CLOSED = 'CLOSED',
+}
+
+// Incident Type
+export enum IncidentType {
+  STAFF_SICKNESS = 'STAFF_SICKNESS',
+  NO_SHOW = 'NO_SHOW',
+  LATE_ARRIVAL = 'LATE_ARRIVAL',
+  EARLY_DEPARTURE = 'EARLY_DEPARTURE',
+  UNEXPECTED_PEAK = 'UNEXPECTED_PEAK',
+  EQUIPMENT_FAILURE = 'EQUIPMENT_FAILURE',
+  SUPPLY_SHORTAGE = 'SUPPLY_SHORTAGE',
+  CUSTOMER_COMPLAINT = 'CUSTOMER_COMPLAINT',
+  SAFETY_INCIDENT = 'SAFETY_INCIDENT',
+  OTHER = 'OTHER',
+}
+
+// Incident Severity
+export enum IncidentSeverity {
+  LOW = 'LOW',
+  MEDIUM = 'MEDIUM',
+  HIGH = 'HIGH',
+  CRITICAL = 'CRITICAL',
+}
+
+// Export Status
+export enum ExportStatus {
+  QUEUED = 'QUEUED',
+  PROCESSING = 'PROCESSING',
+  COMPLETED = 'COMPLETED',
+  FAILED = 'FAILED',
+  CANCELLED = 'CANCELLED',
+  EXPIRED = 'EXPIRED',
+}
+
+// Export Type
+export enum ExportType {
+  SCHEDULE = 'SCHEDULE',
+  PAYROLL = 'PAYROLL',
+  TIMECARD = 'TIMECARD',
+  KPI_REPORT = 'KPI_REPORT',
+  AUDIT_REPORT = 'AUDIT_REPORT',
+  MANAGER_REPORT = 'MANAGER_REPORT',
+}
+
+// Export Format
+export enum ExportFormat {
+  PDF = 'PDF',
+  CSV = 'CSV',
+  EXCEL = 'EXCEL',
+}
+
+// Violation Severity
+export enum ViolationSeverity {
+  HARD = 'HARD',
+  SOFT = 'SOFT',
+}
+
+// Rule Code (Italian Labor Law)
+export enum RuleCode {
+  // Rest periods
+  REST_11H = 'REST_11H',
+  WEEKLY_REST_24H = 'WEEKLY_REST_24H',
+  
+  // Shift limits
+  SHIFT_MAX_13H = 'SHIFT_MAX_13H',
+  DAILY_MAX_8H = 'DAILY_MAX_8H',
+  
+  // Weekly limits
+  WEEKLY_AVG_48H = 'WEEKLY_AVG_48H',
+  WEEKLY_MAX_60H = 'WEEKLY_MAX_60H',
+  
+  // Overtime limits
+  OT_YEAR_MAX = 'OT_YEAR_MAX',
+  OT_WEEKLY_MAX = 'OT_WEEKLY_MAX',
+  
+  // Minor worker protections
+  MINOR_NIGHT_WORK = 'MINOR_NIGHT_WORK',
+  MINOR_MAX_8H = 'MINOR_MAX_8H',
+  MINOR_REST_12H = 'MINOR_REST_12H',
+  
+  // Pregnancy protections
+  PREGNANCY_NIGHT = 'PREGNANCY_NIGHT',
+  PREGNANCY_OVERTIME = 'PREGNANCY_OVERTIME',
+  
+  // Break requirements
+  BREAK_6H = 'BREAK_6H',
+  LUNCH_BREAK = 'LUNCH_BREAK',
+}
+
+// Contract Type
+export enum ContractType {
+  FULL_TIME = 'full_time',
+  PART_TIME = 'part_time',
+  TEMPORARY = 'temporary',
+  FREELANCE = 'freelance',
+  INTERN = 'intern',
+  CONTRACT = 'contract',
+}
+
+// Business Type
+export enum BusinessType {
+  COFFEE_BAR = 'COFFEE_BAR',
+  TRATTORIA = 'TRATTORIA',
+  PIZZERIA = 'PIZZERIA',
+  FINE_DINING = 'FINE_DINING',
+  FAST_CASUAL = 'FAST_CASUAL',
+  BAR_PUB = 'BAR_PUB',
+  HOTEL_RESTAURANT = 'HOTEL_RESTAURANT',
+  CATERING = 'CATERING',
+  FOOD_TRUCK = 'FOOD_TRUCK',
+}
+
+// Subscription Tier
+export enum SubscriptionTier {
+  FREE = 'FREE',
+  BASIC = 'BASIC',
+  PREMIUM = 'PREMIUM',
+  ENTERPRISE = 'ENTERPRISE',
+}
+
+// Phase Status
+export enum PhaseStatus {
+  NOT_STARTED = 'NOT_STARTED',
+  ACTIVE = 'ACTIVE',
+  COMPLETED = 'COMPLETED',
+  CANCELLED = 'CANCELLED',
+  DELAYED = 'DELAYED',
+}
+
+// Phase Instance Status
+export enum PhaseInstanceStatus {
+  PENDING = 'PENDING',
+  ACTIVE = 'ACTIVE',
+  COMPLETED = 'COMPLETED',
+  CANCELLED = 'CANCELLED',
+  OVERDUE = 'OVERDUE',
+}
+
+// Requirement Type
+export enum RequirementType {
+  HARD = 'HARD',
+  SOFT = 'SOFT',
+}
+
+// Punch Type
+export enum PunchType {
+  IN = 'IN',
+  OUT = 'OUT',
+  BREAK_START = 'BREAK_START',
+  BREAK_END = 'BREAK_END',
+}
+
+// Punch Status
+export enum PunchStatus {
+  PENDING = 'PENDING',
+  VERIFIED = 'VERIFIED',
+  RECONCILED = 'RECONCILED',
+  DISPUTED = 'DISPUTED',
+  CORRECTED = 'CORRECTED',
+}
+
+// Audit Action
+export enum AuditAction {
+  CREATE = 'CREATE',
+  READ = 'READ',
+  UPDATE = 'UPDATE',
+  DELETE = 'DELETE',
+  LOGIN = 'LOGIN',
+  LOGOUT = 'LOGOUT',
+  SCHEDULE_PUBLISH = 'SCHEDULE_PUBLISH',
+  COMPLIANCE_SCAN = 'COMPLIANCE_SCAN',
+  EXPORT_GENERATE = 'EXPORT_GENERATE',
+  SYSTEM_MAINTENANCE = 'SYSTEM_MAINTENANCE',
+  JOB_TIMEOUT = 'JOB_TIMEOUT',
+  DAILY_SUMMARY = 'DAILY_SUMMARY',
+  GDPR_REQUEST = 'GDPR_REQUEST',
+  DATA_RETENTION = 'DATA_RETENTION',
+}
+
+// Audit Level
+export enum AuditLevel {
+  INFO = 'INFO',
+  WARNING = 'WARNING',
+  ERROR = 'ERROR',
+  CRITICAL = 'CRITICAL',
+}
+
+// GDPR Request Type
+export enum GdprRequestType {
+  ACCESS = 'ACCESS',
+  RECTIFICATION = 'RECTIFICATION',
+  ERASURE = 'ERASURE',
+  PORTABILITY = 'PORTABILITY',
+  RESTRICTION = 'RESTRICTION',
+  OBJECTION = 'OBJECTION',
+}
+
+// GDPR Request Status
+export enum GdprRequestStatus {
+  PENDING = 'PENDING',
+  IN_PROGRESS = 'IN_PROGRESS',
+  COMPLETED = 'COMPLETED',
+  REJECTED = 'REJECTED',
+  CANCELLED = 'CANCELLED',
+}
+
+// Consent Type
+export enum ConsentType {
+  NECESSARY = 'NECESSARY',
+  ANALYTICS = 'ANALYTICS',
+  MARKETING = 'MARKETING',
+  FUNCTIONAL = 'FUNCTIONAL',
+}
+
+// AI Provider
+export enum AiProvider {
+  OPENAI = 'OPENAI',
+  GEMINI = 'GEMINI',
+  FALLBACK = 'FALLBACK',
+}
+
+// AI Model Type
+export enum AiModelType {
+  TEXT_GENERATION = 'TEXT_GENERATION',
+  SCHEDULE_OPTIMIZATION = 'SCHEDULE_OPTIMIZATION',
+  COST_ANALYSIS = 'COST_ANALYSIS',
+  INCIDENT_RESOLUTION = 'INCIDENT_RESOLUTION',
+}
+
+// Manager Action Type
+export enum ManagerActionType {
+  SCHEDULE_CREATE = 'SCHEDULE_CREATE',
+  SCHEDULE_EDIT = 'SCHEDULE_EDIT',
+  SCHEDULE_PUBLISH = 'SCHEDULE_PUBLISH',
+  STAFF_ASSIGN = 'STAFF_ASSIGN',
+  REQUEST_REVIEW = 'REQUEST_REVIEW',
+  INCIDENT_RESOLVE = 'INCIDENT_RESOLVE',
+  COMPLIANCE_REVIEW = 'COMPLIANCE_REVIEW',
+  REPORT_GENERATE = 'REPORT_GENERATE',
+  BUDGET_REVIEW = 'BUDGET_REVIEW',
+}
+
+// Day of Week
+export enum DayOfWeek {
+  MONDAY = 0,
+  TUESDAY = 1,
+  WEDNESDAY = 2,
+  THURSDAY = 3,
+  FRIDAY = 4,
+  SATURDAY = 5,
+  SUNDAY = 6,
+}
+
+// Time Period
+export enum TimePeriod {
+  DAILY = 'DAILY',
+  WEEKLY = 'WEEKLY',
+  MONTHLY = 'MONTHLY',
+  QUARTERLY = 'QUARTERLY',
+  YEARLY = 'YEARLY',
+}
+
+// Solution Type (for incidents)
+export enum SolutionType {
+  STAFF_REASSIGNMENT = 'STAFF_REASSIGNMENT',
+  CAPACITY_INCREASE = 'CAPACITY_INCREASE',
+  EQUIPMENT_WORKAROUND = 'EQUIPMENT_WORKAROUND',
+  SUPPLY_ALTERNATIVE = 'SUPPLY_ALTERNATIVE',
+  PROCEDURE_CHANGE = 'PROCEDURE_CHANGE',
+  EXTERNAL_SUPPORT = 'EXTERNAL_SUPPORT',
+}
+
+// Feature Flag
+export enum FeatureFlag {
+  AI_SCHEDULING = 'AI_SCHEDULING',
+  AUTOMATED_COMPLIANCE = 'AUTOMATED_COMPLIANCE',
+  WHATSAPP_INTEGRATION = 'WHATSAPP_INTEGRATION',
+  ADVANCED_ANALYTICS = 'ADVANCED_ANALYTICS',
+  EXPORT_SYSTEM = 'EXPORT_SYSTEM',
+  INCIDENT_MANAGEMENT = 'INCIDENT_MANAGEMENT',
+  GDPR_TOOLS = 'GDPR_TOOLS',
+  PUNCH_TRACKING = 'PUNCH_TRACKING',
+  COST_OPTIMIZATION = 'COST_OPTIMIZATION',
+  AUTOMATED_REPORTS = 'AUTOMATED_REPORTS',
+}
+
+// Onboarding Step
+export enum OnboardingStep {
+  RESTAURANT_INFO = 'RESTAURANT_INFO',
+  VENUE_SETUP = 'VENUE_SETUP',
+  ROLE_CREATION = 'ROLE_CREATION',
+  STAFF_ADDITION = 'STAFF_ADDITION',
+  PHASE_TEMPLATES = 'PHASE_TEMPLATES',
+  BUSINESS_PRESET = 'BUSINESS_PRESET',
+  INITIAL_SCHEDULE = 'INITIAL_SCHEDULE',
+  COMPLIANCE_SETUP = 'COMPLIANCE_SETUP',
+  NOTIFICATION_SETUP = 'NOTIFICATION_SETUP',
+  COMPLETION = 'COMPLETION',
+}
+
+// Workflow Status
+export enum WorkflowStatus {
+  PENDING = 'PENDING',
+  IN_PROGRESS = 'IN_PROGRESS',
+  COMPLETED = 'COMPLETED',
+  FAILED = 'FAILED',
+  CANCELLED = 'CANCELLED',
+  PAUSED = 'PAUSED',
+}

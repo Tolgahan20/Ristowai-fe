@@ -1,0 +1,282 @@
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { cn } from '@/lib/utils';
+import Image from 'next/image';
+import styles from './Navigation.module.css';
+
+interface NavigationProps {
+  className?: string;
+  animate?: boolean;
+  topBarVisible?: boolean;
+}
+
+interface NavLink {
+  label: string;
+  href: string;
+  active?: boolean;
+}
+
+const navLinks: NavLink[] = [
+  { label: 'Features', href: '#features' },
+  { label: 'Models', href: '#models' },
+  { label: 'How it Works', href: '#how-it-works' },
+  { label: 'Pricing', href: '#pricing' },
+  { label: 'FAQ', href: '#faq' },
+];
+
+export const Navigation: React.FC<NavigationProps> = ({ 
+  className,
+  animate = true,
+  topBarVisible = true
+}) => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleNavClick = (href: string) => {
+    setActiveLink(href);
+    const el = document.querySelector(href);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+    closeMobileMenu();
+  };
+
+  const navigationClasses = cn(
+    styles.navigation,
+    isScrolled && styles.navigationScrolled,
+    !topBarVisible && styles.navigationWithTopBar,
+    className
+  );
+
+  const navVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const mobileMenuVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -20 }
+  };
+
+  const navItemVariants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.1 }
+    })
+  };
+
+  return (
+    <>
+      <motion.nav
+        className={navigationClasses}
+        initial={animate ? "hidden" : "visible"}
+        animate="visible"
+        variants={navVariants}
+        transition={{ duration: 0.6 }}
+      >
+        <div className={styles.navContainer}>
+          {/* Logo */}
+          <motion.a
+            href="/"
+            className={styles.logo}
+            variants={navItemVariants}
+            custom={0}
+          >
+            <div className={styles.logoIcon}>
+              <Image 
+                src={isScrolled ? "/full_logo_black.svg" : "/full_logo_white.svg"} 
+                alt="magicAI Logo" 
+                width={120} 
+                height={120} 
+              />
+            </div>
+          </motion.a>
+
+          {/* Desktop Navigation Links */}
+          <motion.ul
+            className={styles.navLinks}
+            variants={navItemVariants}
+            custom={1}
+          >
+            {navLinks.map((link, index) => (
+              <motion.li
+                key={link.label}
+                variants={navItemVariants}
+                custom={index + 2}
+              >
+                <a
+                  href={link.href}
+                  className={cn(
+                    styles.navLink,
+                    activeLink === link.href && styles.navLinkActive
+                  )}
+                  onClick={e => {
+                    e.preventDefault();
+                    handleNavClick(link.href);
+                  }}
+                >
+                  {link.label}
+                </a>
+              </motion.li>
+            ))}
+          </motion.ul>
+
+          {/* Desktop Action Buttons */}
+          <motion.div
+            className={styles.navActions}
+            variants={navItemVariants}
+            custom={navLinks.length + 2}
+          >
+            <motion.button
+              className={styles.globeIcon}
+              variants={navItemVariants}
+              custom={navLinks.length + 2}
+              aria-label="Language selection"
+            >
+            </motion.button>
+            <a href="/auth/login" className={styles.loginButton}>
+              Sign In
+            </a>
+            <a href="/auth/register" className={styles.signUpButton}>
+              Join Hub
+            </a>
+          </motion.div>
+
+          {/* Mobile Menu Button */}
+          <motion.button
+            className={styles.mobileMenuButton}
+            onClick={toggleMobileMenu}
+            variants={navItemVariants}
+            custom={navLinks.length + 2}
+            aria-label="Toggle mobile menu"
+          >
+            <svg
+              className={styles.mobileMenuIcon}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {isMobileMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </motion.button>
+        </div>
+      </motion.nav>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            className={cn(styles.mobileMenu, styles.mobileMenuOpen)}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={mobileMenuVariants}
+            transition={{ duration: 0.3 }}
+          >
+            <div className={styles.mobileMenuLinks}>
+              {navLinks.map((link, index) => (
+                <motion.a
+                  key={link.label}
+                  href={link.href}
+                  className={cn(
+                    styles.mobileMenuLink,
+                    link.active && styles.mobileMenuLinkActive
+                  )}
+                  onClick={closeMobileMenu}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  {link.label}
+                </motion.a>
+              ))}
+            </div>
+            
+            <div className={styles.mobileMenuActions}>
+              <motion.a
+                href="/auth/login"
+                className={styles.mobileLoginButton}
+                onClick={closeMobileMenu}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                Login
+              </motion.a>
+              <motion.a
+                href="/auth/register"
+                className={styles.mobileSignUpButton}
+                onClick={closeMobileMenu}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+              >
+                Sign Up
+              </motion.a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Fixed Element (Pencil Icon) */}
+      <motion.button
+        className={styles.fixedElement}
+        initial={animate ? { opacity: 0, scale: 0.8 } : { opacity: 1, scale: 1 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 1, duration: 0.6 }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        aria-label="Feedback"
+      >
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+        </svg>
+      </motion.button>
+    </>
+  );
+};
+

@@ -1,0 +1,627 @@
+/* Form Component - Smart Shifts Design System */
+
+/* Base Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  width: 100%;
+}
+
+/* Form Layout Variants */
+.formHorizontal {
+  gap: var(--spacing-md);
+}
+
+.formInline {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--spacing-md);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+/* Form Spacing Variants */
+.formCompact {
+  gap: var(--spacing-md);
+}
+
+.formRelaxed {
+  gap: var(--spacing-xl);
+}
+
+/* Form Style Variants */
+.formCard {
+  background: var(--surface-primary);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.formModal {
+  background: var(--surface-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.formSidebar {
+  background: var(--surface-secondary);
+  border-right: 1px solid var(--border-medium);
+  padding: var(--spacing-lg);
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* Form Item */
+.formItem {
+  display: grid;
+  gap: var(--spacing-sm);
+  width: 100%;
+}
+
+/* Form Item Layout Variants */
+.formItemDefault {
+  grid-template-rows: auto auto 1fr auto;
+}
+
+.formItemHorizontal {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: var(--spacing-md);
+  align-items: start;
+}
+
+.formItemHorizontal .formLabel {
+  grid-column: 1;
+  grid-row: 1;
+  padding-top: var(--spacing-sm);
+}
+
+.formItemHorizontal .formControl {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.formItemHorizontal .formDescription {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.formItemHorizontal .formMessage {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.formItemInline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+/* Form Item Spacing Variants */
+.formItemCompact {
+  gap: var(--spacing-xs);
+}
+
+.formItemRelaxed {
+  gap: var(--spacing-md);
+}
+
+/* Form Label */
+.formLabel {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--text-primary);
+  line-height: var(--leading-normal);
+  transition: color 0.2s ease;
+}
+
+.formLabelError {
+  color: var(--error);
+}
+
+/* Form Control */
+.formControl {
+  position: relative;
+}
+
+.formControlError {
+  /* Error styles are applied by individual input components */
+}
+
+/* Form Description */
+.formDescription {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}
+
+/* Form Message */
+.formMessage {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-normal);
+  margin: 0;
+  transition: all 0.2s ease;
+}
+
+.formMessageError {
+  color: var(--error);
+}
+
+.formMessageSuccess {
+  color: var(--success);
+}
+
+.formMessageWarning {
+  color: var(--warning);
+}
+
+.formMessageInfo {
+  color: var(--info);
+}
+
+.formMessageIcon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+/* Form Section */
+.formSection {
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.formSection:hover {
+  border-color: var(--border-medium);
+}
+
+.formSectionHeader {
+  background: var(--surface-secondary);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.formSectionTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  margin: 0;
+  line-height: var(--leading-normal);
+}
+
+.formSectionToggle {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 1;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formSectionToggle:hover {
+  background: var(--surface-tertiary);
+  color: var(--text-primary);
+}
+
+.formSectionToggle:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+}
+
+.formSectionDescription {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin: var(--spacing-xs) 0 0 0;
+  line-height: var(--leading-relaxed);
+}
+
+.formSectionContent {
+  padding: var(--spacing-lg);
+  animation: formSectionExpand 0.2s ease-out;
+}
+
+@keyframes formSectionExpand {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form Field Groups */
+.formFieldGroup {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.formFieldGroup .formItem {
+  flex: 1;
+}
+
+/* Form Actions */
+.formActions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: flex-end;
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-light);
+  margin-top: var(--spacing-lg);
+}
+
+.formActions.formActionsLeft {
+  justify-content: flex-start;
+}
+
+.formActions.formActionsCenter {
+  justify-content: center;
+}
+
+.formActions.formActionsFull {
+  justify-content: stretch;
+}
+
+.formActions.formActionsFull > * {
+  flex: 1;
+}
+
+/* Form Validation States */
+.formItem[data-valid="true"] .formLabel {
+  color: var(--success);
+}
+
+.formItem[data-invalid="true"] .formLabel {
+  color: var(--error);
+}
+
+.formItem[data-pending="true"] .formLabel {
+  color: var(--warning);
+}
+
+/* Form Loading State */
+.form[data-loading="true"] {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.form[data-loading="true"]::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(1px);
+  z-index: 10;
+}
+
+/* Form Success State */
+.form[data-success="true"] {
+  border-left: 4px solid var(--success);
+  padding-left: calc(var(--spacing-lg) - 4px);
+}
+
+/* Form Error State */
+.form[data-error="true"] {
+  border-left: 4px solid var(--error);
+  padding-left: calc(var(--spacing-lg) - 4px);
+}
+
+/* Dark Mode Support */
+.dark .formCard,
+.dark .formModal {
+  background: var(--surface-secondary);
+  border-color: var(--border-strong);
+}
+
+.dark .formSidebar {
+  background: var(--surface-tertiary);
+  border-color: var(--border-strong);
+}
+
+.dark .formSectionHeader {
+  background: var(--surface-tertiary);
+  border-color: var(--border-medium);
+}
+
+.dark .formSection {
+  border-color: var(--border-medium);
+}
+
+.dark .formSection:hover {
+  border-color: var(--border-strong);
+}
+
+.dark .formSectionToggle:hover {
+  background: var(--surface-primary);
+}
+
+.dark .formActions {
+  border-color: var(--border-medium);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .formInline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .formItemHorizontal {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+  
+  .formItemHorizontal .formLabel {
+    grid-column: 1;
+    grid-row: 1;
+    padding-top: 0;
+  }
+  
+  .formItemHorizontal .formControl {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  
+  .formItemHorizontal .formDescription {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  
+  .formItemHorizontal .formMessage {
+    grid-column: 1;
+    grid-row: 4;
+  }
+  
+  .formActions {
+    flex-direction: column;
+  }
+  
+  .formCard,
+  .formModal {
+    padding: var(--spacing-lg);
+  }
+  
+  .formFieldGroup {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .formSectionHeader {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+  
+  .formSectionContent {
+    padding: var(--spacing-md);
+  }
+  
+  .formSectionTitle {
+    font-size: var(--text-base);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .formMessage,
+  .formSectionToggle,
+  .formSection {
+    transition: none;
+  }
+  
+  .formSectionContent {
+    animation: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .formSection {
+    border-width: 2px;
+  }
+  
+  .formSectionHeader {
+    border-bottom-width: 2px;
+  }
+  
+  .formActions {
+    border-top-width: 2px;
+  }
+  
+  .form[data-success="true"],
+  .form[data-error="true"] {
+    border-left-width: 6px;
+  }
+}
+
+/* Focus Management */
+.formItem:focus-within .formLabel {
+  color: var(--brand-primary);
+}
+
+.formItem:focus-within .formDescription {
+  color: var(--text-primary);
+}
+
+/* Print Styles */
+@media print {
+  .form {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+  
+  .formSectionToggle {
+    display: none;
+  }
+  
+  .formSectionContent {
+    display: block !important;
+  }
+  
+  .formActions {
+    display: none;
+  }
+  
+  .formMessage {
+    color: black !important;
+  }
+}
+
+/* RTL Support */
+[dir="rtl"] .formMessage {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .formSectionTitle {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .formActions {
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .formActions.formActionsLeft {
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .form[data-success="true"],
+[dir="rtl"] .form[data-error="true"] {
+  border-left: none;
+  border-right: 4px solid;
+  padding-left: var(--spacing-lg);
+  padding-right: calc(var(--spacing-lg) - 4px);
+}
+
+/* Form with steps/wizard */
+.formWizard {
+  position: relative;
+}
+
+.formWizardSteps {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.formWizardStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  flex: 1;
+  position: relative;
+}
+
+.formWizardStep:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 1rem;
+  right: -50%;
+  width: 100%;
+  height: 2px;
+  background: var(--border-light);
+  z-index: 1;
+}
+
+.formWizardStep[data-completed="true"]:not(:last-child)::after {
+  background: var(--success);
+}
+
+.formWizardStepIndicator {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--surface-secondary);
+  border: 2px solid var(--border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  z-index: 2;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.formWizardStep[data-active="true"] .formWizardStepIndicator {
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: white;
+}
+
+.formWizardStep[data-completed="true"] .formWizardStepIndicator {
+  background: var(--success);
+  border-color: var(--success);
+  color: white;
+}
+
+.formWizardStepTitle {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  text-align: center;
+  font-weight: var(--font-medium);
+}
+
+.formWizardStep[data-active="true"] .formWizardStepTitle {
+  color: var(--brand-primary);
+  font-weight: var(--font-semibold);
+}
+
+.formWizardStep[data-completed="true"] .formWizardStepTitle {
+  color: var(--success);
+}
+
+/* Animation for form transitions */
+.formTransition {
+  animation: formSlideIn 0.3s ease-out;
+}
+
+@keyframes formSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,58 @@
+/* Dashboard Layout Styles */
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--background);
+}
+
+.contentArea {
+  display: flex;
+  flex: 1;
+  min-height: 0; /* Prevents flex item from overflowing */
+  position: relative;
+}
+
+.sidebarOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 40;
+  display: none;
+}
+
+.content {
+  flex: 1;
+  padding: var(--spacing-xl);
+  overflow-y: auto;
+  background: var(--background);
+  transition: margin-left 0.3s ease;
+  margin-left: 280px;
+  width: calc(100% - 280px);
+}
+
+.contentExpanded {
+  margin-left: 80px;
+  width: calc(100% - 80px);
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .sidebarOverlay {
+    display: block;
+  }
+  
+  .content {
+    padding: var(--spacing-lg);
+    margin-left: 0 !important; /* No sidebar margin on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: var(--spacing-md);
+  }
+}

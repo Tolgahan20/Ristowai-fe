@@ -1,0 +1,467 @@
+/* Label Component - Smart Shifts Design System */
+
+/* Label Wrapper */
+.labelWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+/* Base Label */
+.label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  user-select: none;
+  line-height: var(--leading-tight);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+  margin-bottom: 0.5rem;
+}
+
+
+.label[data-disabled="true"] {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.label[data-invalid="true"] {
+  color: var(--error);
+}
+
+/* Label Content */
+.labelIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.labelText {
+  font-weight: inherit;
+  color: inherit;
+  line-height: inherit;
+}
+
+.labelRequired {
+  color: var(--error);
+  font-weight: var(--font-bold);
+  font-size: 1em;
+  line-height: 1;
+}
+
+.labelOptional {
+  color: var(--text-tertiary);
+  font-weight: var(--font-normal);
+  font-size: 0.875em;
+  font-style: italic;
+}
+
+.labelTooltipTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: help;
+  color: var(--text-secondary);
+  padding: 0;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.labelTooltipTrigger:hover {
+  color: var(--brand-primary);
+  background: var(--focus-ring);
+}
+
+.labelTooltipTrigger:focus {
+  outline: none;
+  color: var(--brand-primary);
+  background: var(--focus-ring);
+}
+
+.labelTooltipIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Label Description */
+.labelDescription {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: var(--leading-normal);
+}
+
+/* Size Variants */
+.labelXs {
+  font-size: var(--text-xs);
+}
+
+.labelXs .labelIcon {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.labelXs .labelTooltipIcon {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.labelSm {
+  font-size: var(--text-sm);
+}
+
+.labelSm .labelIcon {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.labelSm .labelTooltipIcon {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.labelMd {
+  font-size: var(--text-sm);
+}
+
+.labelMd .labelIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.labelMd .labelTooltipIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.labelLg {
+  font-size: var(--text-base);
+}
+
+.labelLg .labelIcon {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.labelLg .labelTooltipIcon {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+/* Weight Variants */
+.labelWeightNormal {
+  font-weight: var(--font-normal);
+}
+
+.labelWeightMedium {
+  font-weight: var(--font-medium);
+}
+
+.labelWeightSemibold {
+  font-weight: var(--font-semibold);
+}
+
+.labelWeightBold {
+  font-weight: var(--font-bold);
+}
+
+/* State Variants */
+.labelError {
+  color: var(--error);
+}
+
+.labelError:hover {
+  color: var(--error);
+  opacity: 0.8;
+}
+
+.labelError .labelIcon {
+  color: var(--error);
+}
+
+.labelSuccess {
+  color: var(--success);
+}
+
+.labelSuccess:hover {
+  color: var(--success);
+  opacity: 0.8;
+}
+
+.labelSuccess .labelIcon {
+  color: var(--success);
+}
+
+.labelWarning {
+  color: var(--warning);
+}
+
+.labelWarning:hover {
+  color: var(--warning);
+  opacity: 0.8;
+}
+
+.labelWarning .labelIcon {
+  color: var(--warning);
+}
+
+.labelMuted {
+  color: var(--text-secondary);
+}
+
+.labelMuted:hover {
+  color: var(--text-primary);
+}
+
+.labelMuted .labelIcon {
+  color: var(--text-secondary);
+}
+
+/* Focus and Active States */
+.label:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.label:active {
+  transform: translateY(1px);
+}
+
+/* Associated Input States */
+.label:has(+ input:focus),
+.label:has(+ textarea:focus),
+.label:has(+ select:focus) {
+  color: var(--brand-primary);
+}
+
+.label:has(+ input:invalid),
+.label:has(+ textarea:invalid),
+.label:has(+ select:invalid) {
+  color: var(--error);
+}
+
+.label:has(+ input:disabled),
+.label:has(+ textarea:disabled),
+.label:has(+ select:disabled) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Peer State Support */
+.label[data-peer-focused="true"] {
+  color: var(--brand-primary);
+}
+
+.label[data-peer-invalid="true"] {
+  color: var(--error);
+}
+
+.label[data-peer-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Checkbox and Radio Label Styles */
+.label[data-type="checkbox"],
+.label[data-type="radio"] {
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  border-radius: var(--radius-sm);
+  transition: background-color 0.2s ease;
+}
+
+.label[data-type="checkbox"]:hover,
+.label[data-type="radio"]:hover {
+  background: var(--hover-bg);
+}
+
+.label[data-type="checkbox"]:active,
+.label[data-type="radio"]:active {
+  background: var(--surface-secondary);
+}
+
+/* Dark Mode Support */
+.dark .label {
+  color: var(--text-primary);
+}
+
+.dark .label:hover {
+  color: var(--brand-primary);
+}
+
+.dark .labelDescription {
+  color: var(--text-secondary);
+}
+
+.dark .labelOptional {
+  color: var(--text-tertiary);
+}
+
+.dark .labelTooltipTrigger {
+  color: var(--text-secondary);
+}
+
+.dark .labelTooltipTrigger:hover,
+.dark .labelTooltipTrigger:focus {
+  color: var(--brand-primary);
+  background: var(--focus-ring);
+}
+
+.dark .label[data-type="checkbox"]:hover,
+.dark .label[data-type="radio"]:hover {
+  background: var(--surface-tertiary);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .label,
+  .labelTooltipTrigger {
+    transition: none;
+  }
+  
+  .label:active {
+    transform: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .label {
+    font-weight: var(--font-semibold);
+  }
+  
+  .labelRequired {
+    font-size: 1.1em;
+  }
+}
+
+/* High contrast focus indicator */
+@media (prefers-contrast: high) {
+  .label:focus-visible {
+    outline-width: 3px;
+    outline-color: HighlightText;
+    background: Highlight;
+    color: HighlightText;
+  }
+}
+
+/* Screen reader support */
+.label[aria-describedby] {
+  position: relative;
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+  .label {
+    padding: var(--spacing-xs);
+    min-height: 44px; /* Minimum touch target size */
+    align-items: center;
+  }
+  
+  .labelTooltipTrigger {
+    min-width: 44px;
+    min-height: 44px;
+    padding: var(--spacing-sm);
+  }
+}
+
+/* Print styles */
+@media print {
+  .label {
+    color: black;
+  }
+  
+  .labelRequired::after {
+    content: " (required)";
+    font-size: 0.8em;
+  }
+  
+  .labelOptional {
+    display: none;
+  }
+  
+  .labelTooltipTrigger {
+    display: none;
+  }
+  
+  .labelDescription {
+    color: #666;
+  }
+}
+
+/* RTL Support */
+[dir="rtl"] .label {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .labelOptional {
+  margin-right: var(--spacing-xs);
+  margin-left: 0;
+}
+
+/* Animation for required indicator */
+.labelRequired {
+  animation: pulseRequired 2s infinite;
+}
+
+@keyframes pulseRequired {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Reduce animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .labelRequired {
+    animation: none;
+  }
+}
+
+/* Enhanced tooltip styles */
+.labelTooltipTrigger[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: var(--text-xs);
+  white-space: nowrap;
+  z-index: 1000;
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--spacing-xs);
+  pointer-events: none;
+}
+
+.labelTooltipTrigger[title]:hover::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid transparent;
+  border-top-color: var(--border-medium);
+  z-index: 1001;
+  pointer-events: none;
+}
+
+/* Form group integration */
+.label[data-form-group="true"] {
+  margin-bottom: var(--spacing-sm);
+}
+
+.label[data-form-group="true"] + .labelDescription {
+  margin-top: calc(-1 * var(--spacing-xs));
+  margin-bottom: var(--spacing-sm);
+}

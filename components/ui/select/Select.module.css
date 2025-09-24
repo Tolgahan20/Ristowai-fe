@@ -1,0 +1,456 @@
+/* Select Component - Smart Shifts Design System */
+
+/* Select Wrapper */
+.selectWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  width: 100%;
+}
+
+/* Label */
+.selectLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  line-height: var(--leading-tight);
+}
+
+.selectLabelError {
+  color: var(--error);
+}
+
+.selectRequired {
+  color: var(--error);
+  font-weight: var(--font-bold);
+}
+
+/* Select Trigger Variants */
+.selectTrigger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: var(--surface-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  transition: border-color 0.2s ease;
+  box-shadow: none;
+  cursor: pointer;
+  font-size: var(--text-base);
+  color: var(--text-primary);
+}
+
+.selectTrigger:hover:not(:disabled) {
+  border-color: var(--border-medium);
+}
+
+.selectTrigger:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.selectTrigger:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--surface-secondary);
+  border-color: var(--border-light);
+}
+
+/* Size Variants */
+.selectTriggerSm {
+  height: var(--input-height-sm);
+  padding: 0 var(--spacing-md);
+  font-size: var(--text-sm);
+}
+
+.selectTriggerMd {
+  height: var(--input-height);
+  padding: 0 var(--spacing-lg);
+  font-size: var(--text-base);
+}
+
+.selectTriggerLg {
+  height: calc(var(--input-height) + 0.5rem);
+  padding: 0 var(--spacing-xl);
+  font-size: var(--text-lg);
+}
+
+/* State Variants */
+.selectTriggerError {
+  border-color: var(--error);
+  background: rgba(220, 38, 38, 0.02);
+}
+
+.selectTriggerError:hover:not(:disabled) {
+  border-color: var(--error);
+}
+
+.selectTriggerError:focus {
+  border-color: var(--error);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.selectTriggerSuccess {
+  border-color: var(--success);
+  background: rgba(5, 150, 105, 0.02);
+}
+
+.selectTriggerSuccess:hover:not(:disabled) {
+  border-color: var(--success);
+}
+
+.selectTriggerSuccess:focus {
+  border-color: var(--success);
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.selectTriggerWarning {
+  border-color: var(--warning);
+  background: rgba(245, 158, 11, 0.02);
+}
+
+.selectTriggerWarning:hover:not(:disabled) {
+  border-color: var(--warning);
+}
+
+.selectTriggerWarning:focus {
+  border-color: var(--warning);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+/* Select Value */
+.selectValue {
+  flex: 1;
+  text-align: left;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.selectValuePlaceholder {
+  color: var(--text-placeholder);
+}
+
+/* Select Icon */
+.selectIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--text-secondary);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.selectTrigger[data-state="open"] .selectIcon {
+  transform: rotate(180deg);
+}
+
+/* Select Content */
+.selectContent {
+  position: relative;
+  z-index: 50;
+  max-height: 384px;
+  min-width: 8rem;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-medium);
+  background: var(--surface-primary);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-lg);
+  animation-duration: 200ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.selectContent[data-state="open"] {
+  animation-name: selectContentShow;
+}
+
+.selectContent[data-state="closed"] {
+  animation-name: selectContentHide;
+}
+
+@keyframes selectContentShow {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes selectContentHide {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95) translateY(-2px);
+  }
+}
+
+/* Select Viewport */
+.selectViewport {
+  padding: var(--spacing-xs);
+}
+
+/* Select Item */
+.selectItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  padding-right: var(--spacing-4xl);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.selectItem:hover {
+  background: var(--surface-secondary);
+  color: var(--brand-primary);
+}
+
+.selectItem:focus {
+  outline: none;
+  background: var(--surface-secondary);
+  color: var(--brand-primary);
+}
+
+.selectItem[data-state="checked"] {
+  background: rgba(5, 150, 105, 0.1);
+  color: var(--brand-primary);
+  font-weight: var(--font-semibold);
+}
+
+.selectItem[data-disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Select Item Indicator */
+.selectItemIndicator {
+  position: absolute;
+  right: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  color: var(--brand-primary);
+}
+
+/* Select Label */
+.selectGroupLabel {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Select Separator */
+.selectSeparator {
+  height: 1px;
+  background: var(--border-light);
+  margin: var(--spacing-xs) 0;
+}
+
+/* Scroll Buttons */
+.selectScrollButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.5rem;
+  cursor: default;
+  color: var(--text-secondary);
+}
+
+.selectScrollButton:hover {
+  color: var(--text-primary);
+}
+
+/* Messages */
+.selectDescription {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: var(--leading-normal);
+}
+
+.selectErrorMessage,
+.selectSuccessMessage,
+.selectWarningMessage {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  margin: 0;
+  line-height: var(--leading-normal);
+}
+
+.selectErrorMessage {
+  color: var(--error);
+}
+
+.selectSuccessMessage {
+  color: var(--success);
+}
+
+.selectWarningMessage {
+  color: var(--warning);
+}
+
+.selectMessageIcon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+/* Multi-select styles */
+.selectMultiValue {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+  min-height: 1.5rem;
+}
+
+.selectMultiValueItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background: var(--surface-secondary);
+  color: var(--text-primary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+}
+
+.selectMultiValueRemove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.selectMultiValueRemove:hover {
+  background: var(--error);
+  color: white;
+}
+
+/* Loading state */
+.selectLoading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.selectLoadingIcon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--brand-primary);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dark Mode Support */
+.dark .selectTrigger {
+  background: var(--surface-secondary);
+  border-color: var(--border-medium);
+  color: var(--text-primary);
+}
+
+.dark .selectTrigger:disabled {
+  background: var(--surface-tertiary);
+  border-color: var(--border-light);
+}
+
+.dark .selectContent {
+  background: var(--surface-secondary);
+  border-color: var(--border-medium);
+}
+
+.dark .selectItem {
+  color: var(--text-primary);
+}
+
+.dark .selectItem:hover,
+.dark .selectItem:focus {
+  background: var(--surface-tertiary);
+}
+
+.dark .selectMultiValueItem {
+  background: var(--surface-tertiary);
+  color: var(--text-primary);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .selectContent,
+  .selectIcon,
+  .selectTrigger,
+  .selectItem {
+    transition: none;
+    animation: none;
+  }
+  
+  .selectIcon {
+    transform: none !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .selectTrigger {
+    border-width: 3px;
+  }
+  
+  .selectContent {
+    border-width: 2px;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+  .selectContent {
+    max-height: 50vh;
+  }
+  
+  .selectTriggerLg {
+    height: var(--input-height);
+    padding: 0 var(--spacing-lg);
+    font-size: var(--text-base);
+  }
+}

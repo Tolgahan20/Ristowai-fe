@@ -1,0 +1,175 @@
+/* AddressAutocomplete Styles */
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  height: var(--input-height);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  color: var(--text-primary);
+  background-color: var(--surface-primary);
+  font-family: inherit;
+  line-height: var(--leading-normal);
+
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.input::placeholder {
+  color: var(--text-placeholder);
+}
+
+.input.error {
+  border-color: var(--error);
+}
+
+.input.error:focus {
+  border-color: var(--error);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.input.loading {
+  background-color: var(--surface-secondary);
+  cursor: wait;
+}
+
+.input:disabled {
+  background-color: var(--surface-tertiary);
+  color: var(--text-tertiary);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.loadingIndicator {
+  position: absolute;
+  top: 50%;
+  right: var(--spacing-lg);
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  pointer-events: none;
+}
+
+.loadingText {
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  background-color: var(--surface-primary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+}
+
+.loadingText::before {
+  content: "⏳";
+  margin-right: var(--spacing-xs);
+}
+
+.fallbackNotice {
+  margin-top: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.fallbackText {
+  font-size: var(--text-xs);
+  color: var(--warning);
+  font-weight: var(--font-medium);
+}
+
+.fallbackText::before {
+  content: "⚠️";
+  margin-right: var(--spacing-xs);
+}
+
+/* Google Maps Autocomplete Dropdown Styling */
+:global(.pac-container) {
+  background-color: var(--surface-primary) !important;
+  border-radius: var(--radius-md) !important;
+  border: 1px solid var(--border-medium) !important;
+  box-shadow: none;
+  margin-top: var(--spacing-xs) !important;
+  z-index: 1000 !important;
+  font-family: inherit !important;
+}
+
+:global(.pac-item) {
+  padding: var(--spacing-lg) !important;
+  border-bottom: 1px solid var(--border-light) !important;
+  cursor: pointer !important;
+  font-size: var(--text-sm) !important;
+  line-height: var(--leading-normal) !important;
+  background-color: var(--surface-primary) !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-top: none !important;
+}
+
+:global(.pac-item:last-child) {
+  border-bottom: none !important;
+}
+
+:global(.pac-item:hover),
+:global(.pac-item-selected) {
+  background-color: var(--hover-bg) !important;
+}
+
+:global(.pac-item-query) {
+  color: var(--text-primary) !important;
+  font-weight: var(--font-medium) !important;
+}
+
+:global(.pac-matched) {
+  font-weight: var(--font-semibold) !important;
+  color: var(--brand-primary) !important;
+}
+
+:global(.pac-item-query .pac-matched) {
+  color: var(--brand-primary) !important;
+}
+
+:global(.pac-secondary-text) {
+  color: var(--text-secondary) !important;
+  font-size: var(--text-xs) !important;
+}
+
+:global(.pac-icon) {
+ display: none !important;
+}
+
+/* Remove Google's default borders and styling */
+:global(.pac-container:after) {
+  display: none !important;
+}
+
+:global(.pac-container:before) {
+  display: none !important;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  :global(.pac-container) {
+    margin-top: var(--spacing-sm);
+    left: var(--spacing-sm) !important;
+    right: var(--spacing-sm) !important;
+    width: auto !important;
+  }
+  
+  :global(.pac-item) {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+}

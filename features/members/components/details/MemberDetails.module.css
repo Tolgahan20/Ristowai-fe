@@ -1,0 +1,336 @@
+/* Member Details Styles */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: var(--color-background);
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: var(--color-foreground);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.backButton:hover {
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+  background: var(--color-card);
+}
+
+.backIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.headerActions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.buttonIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Profile Section */
+.profileSection {
+  margin-bottom: 2rem;
+}
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.profileAvatar {
+  flex-shrink: 0;
+}
+
+.avatarImage {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-border);
+}
+
+.avatarPlaceholder {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  border: 3px solid var(--color-border);
+}
+
+.avatarActive {
+  background: var(--brand-primary);
+}
+
+.avatarInactive {
+  background: var(--color-muted-foreground);
+}
+
+.profileInfo {
+  flex: 1;
+}
+
+/* Member name styling handled by Heading component */
+.memberName {
+  margin: 0 0 1rem 0;
+}
+
+.memberMeta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Badges */
+.roleBadge,
+.statusBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.badgeIcon {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.statusIcon {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+/* Role badges */
+.role-owner {
+  background: var(--brand-primary-light);
+  color: var(--brand-primary);
+  border: 1px solid var(--brand-primary);
+}
+
+.role-manager {
+  background: var(--color-secondary);
+  color: var(--color-secondary-foreground);
+  border: 1px solid var(--color-border);
+}
+
+/* Status badges */
+.status-active {
+  background: var(--success-light, #f0f9ff);
+  color: var(--success, #10b981);
+  border: 1px solid var(--success, #10b981);
+}
+
+.status-pending {
+  background: var(--warning-light, #fef3cd);
+  color: var(--warning, #f59e0b);
+  border: 1px solid var(--warning, #f59e0b);
+}
+
+.status-suspended {
+  background: var(--error-light, #fef2f2);
+  color: var(--error, #ef4444);
+  border: 1px solid var(--error, #ef4444);
+}
+
+.status-removed {
+  background: var(--color-muted);
+  color: var(--color-muted-foreground);
+  border: 1px solid var(--color-border);
+}
+
+/* Details Grid */
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.detailCard {
+  transition: all 0.2s ease;
+}
+
+.detailCard:hover {
+  border-color: var(--brand-primary);
+  box-shadow: 0 8px 25px rgba(5, 150, 105, 0.15);
+  transform: translateY(-2px);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cardIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--brand-primary);
+}
+
+/* Card title styling handled by Heading component */
+.cardTitle {
+  margin: 0;
+}
+
+.cardContent {
+  padding: 1.5rem;
+}
+
+.detailRows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detailRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.detailRow:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.detailLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-muted-foreground);
+}
+
+.detailValue {
+  font-size: 0.875rem;
+  color: var(--color-foreground);
+  text-align: right;
+}
+
+/* Permissions */
+.permissionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.permissionItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+}
+
+.permissionLabel {
+  font-size: 0.875rem;
+  color: var(--color-foreground);
+}
+
+.permissionValue {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.permissionIcon {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.allowed {
+  color: var(--success, #10b981);
+}
+
+.denied {
+  color: var(--color-muted-foreground);
+}
+
+/* Actions Section */
+.actionsSection {
+  margin-top: 2rem;
+}
+
+.actionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .headerActions {
+    justify-content: center;
+  }
+
+  .profileHeader {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  /* Member name responsive styling handled by Heading component */
+
+  .memberMeta {
+    justify-content: center;
+  }
+
+  .detailsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .actionsGrid {
+    grid-template-columns: 1fr;
+  }
+}

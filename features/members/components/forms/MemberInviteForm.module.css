@@ -1,0 +1,505 @@
+/* Member Invite Form Styles */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--color-background);
+  padding: 1rem 2rem 2rem 2rem;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.backIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.headerInfo {
+  flex: 1;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-foreground);
+  margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--color-muted-foreground);
+  margin: 0;
+}
+
+/* Form */
+.form {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.formSections {
+  padding: 1rem 1.5rem;
+  max-width: 100%;
+}
+
+.formSection {
+  margin-bottom: 1.25rem;
+}
+
+.formSection:last-child {
+  margin-bottom: 0;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sectionIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--brand-primary);
+}
+
+.sectionTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+  margin: 0;
+  flex: 1;
+}
+
+/* Fields */
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.fieldRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Responsive - stack fields on smaller screens */
+@media (max-width: 640px) {
+  .fieldRow {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Form input styling handled by Input and Textarea components */
+.labelIcon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--color-muted-foreground);
+}
+
+/* Role Display */
+.roleDisplay {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  background: var(--color-card);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.roleNote {
+  font-size: 0.75rem;
+  color: var(--color-muted-foreground);
+  margin: 0.5rem 0 0 0;
+  font-style: italic;
+}
+
+.roleInfo {
+  flex: 1;
+}
+
+.roleName {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--brand-primary);
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.roleDescription {
+  font-size: 0.75rem;
+  color: var(--color-muted-foreground);
+}
+
+/* Venue Access */
+.venueActions {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.venueActionButton {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.75rem;
+  color: var(--color-muted-foreground);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.venueActionButton:hover {
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+}
+
+.venueList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.venueItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: 0.75rem;
+  background: var(--color-background);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.venueItem:hover {
+  border-color: var(--brand-primary);
+  background: var(--color-card);
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.1);
+}
+
+.venueItemSelected {
+  border-color: var(--brand-primary);
+  background: var(--color-card);
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.1);
+  position: relative;
+}
+
+.venueItemSelected::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--brand-primary);
+  border-radius: 0.75rem 0 0 0.75rem;
+}
+
+.venueCheckbox {
+  flex-shrink: 0;
+}
+
+.checkboxChecked {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--brand-primary);
+  filter: drop-shadow(0 1px 2px rgba(34, 197, 94, 0.3));
+}
+
+.checkboxUnchecked {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--color-border);
+  opacity: 0.6;
+}
+
+.venueInfo {
+  flex: 1;
+}
+
+.venueName {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+  margin-bottom: 0.25rem;
+}
+
+.venueAddress {
+  font-size: 0.8rem;
+  color: var(--color-muted-foreground);
+  opacity: 0.8;
+}
+
+/* Enhanced venue selection for selected items */
+.venueItemSelected .venueName {
+  color: var(--color-foreground);
+  font-weight: 700;
+}
+
+.venueItemSelected .venueAddress {
+  color: var(--color-muted-foreground);
+  opacity: 0.8;
+}
+
+/* Form Actions */
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: var(--color-muted);
+  border-top: 1px solid var(--color-border);
+}
+
+
+.submitIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Error State */
+.errorState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.errorIcon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--error);
+  margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .venueActions {
+    margin-left: 0;
+  }
+
+  .formActions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .submitButton,
+  .cancelButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .formSections {
+    padding: 1.5rem;
+  }
+
+  .formActions {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .formSections {
+    padding: 1rem;
+  }
+
+  .formActions {
+    padding: 1rem;
+  }
+
+  .venueItem {
+    padding: 0.75rem;
+  }
+
+  .roleOption {
+    padding: 0.75rem;
+  }
+}
+
+/* Invite Type Section */
+.inviteTypeSection {
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.inviteTypeLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+  font-size: 0.875rem;
+}
+
+.inviteTypeButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.inviteTypeButton {
+  /* Custom styles for invite type buttons */
+  height: auto;
+  padding: 0.875rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+
+.inviteTypeButtonInactive {
+  background: var(--color-background) !important;
+  color: var(--color-foreground) !important;
+  border: 1px solid var(--color-border) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.inviteTypeButtonInactive:hover {
+  background: var(--color-card) !important;
+  border-color: var(--brand-primary) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  transform: translateY(-1px) !important;
+}
+
+.buttonIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Role label styling - non-clickable */
+.roleLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+  margin-bottom: 0.5rem;
+  user-select: none;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Override Label component styles for role label */
+.roleLabel:hover {
+  color: var(--color-foreground) !important;
+}
+
+.roleLabel:focus {
+  outline: none !important;
+}
+
+/* Minimal textarea styling */
+.minimalTextarea {
+  border: 1px solid var(--color-border) !important;
+  box-shadow: none !important;
+  background: var(--color-background) !important;
+}
+
+.minimalTextarea:hover {
+  border-color: var(--brand-primary) !important;
+  box-shadow: 0 0 0 1px var(--brand-primary) !important;
+}
+
+.minimalTextarea:focus {
+  border-color: var(--brand-primary) !important;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.1) !important;
+}
+
+/* Read-only input style */
+/* Read-only input styling handled by Input component */
+
+/* Staff Selection Container */
+.staffSelectionContainer {
+  margin-bottom: 2rem;
+}
+
+/* Staff Promotion Note */
+.staffPromotionNote {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0rem;
+  padding: 0.75rem;
+  background: var(--brand-primary-light);
+  border: 1px solid var(--brand-primary);
+  border-radius: 0.375rem;
+}
+
+.noteIcon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--color-foreground);
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.noteText {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-foreground);
+  line-height: 1.4;
+}

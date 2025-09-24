@@ -1,0 +1,310 @@
+/* Separator Component - Smart Shifts Design System */
+
+/* Base Separator */
+.separator {
+  flex-shrink: 0;
+  background: var(--border-medium);
+  transition: all 0.2s ease;
+}
+
+.separatorHorizontal {
+  height: 1px;
+  width: 100%;
+}
+
+.separatorVertical {
+  width: 1px;
+  height: 100%;
+}
+
+/* Variant Styles */
+.separatorDashed {
+  border-style: dashed;
+  border-width: 1px;
+  background: none;
+  border-color: var(--border-medium);
+}
+
+.separatorDotted {
+  border-style: dotted;
+  border-width: 1px;
+  background: none;
+  border-color: var(--border-medium);
+}
+
+.separatorGradient {
+  background: linear-gradient(90deg, transparent, var(--border-medium), transparent);
+}
+
+.separatorThick {
+  height: 2px;
+}
+
+.separatorVertical.separatorThick {
+  width: 2px;
+  height: 100%;
+}
+
+/* Color Variants */
+.separatorMuted {
+  background: var(--border-light);
+}
+
+.separatorAccent {
+  background: var(--surface-tertiary);
+}
+
+.separatorBrand {
+  background: var(--brand-primary);
+}
+
+/* Spacing Variants */
+.separatorSpacingNone {
+  margin: 0;
+}
+
+.separatorSpacingSm {
+  margin: var(--spacing-sm) 0;
+}
+
+.separatorSpacingMd {
+  margin: var(--spacing-md) 0;
+}
+
+.separatorSpacingLg {
+  margin: var(--spacing-lg) 0;
+}
+
+.separatorSpacingXl {
+  margin: var(--spacing-xl) 0;
+}
+
+/* Vertical spacing for vertical separators */
+.separatorVertical.separatorSpacingSm {
+  margin: 0 var(--spacing-sm);
+}
+
+.separatorVertical.separatorSpacingMd {
+  margin: 0 var(--spacing-md);
+}
+
+.separatorVertical.separatorSpacingLg {
+  margin: 0 var(--spacing-lg);
+}
+
+.separatorVertical.separatorSpacingXl {
+  margin: 0 var(--spacing-xl);
+}
+
+/* Separator with Label */
+.separatorWithLabel {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.separatorWithLabelVertical {
+  flex-direction: column;
+  height: 100%;
+}
+
+.separatorLabel {
+  background: var(--surface-primary);
+  padding: 0 var(--spacing-md);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  font-weight: var(--font-medium);
+  white-space: nowrap;
+  position: absolute;
+  z-index: 1;
+}
+
+.separatorLabelCenter {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.separatorLabelLeft {
+  left: var(--spacing-lg);
+}
+
+.separatorLabelRight {
+  right: var(--spacing-lg);
+}
+
+/* Vertical label positioning */
+.separatorWithLabelVertical .separatorLabel {
+  padding: var(--spacing-md) 0;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.separatorWithLabelVertical .separatorLabelCenter {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.separatorWithLabelVertical .separatorLabelLeft {
+  top: var(--spacing-lg);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.separatorWithLabelVertical .separatorLabelRight {
+  bottom: var(--spacing-lg);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Dark Mode Support */
+.dark .separator {
+  background: var(--border-strong);
+}
+
+.dark .separatorDashed,
+.dark .separatorDotted {
+  border-color: var(--border-strong);
+}
+
+.dark .separatorGradient {
+  background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+}
+
+.dark .separatorMuted {
+  background: var(--border-medium);
+}
+
+.dark .separatorAccent {
+  background: var(--surface-primary);
+}
+
+.dark .separatorLabel {
+  background: var(--surface-secondary);
+  color: var(--text-primary);
+}
+
+/* Accessibility */
+@media (prefers-contrast: high) {
+  .separator {
+    background: black;
+    height: 2px;
+  }
+  
+  .separatorVertical {
+    width: 2px;
+    height: 100%;
+  }
+  
+  .separatorDashed,
+  .separatorDotted {
+    border-color: black;
+    border-width: 2px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .separator {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    background: black !important;
+  }
+  
+  .separatorDashed,
+  .separatorDotted {
+    border-color: black !important;
+  }
+}
+
+/* RTL Support */
+[dir="rtl"] .separatorLabelLeft {
+  left: auto;
+  right: var(--spacing-lg);
+}
+
+[dir="rtl"] .separatorLabelRight {
+  right: auto;
+  left: var(--spacing-lg);
+}
+
+/* Animation effects */
+.separatorAnimated {
+  animation: separatorFade 2s infinite;
+}
+
+@keyframes separatorFade {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Special separator styles */
+.separatorGlow {
+  box-shadow: 0 0 10px currentColor;
+}
+
+.separatorShadow {
+  box-shadow: var(--shadow-sm);
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .separatorLabel {
+    font-size: var(--text-xs);
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .separatorLabelLeft {
+    left: var(--spacing-md);
+  }
+  
+  .separatorLabelRight {
+    right: var(--spacing-md);
+  }
+}
+
+/* Separator patterns */
+.separatorWave {
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--border-medium) 0px,
+    var(--border-medium) 5px,
+    transparent 5px,
+    transparent 10px
+  );
+}
+
+.separatorZigzag {
+  height: 2px;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--border-medium) 0px,
+    var(--border-medium) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+}
+
+/* Custom properties for dynamic styling */
+.separator {
+  --separator-color: var(--border-medium);
+  --separator-thickness: 1px;
+  --separator-spacing: var(--spacing-md);
+  
+  background: var(--separator-color);
+}
+
+.separatorHorizontal {
+  height: var(--separator-thickness);
+  margin: var(--separator-spacing) 0;
+}
+
+.separatorVertical {
+  width: var(--separator-thickness);
+  margin: 0 var(--separator-spacing);
+}

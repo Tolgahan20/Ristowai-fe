@@ -1,0 +1,186 @@
+.footer {
+  width: 100%;
+  padding: 4rem 0 2rem 0;
+  color: #fff;
+  background: transparent;
+  border-radius: 0;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  border-top: 1px solid #374151;
+  margin: 0 auto;
+  padding: 0 2rem;
+  padding-top: 100px;
+}
+
+.topSection {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Brand | Links */
+  gap: 10rem; /* increased gap between brand and links columns */
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #374151;
+  align-items: flex-start;
+}
+
+.brandSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start; /* Align logo and text to left */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.brandDescription {
+  font-size: 1rem;
+  color: #9ca3af;
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+.socialLinks {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+
+.socialIcons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.socialLink {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.18s;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+.socialLink:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.socialLink svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.linksSection {
+  display: flex;
+  flex-direction: row;
+  gap: 6rem; /* increased gap between each link column */
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.linkColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+  min-width: 120px; /* ensures columns don't shrink too much */
+}
+
+.linkColumnTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.link {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.18s;
+}
+
+.link:hover {
+  color: #fff;
+}
+
+.bottomSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.copyright {
+  color: #F7F8FA !important;
+  font-size: 0.875rem;
+}
+
+
+/* Ensure footer links and descriptions use the readable font */
+.link,
+.linkColumnTitle,
+.brandDescription {
+  font-family: var(--font-sans) !important;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .topSection {
+    grid-template-columns: 1fr;
+  }
+  .linksSection {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  .topSection {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+  }
+  .linksSection {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .bottomSection {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+  .bottomLinks {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

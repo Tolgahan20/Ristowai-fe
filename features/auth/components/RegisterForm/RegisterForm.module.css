@@ -1,0 +1,169 @@
+/* Ultra Clean Register Form */
+.registerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+  width: 100%;
+}
+
+/* Social login and divider handled by components */
+
+/* Register Form */
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  width: 100%;
+}
+
+/* Two Column Layout */
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+}
+
+/* Form Groups */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* Required asterisk styling */
+.required {
+  color: var(--error);
+  margin-left: 2px;
+}
+
+/* Input styling handled by Input and PasswordInput components */
+/* Ensure all inputs have consistent width */
+.formGroup :global(input),
+.formGroup :global([class*="inputContainer"]) {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Checkbox Groups - Using built-in Checkbox component with label */
+.checkboxGroup {
+  margin: var(--spacing-sm) 0;
+}
+
+/* Override the Checkbox component's container gap for tighter spacing */
+.checkboxGroup :global([class*="checkboxContainer"]) {
+  gap: 0.5rem !important;
+}
+
+.termsLink {
+  color: var(--brand-primary);
+  text-decoration: none;
+  font-weight: var(--font-medium);
+}
+
+.termsLink:hover {
+  text-decoration: underline;
+}
+
+.checkboxRequired {
+  color: var(--error);
+}
+
+/* Password Strength */
+.passwordStrength {
+  margin-top: var(--spacing-sm);
+}
+
+.strengthBar {
+  width: 100%;
+  height: 4px;
+  background: var(--border-light);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: var(--spacing-xs);
+}
+
+.strengthProgress {
+  height: 100%;
+  width: 0%;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.strengthProgress.strengthWeak {
+  width: 25%;
+  background: var(--error);
+}
+
+.strengthProgress.strengthFair {
+  width: 50%;
+  background: var(--warning, #f59e0b);
+}
+
+.strengthProgress.strengthGood {
+  width: 75%;
+  background: var(--brand-primary-light);
+}
+
+.strengthProgress.strengthStrong {
+  width: 100%;
+  background: var(--brand-primary);
+}
+
+.strengthText {
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+}
+
+/* Submit button styling handled by Button component */
+.submitButton {
+  width: 100%;
+  margin-top: var(--spacing-sm);
+}
+
+/* Footer */
+.footer {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--border-light);
+}
+
+.footerText {
+  color: var(--text-tertiary);
+  font-size: var(--text-sm);
+}
+
+/* Error Messages - minimal styling, handled by ErrorText component */
+.errorMessage {
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background: rgba(220, 38, 38, 0.05);
+  border: 1px solid rgba(220, 38, 38, 0.1);
+  border-radius: var(--radius-md);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .registerContainer {
+    gap: var(--spacing-xl);
+  }
+  
+  .registerForm {
+    gap: var(--spacing-md);
+  }
+}
+
+@media (max-width: 640px) {
+  .checkboxGroup {
+    margin: var(--spacing-xs) 0;
+  }
+  
+  .footer {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+  }
+}
