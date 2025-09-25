@@ -7,8 +7,7 @@
   background: linear-gradient(115deg, #c471f5 0%, #6a7ff9 55%, #49a7f9 100%);
   position: relative;
   overflow: hidden;
-  font-family: var(--font-custom) !important;
-
+  
 }
 
 .heroContent {

@@ -32,9 +32,9 @@ export default function LandingPage() {
       {/* Features Section */}
       <FeaturesSection />
       
-      {/* Magic Tools Section */}
+      {/* Magic Tools Section 
       <MagicToolsSection />
-
+*/} 
       <HowItWorksSection />
 
       {/* Testimonials Section */}

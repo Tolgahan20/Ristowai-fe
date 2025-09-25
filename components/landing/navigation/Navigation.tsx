@@ -255,27 +255,6 @@ export const Navigation: React.FC<NavigationProps> = ({
         )}
       </AnimatePresence>
 
-      {/* Fixed Element (Pencil Icon) */}
-      <motion.button
-        className={styles.fixedElement}
-        initial={animate ? { opacity: 0, scale: 0.8 } : { opacity: 1, scale: 1 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1, duration: 0.6 }}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        aria-label="Feedback"
-      >
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={2}
-        >
-          <path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
-        </svg>
-      </motion.button>
     </>
   );
 };
