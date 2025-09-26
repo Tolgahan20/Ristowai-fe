@@ -11,13 +11,21 @@ const steps = [
 	},
 	{
 		title: "2",
-		stepTitle: "Onboard Your Business",
-		desc: "Easily add your restaurants, venues, and staff. Our guided onboarding ensures a smooth setup for your entire team.",
+		stepTitle: "Onboard Your Restaurant (or let us do it for you)",
+		desc: (
+			<>
+				Add your venue, opening hours, staff roles, and contracts with our guided onboarding.
+			</>
+		),
 	},
 	{
 		title: "3",
-		stepTitle: "Unlock Smart Shifts",
-		desc: "Leverage advanced AI tools for scheduling, compliance, and operations. Experience automation and insights from day one.",
+		stepTitle: "Unlock AI Solutions",
+		desc: (
+			<>
+				From day one, harness the full power of AI to to run your restaurant.
+			</>
+		),
 	},
 ];
 

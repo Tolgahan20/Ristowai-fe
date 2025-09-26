@@ -4,28 +4,36 @@ import styles from "./FaqSection.module.css";
 
 const faqs = [
   {
-    question: "How does it generate responses?",
-    answer: "MagicAI uses the most popular AI models such as GPT, Dall-E, Ada to create text, image, code and more within seconds. The process is simple. All you have to do is provide a topic or idea, and our AI-based generator will take care of the rest."
+    question: "Do I need technical skills to use Ristowai?",
+    answer: "No. Ristowai is built for restaurant managers and staff, not IT experts. Setup is guided and you can even share info with us via WhatsApp — we’ll configure it for you."
   },
   {
-    question: "Can I create templates or chat bots?",
-    answer: "Yes! You can create unlimited custom templates and chat bots. Our platform allows you to build personalized AI assistants tailored to your specific needs and industry requirements."
+    question: "Can I try Ristowai for free?",
+    answer: "Yes. Every restaurant gets a 1-month free trial with full access to all solutions."
   },
   {
-    question: "Should I buy regular or extended license?",
-    answer: "The regular license is perfect for personal and small business use. The extended license is recommended for larger organizations, resellers, or if you plan to use MagicAI for client projects."
+    question: "Can I choose only some solutions?",
+    answer: "Yes. Each solution works standalone. You only pay for what you use."
   },
   {
-    question: "Can I translate the script into another language?",
-    answer: "Absolutely! MagicAI supports multiple languages and can generate content in over 40 different languages. You can also translate existing content from one language to another seamlessly."
+    question: "What results can I expect?",
+    answer: "Beta testers reported 20% lower operating costs and up to +12% margin growth after just 2 months."
   },
   {
-    question: "What kind of support do you provide?",
-    answer: "We provide comprehensive support including live chat, email support, extensive documentation, video tutorials, and a community forum. Premium users get priority support with faster response times."
+    question: "Is my data safe?",
+    answer: "Absolutely. All data is encrypted, stored securely in the EU, and never shared with third parties."
   },
   {
-    question: "Is there a free trial available?",
-    answer: "Yes! We offer a free plan that includes 10,000 words per month, access to 50+ AI templates, and basic features. No credit card required to get started."
+    question: "Do you provide extra services?",
+    answer: "Yes. On request we also offer: Website showcase creation (€400–800 one time), Nutritionist consultation or menu design (€50–150)."
+  },
+  {
+    question: "Can staff use it on mobile?",
+    answer: "Yes. Ristowai works on desktop, tablet, and smartphones — no app installation required."
+  },
+  {
+    question: "How do I cancel my subscription?",
+    answer: "You can cancel anytime. No long-term contracts, no hidden fees."
   }
 ];
 

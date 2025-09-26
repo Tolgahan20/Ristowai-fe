@@ -1,40 +1,47 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FiEdit3, FiBarChart2, FiGlobe, FiFileText, FiMessageCircle } from "react-icons/fi";
-import {FaPaypal} from "react-icons/fa";
+import { 
+  FiClock, 
+  FiTrendingUp, 
+  FiCheckSquare, 
+  FiShield, 
+  FiMessageSquare, 
+  FiBarChart
+} from "react-icons/fi";
 import styles from "./FeaturesSection.module.css";
 
 const features = [
   {
-    icon: <FiEdit3 size={22} />,
-    title: "AI Generator",
-    desc: <>Generate <b>text, image, code, chat</b> and even more with</>,
+    icon: <FiClock size={22} />,
+    title: "Effortless Scheduling & Time Tracking",
+    desc: <>Automate shift planning with AI, enable punch clock for staff, and export reports in one click. Save hours of manual work and guarantee coverage for every service.
+</>,
   },
   {
-    icon: <FiBarChart2 size={22} />,
-    title: "Advanced Dashboard",
-    desc: <>Access to valuable user insight, analytics and activity.</>,
+    icon: <FiTrendingUp size={22} />,
+    title: "Smart Food Cost & Menu Insights",
+    desc: <>Track real-time food costs, detect low-margin dishes, and get AI suggestions to optimize your menu pricing. Increase profitability without losing customer satisfaction.</>,
   },
   {
-    icon: <FaPaypal size={22} />,
-    title: "Payment Gateways",
-    desc: <>Securely process credit card, debit card, or other methods.</>,
+    icon: <FiCheckSquare size={22} />,
+    title: "Daily Checklists & Maintenance Made Simple",
+    desc: <>Organize daily/weekly checklists, register assets, and manage maintenance or tickets with full evidence trails. Keep your operations smooth and audit-ready.</>,
   },
   {
-    icon: <FiGlobe size={22} />,
-    title: "Multi-Lingual",
-    desc: <>Ability to understand and generate content in different languages</>,
+    icon: <FiShield size={22} />,
+    title: "Contracts, Docs & Compliance Under Control",
+    desc: <>Centralize employee documents, contracts, and compliance reminders. Avoid fines and simplify HR tasks with automated nudges and smart storage.</>,
   },
   {
-    icon: <FiFileText size={22} />,
-    title: "Custom Templates",
-    desc: <>Add unlimited number of custom prompts for your customers.</>,
+    icon: <FiMessageSquare size={22} />,
+    title: "AI-Powered Brand & Reputation Growth",
+    desc: <>Plan your content calendar, generate posts and promotions, and reply to reviews with the right tone. Detect red flags early and boost your online reputation..</>,
   },
   {
-    icon: <FiMessageCircle size={22} />,
-    title: "Support Platform",
-    desc: <>Access and manage your support tickets from your dashboard.</>,
+    icon: <FiBarChart size={22} />,
+    title: "Full Control in One Dashboard",
+    desc: <>Monitor KPIs, track savings, manage all solutions, and export monthly reports in PDF. A true command center for restaurant managers.</>,
   },
 ];
 

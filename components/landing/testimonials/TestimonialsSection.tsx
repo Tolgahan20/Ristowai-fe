@@ -5,22 +5,34 @@ import styles from "./TestimonialsSection.module.css";
 
 const testimonials = [
 	{
-		name: "Eric Sanchez",
-		role: "UX Designer",
+		name: "Ristorante Da Carlo",
+		role: "Genova",
 		avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-		text: "The customer support team has been incredibly helpful whenever I've had any questions. I can't imagine going back to my old content-creation methods!",
+		text: "With Smart Shifts we reduced weekly planning time from 3 hours to just 20 minutes. The staff feels more organized and happier.",
 	},
 	{
-		name: "Anna Lee",
-		role: "Content Strategist",
-		avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-		text: "MagicAI has transformed our workflow. The AI-generated content is top-notch and saves us hours every week.",
+		name: "Trattoria La Rustica",
+		role: "Bologna",
+		avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+		text: "FoodBrain helped us discover which dishes were killing our margins. After two months we improved profitability by 14%.",
 	},
 	{
-		name: "Michael Chen",
-		role: "Product Manager",
+		name: "Pizzeria Vesuvio",
+		role: "Napoli",
 		avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-		text: "The analytics and dashboard features are a game changer. Highly recommended for any SaaS business.",
+		text: "Thanks to the punch clock and Staff Pro+, we finally track hours correctly and manage maintenance tickets without paper notes.",
+	},
+	{
+		name: "Osteria del Ponte",
+		role: "Firenze",
+		avatar: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=150&h=150&fit=crop&crop=face",
+		text: "Review Sense drafted answers to more than 150 reviews in our tone of voice. Our Google rating went from 4.1 to 4.6 stars.",
+	},
+	{
+		name: "Caffè Moderno",
+		role: "Milano",
+		avatar: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=150&h=150&fit=crop&crop=face",
+		text: "Brand Pulse gave us a full content calendar in one click. We saved hours on marketing and our Instagram engagement doubled.",
 	},
 ];
 

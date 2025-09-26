@@ -1,56 +1,55 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "./PricingSection.module.css";
+import extrasStyles from "./PricingExtras.module.css";
 
 const plans = [
   {
-    name: "Free",
-    price: "$0",
-    period: "forever",
-    description: "Perfect for trying out magicAI",
+    name: "Free Trial",
+    price: "€0",
+    description: "Perfect for discovering Ristowai.",
     features: [
-      "10,000 Words / month",
-      "50+ AI Templates",
-      "All languages",
-      "Chat support"
+      "Full access to all solutions",
+      "Guided or concierge onboarding",
+      "No payment required",
+      "Cancel anytime"
     ],
-    buttonText: "Start Free",
+    buttonText: "Start Free Trial",
     buttonStyle: "secondary",
     popular: false,
   },
   {
-    name: "Premium",
-    price: "$19",
+    name: "Pick Your Solution",
+    price: "€20–30",
     period: "per month",
-    description: "Most popular plan for small teams",
+    description: "Choose only the tools you need.",
     features: [
-      "100,000 Words / month",
-      "100+ AI Templates",
-      "All languages",
-      "Chat support",
-      "API Access",
-      "Custom Templates"
+      "Smart Shifts → €20",
+      "FoodBrain → €30",
+      "Staff Pro+ → €20",
+      "HR Smart → €20",
+      "Marketing & Reviews → €20",
+      "Access Manager Dashboard with any solution"
     ],
-    buttonText: "Start Premium",
+    buttonText: "Choose a Solution",
+    buttonStyle: "secondary",
+    popular: false,
+  },
+  {
+    name: "Full Suite (Most Popular)",
+    price: "€100",
+    period: "per month",
+    description: "Best value for restaurants that want full control.",
+    features: [
+      "All 5 solutions included",
+      "Manager Dashboard unlocked",
+      "Monthly PDF report",
+      "Priority support",
+      "Save up to €10 vs single modules",
+    ],
+    buttonText: "Get Full Suite",
     buttonStyle: "primary",
     popular: true,
-  },
-  {
-    name: "Team",
-    price: "$99",
-    period: "per month",
-    description: "Advanced features for growing teams",
-    features: [
-      "Unlimited Words / month",
-      "100+ AI Templates",
-      "All languages",
-      "Priority support",
-      "API Access",
-      "Team Management"
-    ],
-    buttonText: "Start Team",
-    buttonStyle: "secondary",
-    popular: false,
   },
 ];
 
@@ -169,11 +168,67 @@ export function PricingSection() {
         </motion.div>
 
         <motion.div 
+          className={extrasStyles.extrasSection}
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 1.6 }}
+        >
+          <motion.h3 
+            className={extrasStyles.extrasTitle}
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 1.8 }}
+          >
+            Extras (on request)
+          </motion.h3>
+          <motion.div 
+            className={extrasStyles.extrasList}
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 2.0 }}
+          >
+            <motion.div 
+              className={extrasStyles.extrasItem}
+              initial={{ x: -20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 2.2 }}
+            >
+              <span className={extrasStyles.extrasService}>Website showcase</span>
+              <span className={extrasStyles.extrasPrice}>€400–800 (one-time)</span>
+            </motion.div>
+            <motion.div 
+              className={extrasStyles.extrasItem}
+              initial={{ x: -20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 2.3 }}
+            >
+              <span className={extrasStyles.extrasService}>Nutritionist consultation</span>
+              <span className={extrasStyles.extrasPrice}>€50</span>
+            </motion.div>
+            <motion.div 
+              className={extrasStyles.extrasItem}
+              initial={{ x: -20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 2.4 }}
+            >
+              <span className={extrasStyles.extrasService}>Full healthy menu design</span>
+              <span className={extrasStyles.extrasPrice}>€100–150</span>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+
+        <motion.div 
           className={styles.footer}
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 1.8 }}
+          transition={{ duration: 0.6, delay: 2.6 }}
         >
           <p className={styles.footerText}>
             All plans include our core AI features. Need something custom?{" "}

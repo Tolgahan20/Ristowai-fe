@@ -12,8 +12,7 @@ const footerLinks = {
   Company: [
     { label: "About Us", href: "#" },
     { label: "Contact", href: "#" },
-    { label: "Careers", href: "#" },
-    { label: "Press Kit", href: "#" },
+    { label: "Beta Test Program", href: "#" },
     { label: "Partners", href: "#" },
   ],
   Legal: [
@@ -54,8 +53,7 @@ export function FooterSection() {
                 <Image src="/full_logo_white.svg" alt="Ristowai Logo" width={220} height={40} />
             </div>
             <p className={styles.brandDescription}>
-              The most advanced AI-powered platform for content creation, 
-              image generation, and business automation.
+            AI-powered restaurant management platform. Built in Italy, made for restaurants.
             </p>
             <div className={styles.socialLinks}>
               <motion.a 

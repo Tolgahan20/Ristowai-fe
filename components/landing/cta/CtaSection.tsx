@@ -38,9 +38,9 @@ export function CtaSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            Start your
+            Start your free 
             <br />
-            free trial.
+            1-month trial
           </motion.h2>
           
           <motion.p 
@@ -50,9 +50,9 @@ export function CtaSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            Unlock your business potential by letting the AI
+            Unlock your restaurant’s potential with AI.
             <br />
-            work and save money and time for you.
+            Save hours every week, reduce costs, and increase margins — all while staying in full control.
           </motion.p>
           
           <motion.button 
