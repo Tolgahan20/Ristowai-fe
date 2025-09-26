@@ -144,6 +144,29 @@
   letter-spacing: -0.01em;
 }
 
+/* Arrow styles */
+.arrowContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  align-self: center; /* Center align on desktop */
+}
+
+.arrowDesktop {
+  width: 24px;
+  height: 24px;
+  color: #999; /* Lighter color */
+  display: block;
+}
+
+.arrowMobile {
+  width: 24px;
+  height: 24px;
+  color: #999; /* Lighter color */
+  display: none;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .container {
@@ -182,5 +205,18 @@
     height: 48px;
     font-size: 1.3rem;
     margin-bottom: 0.8rem;
+  }
+  
+  /* Arrow mobile styles */
+  .arrowDesktop {
+    display: none;
+  }
+  
+  .arrowMobile {
+    display: block;
+  }
+  
+  .arrowContainer {
+    margin: 0.5rem 0;
   }
 }

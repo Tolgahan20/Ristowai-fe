@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
 import { FiEdit3, FiBarChart2, FiGlobe, FiFileText, FiMessageCircle } from "react-icons/fi";
 import {FaPaypal} from "react-icons/fa";
 import styles from "./FeaturesSection.module.css";
@@ -60,7 +62,7 @@ const tabContent: Record<string, {
     badgeColor: "#e9d8fd",
     title: "Smart Shifts",
     desc: "Automate shift planning, enable punch clock for staff, and generate exportable reports. Reduce manual errors and ensure optimal coverage for every service.",
-    image: "/features/shift.png",
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop",
     imageBg: "#f3e8ff",
     imageAlt: "Smart Shifts UI"
   },
@@ -69,7 +71,7 @@ const tabContent: Record<string, {
     badgeColor: "#f3e8ff",
     title: "FoodBrain",
     desc: "Control food costs, analyze your menu, and receive AI-driven pricing suggestions. Make every dish profitable and every menu decision data-backed.",
-    image: "/features/food.png",
+    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=300&fit=crop",
     imageBg: "#e0e7ff",
     imageAlt: "FoodBrain UI"
   },
@@ -78,7 +80,7 @@ const tabContent: Record<string, {
     badgeColor: "#dbeafe",
     title: "Staff Pro",
     desc: "Digitize daily checklists, manage asset inventory, and streamline maintenance tickets. Empower your team to deliver consistent quality and accountability.",
-    image: "/features/staff.png",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=300&fit=crop",
     imageBg: "#f1f5f9",
     imageAlt: "Staff Pro UI"
   },
@@ -87,7 +89,7 @@ const tabContent: Record<string, {
     badgeColor: "#fef9c3",
     title: "HR Smart",
     desc: "Automate contracts, manage staff documentation, and receive compliance reminders. Keep your workforce organized and your business audit-ready.",
-    image: "/features/hr.png",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
     imageBg: "#fef9c3",
     imageAlt: "HR Smart UI"
   },
@@ -96,7 +98,7 @@ const tabContent: Record<string, {
     badgeColor: "#d1fae5",
     title: "Marketing & Reviews",
     desc: "Plan campaigns with a smart content calendar, automate review replies, and test promotions. Grow your brand and boost engagement with less effort.",
-    image: "/features/marketing.png",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
     imageBg: "#d1fae5",
     imageAlt: "Marketing UI"
   },
@@ -105,7 +107,7 @@ const tabContent: Record<string, {
     badgeColor: "#e0e7ff",
     title: "Manager Dashboard",
     desc: "Monitor real-time KPIs, manage your agenda, and export PDF reports. Make informed decisions with actionable insights at your fingertips.",
-    image: "/features/dashboard.png",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
     imageBg: "#e0e7ff",
     imageAlt: "Dashboard UI"
   },
@@ -125,42 +127,123 @@ export function FeaturesSection() {
   const content = tabContent[activeTab];
 
   return (
-    <section id="features" className={styles.featuresSection}>
-      <h2 className={styles.title}>The future of AI.</h2>
-      <div className={styles.featuresGrid}>
+    <motion.section 
+      id="features" 
+      className={styles.featuresSection}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8 }}
+    >
+      <motion.h2 
+        className={styles.title}
+        initial={{ y: 30, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        The future of AI.
+      </motion.h2>
+      
+      <motion.div 
+        className={styles.featuresGrid}
+        initial={{ y: 30, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
         {features.map((f, i) => (
-          <div className={styles.feature} key={i}>
-            <span className={styles.icon}>{f.icon}</span>
+          <motion.div 
+            className={styles.feature} 
+            key={i}
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 * i }}
+            whileHover={{ 
+              y: -5,
+              transition: { duration: 0.2 }
+            }}
+          >
+            <motion.span 
+              className={styles.icon}
+              whileHover={{ 
+                scale: 1.1,
+                transition: { duration: 0.2 }
+              }}
+            >
+              {f.icon}
+            </motion.span>
             <div>
               <div className={styles.featureTitle}>{f.title}</div>
               <div className={styles.featureDesc}>{f.desc}</div>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
-      <div className={styles.tabsBorder}>
-        <div className={styles.tabsRow}>
-          {tabs.map((tab) => (
-            <button
+      </motion.div>
+      <motion.div 
+        className={styles.tabsBorder}
+        initial={{ y: 30, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.2 }} // Reduced delay from 0.6 to 0.2
+      >
+        <motion.div 
+          className={styles.tabsRow}
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }} // Reduced delay from 0.8 to 0.4
+        >
+          {tabs.map((tab, index) => (
+            <motion.button
               key={tab.key}
               className={`${styles.tabButton} ${activeTab === tab.key ? styles.tabButtonActive : ""}`}
               onClick={() => setActiveTab(tab.key)}
               type="button"
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.5 + (index * 0.05) }} // Reduced delays
+              whileHover={{ 
+                y: -2,
+                transition: { duration: 0.2 }
+              }}
             >
               <span className={styles.tabLabel}>{tab.label}</span>
-            </button>
+            </motion.button>
           ))}
-        </div>
-        <div className={styles.tabContentRow}>
-          <div className={styles.tabCard} style={{ background: "#fff" }}>
+        </motion.div>
+        <motion.div 
+          className={styles.tabContentRow}
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.6 }} // Reduced delay from 1.0 to 0.6
+        >
+          <motion.div 
+            className={styles.tabCard} 
+            style={{ background: "#fff" }}
+            initial={{ x: -30, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.8 }} // Reduced delay from 1.2 to 0.8
+          >
             <div className={styles.tabBadge} style={{ background: content.badgeColor }}>
               {content.badge} <span className={styles.tabBadgeAI}>• AI</span>
             </div>
             <h3 className={styles.tabTitle}>{content.title}</h3>
             <p className={styles.tabDesc}>{content.desc}</p>
-          </div>
-          <div className={styles.tabImageCard} style={{ background: content.imageBg }}>
-            <img src={content.image} alt={content.imageAlt} className={styles.tabImage} />
+          </motion.div>
+          <motion.div 
+            className={styles.tabImageCard} 
+            style={{ background: content.imageBg }}
+            initial={{ x: 30, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 1.0 }} // Reduced delay from 1.4 to 1.0
+          >
+                <Image src={content.image} alt={content.imageAlt} width={400} height={300} className={styles.tabImage} />
             <div className={styles.tabImageCaption}>
               {activeTab === "image" && (
                 <span>
@@ -176,25 +259,39 @@ export function FeaturesSection() {
               )}
               {/* Add captions for other tabs as needed */}
             </div>
-          </div>
-        </div>
-      </div>
-      <div className={styles.bannersGrid}>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+      <motion.div 
+        className={styles.bannersGrid}
+        initial={{ y: 30, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 1.2 }} // Reduced delay from 1.6 to 1.2
+      >
         {banners.map((b, i) => (
-          <span
+          <motion.span
             key={b.label}
             className={styles.banner}
             style={{
               background: b.color,
               color: b.textColor,
             }}
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 1.4 + (i * 0.05) }} // Reduced delays
+            whileHover={{ 
+              y: -3,
+              transition: { duration: 0.2 }
+            }}
           >
             <span className={styles.bannerDot} style={{ color: b.textColor }} />
             {b.label}
-          </span>
+          </motion.span>
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }
 

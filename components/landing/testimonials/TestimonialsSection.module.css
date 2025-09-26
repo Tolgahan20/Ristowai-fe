@@ -147,27 +147,46 @@
 
 .carouselRow {
   display: flex;
+  flex-direction: column; /* Always stack vertically */
   align-items: center;
   justify-content: center;
-  gap: 2.5rem;
+  gap: 1.5rem;
   margin-top: 1.2rem;
 }
 
+.testimonialText {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.arrowButtons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
 .arrow {
-  background: none;
-  border: none;
-  font-size: 2.7rem;
-  color: #bdbdbd;
-  cursor: pointer;
-  padding: 0 0.7rem;
-  transition: color 0.18s, background 0.18s;
+  background: #f8f9fa;
+  border: 1px solid #e5e7eb;
   border-radius: 50%;
-  line-height: 1;
+  font-size: 1.8rem;
+  color: #666;
+  cursor: pointer;
+  padding: 0.8rem;
+  transition: all 0.2s ease;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
   user-select: none;
 }
 .arrow:hover {
-  color: #7c3aed;
-  background: #f3f4f6;
+  background: #7c3aed;
+  color: white;
+  border-color: #7c3aed;
 }
 
 .testimonialText {
@@ -189,17 +208,7 @@
   justify-content: center;
 }
 
-.fadeIn {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.fadeOut {
-  opacity: 0;
-  transform: translateY(30px);
-  pointer-events: none;
-}
+/* Fade classes removed - now using Framer Motion for transitions */
 
 .quoteMark {
   font-size: 2.5rem;
@@ -212,33 +221,97 @@
 
 /* Responsive */
 @media (max-width: 1100px) {
+  .section {
+    padding: 4rem 1rem 3rem 1rem; /* Add external padding */
+  }
+  
   .container {
     max-width: 98vw;
-    padding: 2.5rem 0.5rem 1.5rem 0.5rem;
+    padding: 2.5rem 1.5rem 2rem 1.5rem; /* Increased internal padding */
     border-radius: 1.2rem;
   }
+  
   .avatarsRow {
     gap: 1.2rem;
+    margin-bottom: 1.5rem; /* More space below avatars */
   }
+  
   .avatarWrap, .avatar {
     width: 60px;
     height: 60px;
   }
+  
   .avatarActive,
   .avatarCenter {
     width: 80px;
     height: 80px;
   }
+  
   .avatarActive .avatar,
   .avatarCenter .avatar {
     width: 66px;
     height: 66px;
   }
+  
   .title {
     font-size: 1.7rem;
+    margin-bottom: 2rem; /* More space below title */
   }
+  
+  .name {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+  }
+  
+  .role {
+    font-size: 1rem;
+    margin-bottom: 3rem; /* Increased space below role */
+  }
+  
+  .carouselRow {
+    flex-direction: column; /* Stack vertically on mobile */
+    gap: 1rem;
+    margin-top: 0;
+  }
+  
   .testimonialText {
-    font-size: 1.05rem;
-    min-height: 60px;
+    font-size: 1.1rem; /* Slightly larger text */
+    min-height: 80px; /* More height for text */
+    line-height: 1.6; /* Better line spacing */
+    margin-bottom: 1rem; /* Space below text */
+    padding: 0 1rem; /* Horizontal padding for text */
+  }
+  
+  /* Arrow buttons container */
+  .arrowButtons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .arrow {
+    font-size: 1.8rem;
+    padding: 0.8rem;
+    background: #f8f9fa;
+    border-radius: 50%; /* Make circular */
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e5e7eb;
+    transition: all 0.2s ease;
+  }
+  
+  .arrow:hover {
+    background: #7c3aed;
+    color: white;
+    border-color: #7c3aed;
+  }
+  
+  .quoteMark {
+    font-size: 2rem; /* Smaller quote marks on mobile */
   }
 }

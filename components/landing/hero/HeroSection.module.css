@@ -37,6 +37,19 @@
   pointer-events: none;
 }
 
+/* Wave path visibility controls */
+.wavePathDesktop {
+  display: block;
+}
+
+.wavePathMobile {
+  display: none;
+}
+
+.wavePathSmallMobile {
+  display: none;
+}
+
 .badge {
   display: inline-block;
   background: rgba(255, 255, 255, 0.18);
@@ -48,4 +61,53 @@
   margin-bottom: 1rem; /* was 1.5rem */
   letter-spacing: 0.01em;
   backdrop-filter: blur(4px);
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .heroContent {
+    padding-top: 2rem; /* Reduced from 4rem */
+    padding-bottom: 3rem; /* Reduced from 4rem */
+    gap: 1.2rem; /* Reduced gap */
+  }
+  
+  .heroSection {
+    min-height: 90vh; /* Reduced height on mobile */
+  }
+  
+  .wavePathDesktop {
+    display: none;
+  }
+  
+  .wavePathMobile {
+    display: block;
+  }
+  
+  .wavePathSmallMobile {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent {
+    padding-top: 1.5rem; /* Even less top spacing for small mobile */
+    padding-bottom: 2.5rem;
+    gap: 1rem; /* Smaller gap */
+  }
+  
+  .heroSection {
+    min-height: 85vh; /* Further reduced height for small mobile */
+  }
+  
+  .wavePathDesktop {
+    display: none;
+  }
+  
+  .wavePathMobile {
+    display: none;
+  }
+  
+  .wavePathSmallMobile {
+    display: block;
+  }
 }

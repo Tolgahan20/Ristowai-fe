@@ -1,6 +1,6 @@
 .heroTitle {
   color: #fff;
-  font-size: rem; /* was 4rem */
+  font-size: 2.8rem; /* Increased from 2.5rem */
   font-weight: 900;
   letter-spacing: -0.03em;
   line-height: 1.08;
@@ -31,6 +31,27 @@
   color: #fff;
 }
 
+.rotatingWord {
+  display: inline-block;
+  min-height: 1em;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  vertical-align: middle;
+}
+
+.iconContainer {
+  display: inline-block;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #fff;
+  filter: drop-shadow(0 2px 8px rgba(80,0,120,0.2));
+}
+
 .emoji {
   font-size: 2.5rem;
   margin-left: 0.5rem;
@@ -45,8 +66,22 @@
   .heroTitleDynamicActive {
     font-size: 5.5rem;
   }
+  .icon {
+    width: 3rem;
+    height: 3rem;
+  }
   .emoji {
     font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 3rem; /* Increased from 2rem */
+  }
+  .icon {
+    width: 2rem;
+    height: 2rem;
   }
 }
 

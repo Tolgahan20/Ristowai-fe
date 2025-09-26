@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import styles from "./FaqSection.module.css";
 
 const faqs = [
@@ -36,26 +37,73 @@ export function FaqSection() {
   };
 
   return (
-    <section id="faq" className={styles.section}>
+    <motion.section 
+      id="faq" 
+      className={styles.section}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8 }}
+    >
       <div className={styles.container}>
-        <div className={styles.header}>
-          <div className={styles.breadcrumb}>
+        <motion.div 
+          className={styles.header}
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <motion.div 
+            className={styles.breadcrumb}
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
             <span className={styles.breadcrumbItem}>FAQ</span>
             <span className={styles.breadcrumbSeparator}>•</span>
             <span className={styles.breadcrumbItem}>Help Center</span>
-          </div>
-          <h2 className={styles.title}>Have a question?</h2>
-          <p className={styles.subtitle}>
+          </motion.div>
+          <motion.h2 
+            className={styles.title}
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            Have a question?
+          </motion.h2>
+          <motion.p 
+            className={styles.subtitle}
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          >
             Our support team will get assistance from AI-powered suggestions, 
             making it quicker than ever to handle support requests.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className={styles.faqList}>
+        <motion.div 
+          className={styles.faqList}
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 1.0 }}
+        >
           {faqs.map((faq, index) => (
-            <div 
+            <motion.div 
               key={index}
               className={`${styles.faqItem} ${openIndex === index ? styles.faqItemOpen : ""}`}
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 1.2 + (index * 0.1) }}
+              whileHover={{ 
+                y: -2,
+                transition: { duration: 0.2 }
+              }}
             >
               <button
                 className={styles.faqQuestion}
@@ -63,24 +111,34 @@ export function FaqSection() {
                 aria-expanded={openIndex === index}
               >
                 <span>{faq.question}</span>
-                <svg 
+                <motion.svg 
                   className={`${styles.faqIcon} ${openIndex === index ? styles.faqIconOpen : ""}`}
                   viewBox="0 0 24 24" 
                   fill="none" 
                   stroke="currentColor"
+                  animate={{ rotate: openIndex === index ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
+                </motion.svg>
               </button>
-              <div className={`${styles.faqAnswer} ${openIndex === index ? styles.faqAnswerOpen : ""}`}>
+              <motion.div 
+                className={`${styles.faqAnswer} ${openIndex === index ? styles.faqAnswerOpen : ""}`}
+                initial={false}
+                animate={{ 
+                  height: openIndex === index ? "auto" : 0,
+                  opacity: openIndex === index ? 1 : 0
+                }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              >
                 <div className={styles.faqAnswerContent}>
                   {faq.answer}
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

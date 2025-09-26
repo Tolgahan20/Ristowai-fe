@@ -20,7 +20,7 @@ interface NavLink {
 
 const navLinks: NavLink[] = [
   { label: 'Features', href: '#features' },
-  { label: 'Models', href: '#models' },
+
   { label: 'How it Works', href: '#how-it-works' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'FAQ', href: '#faq' },
@@ -74,9 +74,9 @@ export const Navigation: React.FC<NavigationProps> = ({
   };
 
   const mobileMenuVariants = {
-    hidden: { opacity: 0, y: -20 },
+    hidden: { opacity: 0, y: -30 },
     visible: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -20 }
+    exit: { opacity: 0, y: -30 }
   };
 
   const navItemVariants = {
@@ -173,28 +173,11 @@ export const Navigation: React.FC<NavigationProps> = ({
             custom={navLinks.length + 2}
             aria-label="Toggle mobile menu"
           >
-            <svg
-              className={styles.mobileMenuIcon}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              {isMobileMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
+            <div className={styles.hamburgerIcon}>
+              <span className={`${styles.hamburgerLine} ${isMobileMenuOpen ? styles.hamburgerLine1 : ''}`}></span>
+              <span className={`${styles.hamburgerLine} ${isMobileMenuOpen ? styles.hamburgerLine2 : ''}`}></span>
+              <span className={`${styles.hamburgerLine} ${isMobileMenuOpen ? styles.hamburgerLine3 : ''}`}></span>
+            </div>
           </motion.button>
         </div>
       </motion.nav>
@@ -203,13 +186,26 @@ export const Navigation: React.FC<NavigationProps> = ({
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className={cn(styles.mobileMenu, styles.mobileMenuOpen)}
+            className={styles.mobileMenu}
             initial="hidden"
             animate="visible"
             exit="exit"
             variants={mobileMenuVariants}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
           >
+            {/* Close Button */}
+            <button
+              className={styles.mobileMenuClose}
+              onClick={closeMobileMenu}
+              aria-label="Close mobile menu"
+            >
+              <div className={styles.hamburgerIcon}>
+                <span className={`${styles.hamburgerLine} ${styles.hamburgerLine1}`}></span>
+                <span className={`${styles.hamburgerLine} ${styles.hamburgerLine2}`}></span>
+                <span className={`${styles.hamburgerLine} ${styles.hamburgerLine3}`}></span>
+              </div>
+            </button>
+
             <div className={styles.mobileMenuLinks}>
               {navLinks.map((link, index) => (
                 <motion.a
@@ -220,9 +216,9 @@ export const Navigation: React.FC<NavigationProps> = ({
                     link.active && styles.mobileMenuLinkActive
                   )}
                   onClick={closeMobileMenu}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.05, duration: 0.2 }}
                 >
                   {link.label}
                 </motion.a>
@@ -234,9 +230,9 @@ export const Navigation: React.FC<NavigationProps> = ({
                 href="/auth/login"
                 className={styles.mobileLoginButton}
                 onClick={closeMobileMenu}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
+                transition={{ delay: 0.1, duration: 0.2 }}
               >
                 Login
               </motion.a>
@@ -244,9 +240,9 @@ export const Navigation: React.FC<NavigationProps> = ({
                 href="/auth/register"
                 className={styles.mobileSignUpButton}
                 onClick={closeMobileMenu}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
+                transition={{ delay: 0.15, duration: 0.2 }}
               >
                 Sign Up
               </motion.a>

@@ -61,6 +61,17 @@
   color: #000;
 }
 
+.navigationScrolled .mobileMenuButton {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #23272f;
+}
+
+.navigationScrolled .mobileMenuButton:hover {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
 .navContainer {
   max-width: 1200px;
   margin: 0 auto;
@@ -175,62 +186,132 @@
 
 .mobileMenuButton {
   display: none;
-  background: none;
-  border: none;
-  color: #4a4a4a;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #374151;
   cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 0.25rem;
-  transition: color 0.2s ease;
+  padding: 0.75rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  grid-column: 3 / 4;
+  justify-self: end;
 }
 
 .mobileMenuButton:hover {
-  color: #8b5cf6;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .mobileMenuIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  stroke-width: 2;
+}
+
+.hamburgerIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 1.5rem;
-  height: 1.5rem;
+  height: 1.125rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.hamburgerLine {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #374151;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+  position: relative;
+}
+
+.hamburgerLine1 {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburgerLine2 {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburgerLine3 {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Hover effects */
+.hamburgerIcon:hover .hamburgerLine {
+  background-color: #1f2937;
 }
 
 .mobileMenu {
   position: fixed;
-  top: 7rem; /* Position below navigation + top bar */
+  top: 0;
   left: 0;
   right: 0;
-  background: white;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  padding: 1rem 0;
-  transform: translateY(-100%);
-  opacity: 0;
-  transition: all 0.3s ease;
-  z-index: 999;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 6rem;
 }
 
-.mobileMenuOpen {
-  transform: translateY(0);
-  opacity: 1;
+
+.mobileMenuClose {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #23272f;
+  cursor: pointer;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 10000;
+}
+
+.mobileMenuClose:hover {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
 }
 
 .mobileMenuLinks {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding: 0 1.5rem;
+  gap: 1.5rem;
+  padding: 0;
+  margin-bottom: 2rem;
 }
 
 .mobileMenuLink {
-  color: #4a4a4a;
+  color: #23272f;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 1.25rem;
   padding: 0.75rem 0;
-  border-bottom: 1px solid #f3f4f6;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
+  text-align: center;
+  position: relative;
 }
 
 .mobileMenuLink:hover {
   color: #8b5cf6;
+  transform: scale(1.02);
 }
 
 .mobileMenuLinkActive {
@@ -241,45 +322,51 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  padding: 1rem 1.5rem 0;
-  border-top: 1px solid #f3f4f6;
-  margin-top: 1rem;
+  padding: 0;
+  margin-top: 0;
+  width: 100%;
+  max-width: 240px;
 }
 
 .mobileLoginButton {
-  background: transparent;
-  color: #4a4a4a;
-  border: 2px solid #e5e7eb;
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
-  font-weight: 500;
+  background: rgba(0, 0, 0, 0.02);
+  color: #23272f;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 0.875rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 1rem;
   text-decoration: none;
   text-align: center;
   transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .mobileLoginButton:hover {
-  background: #f9fafb;
-  border-color: #8b5cf6;
-  color: #8b5cf6;
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
 }
 
 .mobileSignUpButton {
   background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
   color: white;
   border: none;
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
-  font-weight: 500;
+  padding: 0.875rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 1rem;
   text-decoration: none;
   text-align: center;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.3);
 }
 
 .mobileSignUpButton:hover {
   background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
-  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+  transform: translateY(-1px);
 }
 
 .fixedElement {
@@ -324,6 +411,7 @@
   
   .navContainer {
     padding: 0 1rem;
+    grid-template-columns: auto 1fr auto; /* logo | space | hamburger */
   }
   
   .fixedElement {

@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { ChevronRight, ChevronDown } from "lucide-react";
 import styles from "./HowItWorksSection.module.css";
 
 const steps = [
@@ -21,28 +23,92 @@ const steps = [
 
 export function HowItWorksSection() {
 	return (
-		<section id="how-it-works" className={styles.sectionWrap}>
+		<motion.section 
+			id="how-it-works" 
+			className={styles.sectionWrap}
+			initial={{ opacity: 0 }}
+			whileInView={{ opacity: 1 }}
+			viewport={{ once: true, margin: "-100px" }}
+			transition={{ duration: 0.8 }}
+		>
 			<div className={styles.container}>
-				<h2 className={styles.title}>
+				<motion.h2 
+					className={styles.title}
+					initial={{ y: 30, opacity: 0 }}
+					whileInView={{ y: 0, opacity: 1 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.6, delay: 0.2 }}
+				>
 					So, how does
 					<br />
 					it work?
-				</h2>
-				<div className={styles.stepsRow}>
+				</motion.h2>
+				<motion.div 
+					className={styles.stepsRow}
+					initial={{ y: 30, opacity: 0 }}
+					whileInView={{ y: 0, opacity: 1 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.6, delay: 0.4 }}
+				>
 					{steps.map((step, i) => (
-						<div className={styles.step} key={i}>
-							<div className={styles.circle}>{step.title}</div>
-							<div className={styles.stepTitle}>{step.stepTitle}</div>
-							<div className={styles.desc}>{step.desc}</div>
-						</div>
+						<React.Fragment key={i}>
+							<motion.div 
+								className={styles.step}
+								initial={{ y: 30, opacity: 0 }}
+								whileInView={{ y: 0, opacity: 1 }}
+								viewport={{ once: true }}
+								transition={{ duration: 0.5, delay: 0.6 + (i * 0.1) }}
+								whileHover={{ 
+									y: -5,
+									transition: { duration: 0.2 }
+								}}
+							>
+								<motion.div 
+									className={styles.circle}
+									whileHover={{ 
+										scale: 1.1,
+										transition: { duration: 0.2 }
+									}}
+								>
+									{step.title}
+								</motion.div>
+								<div className={styles.stepTitle}>{step.stepTitle}</div>
+								<div className={styles.desc}>{step.desc}</div>
+							</motion.div>
+							{i < steps.length - 1 && (
+								<motion.div 
+									className={styles.arrowContainer}
+									initial={{ scale: 0, opacity: 0 }}
+									whileInView={{ scale: 1, opacity: 1 }}
+									viewport={{ once: true }}
+									transition={{ duration: 0.4, delay: 0.8 + (i * 0.1) }}
+								>
+									<ChevronRight className={styles.arrowDesktop} />
+									<ChevronDown className={styles.arrowMobile} />
+								</motion.div>
+							)}
+						</React.Fragment>
 					))}
-				</div>
-				<div className={styles.ctaRow}>
-					<a href="#" className={styles.ctaButton}>
+				</motion.div>
+				<motion.div 
+					className={styles.ctaRow}
+					initial={{ y: 20, opacity: 0 }}
+					whileInView={{ y: 0, opacity: 1 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.6, delay: 1.0 }}
+				>
+					<motion.a 
+						href="#" 
+						className={styles.ctaButton}
+						whileHover={{ 
+							y: -2,
+							transition: { duration: 0.2 }
+						}}
+					>
 						Start your free 1-month trial
-					</a>
-				</div>
+					</motion.a>
+				</motion.div>
 			</div>
-		</section>
+		</motion.section>
 	);
 }
