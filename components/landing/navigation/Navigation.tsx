@@ -157,10 +157,10 @@ export const Navigation: React.FC<NavigationProps> = ({
             >
             </motion.button>
             <a href="/auth/login" className={styles.loginButton}>
-              Sign In
+            Accedi
             </a>
             <a href="/auth/register" className={styles.signUpButton}>
-              Join Hub
+            Registrati
             </a>
           </motion.div>
 
