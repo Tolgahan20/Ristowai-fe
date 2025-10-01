@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Navigation, TopBar } from '@/components/landing';
 import { HeroSection } from '@/components/landing/hero/HeroSection';
 import { FeaturesSection } from '@/components/landing/features/FeaturesSection';
-import { MagicToolsSection } from '@/components/landing/magic-tools/MagicToolsSection';
+import { MarketContextSection } from '@/components/landing/market-context/MarketContextSection';
 import { HowItWorksSection } from '@/components/landing/how-it-works/HowItWorksSection';
 import { TestimonialsSection } from '@/components/landing/testimonials/TestimonialsSection';
 import { PricingSection } from '@/components/landing/pricing/PricingSection';
@@ -32,8 +32,12 @@ export default function LandingPage() {
       {/* Features Section */}
       <FeaturesSection />
       
-      {/* Magic Tools Section */}
+      {/* Market Context Section */}
+      <MarketContextSection />
+      
+      {/* Magic Tools Section 
       <MagicToolsSection />
+      */}
       <HowItWorksSection />
 
       {/* Testimonials Section */}

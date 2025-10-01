@@ -6,7 +6,7 @@ import titleStyles from "./HeroTitle.module.css";
 import { HeroSubtitle } from "./HeroSubtitle";
 import { PlayButton } from "./PlayButton";
 
-const rotatingWords = ["Staff", "Cost", "Operations"];
+const rotatingWords = ["Personale", "Costo", "Operazioni"];
 const rotatingIcons = [Zap, Sparkles, Rocket];
 
 export function HeroSection() {
@@ -40,7 +40,7 @@ export function HeroSection() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <b>RISTOWAI</b> &nbsp;·&nbsp; Unleash the Power of AI
+          <b>RISTOWAI</b> &nbsp;·&nbsp; Scatena la potenza dell&apos;IA
         </motion.span>
         
         <motion.h1 
@@ -49,7 +49,7 @@ export function HeroSection() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          AI that simplifies
+          AI che semplifica
           <br />
           <motion.span
             className={titleStyles.rotatingWord}

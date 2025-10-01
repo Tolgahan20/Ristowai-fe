@@ -5,49 +5,49 @@ import extrasStyles from "./PricingExtras.module.css";
 
 const plans = [
   {
-    name: "Free Trial",
+    name: "Prova gratuita",
     price: "€0",
-    description: "Perfect for discovering Ristowai.",
+    description: "Perfetto per scoprire Ristowai.",
     features: [
-      "Full access to all solutions",
-      "Guided or concierge onboarding",
-      "No payment required",
-      "Cancel anytime"
+      "Accesso completo a tutte le soluzioni",
+      "Servizio di concierge incluso",
+      "Nessun pagamento richiesto",
+      "Annulla in qualsiasi momento"
     ],
-    buttonText: "Start Free Trial",
+    buttonText: "Inizia la prova gratuita",
     buttonStyle: "secondary",
     popular: false,
   },
   {
-    name: "Pick Your Solution",
+    name: "Scegli la tua soluzione",
     price: "€20–30",
-    period: "per month",
-    description: "Choose only the tools you need.",
+    period: "al mese",
+    description: "Scegli solo le soluzioni che ti servono.",
     features: [
       "Smart Shifts → €20",
       "FoodBrain → €30",
       "Staff Pro+ → €20",
       "HR Smart → €20",
       "Marketing & Reviews → €20",
-      "Access Manager Dashboard with any solution"
+      "Accesso al Dashboard Manager con qualsiasi soluzione"
     ],
-    buttonText: "Choose a Solution",
+    buttonText: "Scegli la tua soluzione",
     buttonStyle: "secondary",
     popular: false,
   },
   {
-    name: "Full Suite (Most Popular)",
+    name: "Suite completa (Most Popular)",
     price: "€100",
-    period: "per month",
-    description: "Best value for restaurants that want full control.",
+    period: "al mese",
+    description: "Migliore valore per i ristoranti che vogliono un controllo totale.",
     features: [
       "All 5 solutions included",
-      "Manager Dashboard unlocked",
-      "Monthly PDF report",
-      "Priority support",
-      "Save up to €10 vs single modules",
+      "Dashboard Manager sbloccato",
+      "Report PDF mensile",
+      "Supporto prioritario",
+      "Risparmia fino a €10 rispetto alle singole soluzioni",
     ],
-    buttonText: "Get Full Suite",
+    buttonText: "Ottieni la suite completa",
     buttonStyle: "primary",
     popular: true,
   },
@@ -78,7 +78,7 @@ export function PricingSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Flexible pricing.
+            Prezzi flessibili.
           </motion.h2>
           <motion.p 
             className={styles.subtitle}
@@ -87,7 +87,8 @@ export function PricingSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            Choose the perfect plan for your needs. Always flexible to change.
+            Scegli il piano perfetto per le tue esigenze. Sempre flessibile e modificabile.
+
           </motion.p>
         </motion.div>
 
@@ -181,7 +182,7 @@ export function PricingSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 1.8 }}
           >
-            Extras (on request)
+            Extras (su richiesta)
           </motion.h3>
           <motion.div 
             className={extrasStyles.extrasList}
@@ -197,8 +198,8 @@ export function PricingSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 2.2 }}
             >
-              <span className={extrasStyles.extrasService}>Website showcase</span>
-              <span className={extrasStyles.extrasPrice}>€400–800 (one-time)</span>
+              <span className={extrasStyles.extrasService}>POS AI Insight</span>
+              <span className={extrasStyles.extrasPrice}>€39/mese</span>
             </motion.div>
             <motion.div 
               className={extrasStyles.extrasItem}
@@ -207,8 +208,8 @@ export function PricingSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 2.3 }}
             >
-              <span className={extrasStyles.extrasService}>Nutritionist consultation</span>
-              <span className={extrasStyles.extrasPrice}>€50</span>
+              <span className={extrasStyles.extrasService}>Showcase del sito web</span>
+              <span className={extrasStyles.extrasPrice}>€400–800 (una volta sola)</span>
             </motion.div>
             <motion.div 
               className={extrasStyles.extrasItem}
@@ -217,8 +218,18 @@ export function PricingSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 2.4 }}
             >
-              <span className={extrasStyles.extrasService}>Full healthy menu design</span>
-              <span className={extrasStyles.extrasPrice}>€100–150</span>
+              <span className={extrasStyles.extrasService}>Servizi nutrizionista</span>
+              <span className={extrasStyles.extrasPrice}>€50–150 (una volta sola)</span>
+            </motion.div>
+            <motion.div 
+              className={extrasStyles.extrasItem}
+              initial={{ x: -20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 2.5 }}
+            >
+              <span className={extrasStyles.extrasService}>Assistenza inserimento dati</span>
+              <span className={extrasStyles.extrasPrice}>€50–200 (una volta sola)</span>
             </motion.div>
           </motion.div>
         </motion.div>
@@ -231,8 +242,8 @@ export function PricingSection() {
           transition={{ duration: 0.6, delay: 2.6 }}
         >
           <p className={styles.footerText}>
-            All plans include our core AI features. Need something custom?{" "}
-            <a href="#contact" className={styles.footerLink}>Contact our sales team</a>
+            Tutti i piani includono le nostre funzionalità principali. Hai bisogno di qualcosa di personalizzato?{" "}
+            <a href="#contact" className={styles.footerLink}>Contattaci il nostro team di vendite</a>
           </p>
         </motion.div>
       </div>

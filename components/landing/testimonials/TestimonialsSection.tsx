@@ -8,31 +8,31 @@ const testimonials = [
 		name: "Ristorante Da Carlo",
 		role: "Genova",
 		avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-		text: "With Smart Shifts we reduced weekly planning time from 3 hours to just 20 minutes. The staff feels more organized and happier.",
+		text: "Con Smart Shifts abbiamo ridotto il tempo dedicato alla pianificazione da 3 ore alla settimana a 20 minuti. I costi del personale sono diminuiti del 18% nel primo mese.",
 	},
 	{
 		name: "Trattoria La Rustica",
 		role: "Bologna",
 		avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
-		text: "FoodBrain helped us discover which dishes were killing our margins. After two months we improved profitability by 14%.",
+		text: "FoodBrain ci ha mostrato i piatti a basso margine. Dopo 2 mesi, il margine è migliorato del 14%.",
 	},
 	{
 		name: "Pizzeria Vesuvio",
 		role: "Napoli",
 		avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-		text: "Thanks to the punch clock and Staff Pro+, we finally track hours correctly and manage maintenance tickets without paper notes.",
+		text: "Staff Pro+ ci ha finalmente permesso di monitorare correttamente le ore e i ticket. Abbiamo ridotto del 25% gli errori operativi.",
 	},
 	{
 		name: "Osteria del Ponte",
 		role: "Firenze",
 		avatar: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=150&h=150&fit=crop&crop=face",
-		text: "Review Sense drafted answers to more than 150 reviews in our tone of voice. Our Google rating went from 4.1 to 4.6 stars.",
+		text: "Review Sense ha redatto oltre 150 risposte nel nostro tono. La valutazione su Google è passata da 4,1 a 4,6 in 6 settimane.",
 	},
 	{
 		name: "Caffè Moderno",
 		role: "Milano",
 		avatar: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=150&h=150&fit=crop&crop=face",
-		text: "Brand Pulse gave us a full content calendar in one click. We saved hours on marketing and our Instagram engagement doubled.",
+		text: "Brand Pulse ha creato un calendario di marketing completo con un solo clic. Il coinvolgimento è raddoppiato, le vendite sono aumentate del 9%.",
 	},
 ];
 
@@ -106,8 +106,8 @@ export function TestimonialsSection() {
 					viewport={{ once: true }}
 					transition={{ duration: 0.6, delay: 0.2 }}
 				>
-					<span className={styles.badge}>Testimonials</span>
-					<span className={styles.badgeSecondary}>Trustpilot</span>
+					<span className={styles.badge}>Testimonianze</span>
+					<span className={styles.badgeSecondary}>Ristowai</span>
 				</motion.div>
 				<motion.h2 
 					className={styles.title}
@@ -116,7 +116,7 @@ export function TestimonialsSection() {
 					viewport={{ once: true }}
 					transition={{ duration: 0.6, delay: 0.4 }}
 				>
-					Trusted by millions.
+					Casi di studio
 				</motion.h2>
 				<motion.div 
 					className={styles.avatarsRow}

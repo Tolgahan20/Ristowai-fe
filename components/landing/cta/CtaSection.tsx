@@ -28,7 +28,7 @@ export function CtaSection() {
           >
             <span className={styles.badgeText}>RISTOWAI</span>
             <span className={styles.badgeSeparator}>•</span>
-            <span className={styles.badgeSubtext}> OWN FOREVER.</span>
+            <span className={styles.badgeSubtext}> PROPRIETÀ PER SEMPRE.</span>
           </motion.div>
           
           <motion.h2 
@@ -38,9 +38,9 @@ export function CtaSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            Start your free 
+            Inizia la tua prova gratuita 
             <br />
-            1-month trial
+            1-mese
           </motion.h2>
           
           <motion.p 
@@ -50,9 +50,9 @@ export function CtaSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            Unlock your restaurant’s potential with AI.
+            Sblocca il potenziale del tuo ristorante con l&apos;IA.
             <br />
-            Save hours every week, reduce costs, and increase margins — all while staying in full control.
+            Risparmia ore ogni settimana, riduci i costi e aumenta i margini — tutto mentre rimani in controllo.
           </motion.p>
           
           <motion.button 
@@ -66,7 +66,7 @@ export function CtaSection() {
               transition: { duration: 0.2 }
             }}
           >
-            Start your free 1-month trial
+            Inizia la tua prova gratuita di 1 mese
             <motion.svg 
               className={styles.ctaIcon} 
               viewBox="0 0 24 24" 

@@ -5,21 +5,21 @@ import styles from "./FooterSection.module.css";
 
 const footerLinks = {
   Product: [
-    { label: "Solutions", href: "#" },
-    { label: "Extras", href: "#" },
+    { label: "Soluzioni", href: "#" },
+    { label: "Extra", href: "#" },
     { label: "Dashboard", href: "#" },
   ],
   Company: [
-    { label: "About Us", href: "#" },
-    { label: "Contact", href: "#" },
-    { label: "Beta Test Program", href: "#" },
-    { label: "Partners", href: "#" },
+    { label: "Chi Siamo", href: "#" },
+    { label: "Contattaci", href: "#" },
+    { label: "Programma Beta Test", href: "#" },
+    { label: "Partner", href: "#" },
   ],
   Legal: [
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms of Service", href: "#" },
-    { label: "Cookie Policy", href: "#" },
-    { label: "Refund Policy", href: "#" },
+    { label: "Informativa sulla privacy", href: "#" },
+    { label: "Condizioni di Servizio", href: "#" },
+    { label: "Politica sui cookie", href: "#" },
+    { label: "Politica di Rimborso", href: "#" },
     { label: "GDPR", href: "#" },
   ],
 };
@@ -31,7 +31,7 @@ export function FooterSection() {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0 }}
     >
       <div className={styles.container}>
         <motion.div 
@@ -53,7 +53,7 @@ export function FooterSection() {
                 <Image src="/full_logo_white.svg" alt="Ristowai Logo" width={220} height={40} />
             </div>
             <p className={styles.brandDescription}>
-            AI-powered restaurant management platform. Built in Italy, made for restaurants.
+            Piattaforma di gestione ristoranti basata sull&apos;intelligenza artificiale. Realizzata in Italia, pensata per i ristoranti.AI-powered restaurant management platform. Built in Italy, made for restaurants.
             </p>
             <div className={styles.socialLinks}>
               <motion.a 
@@ -113,7 +113,7 @@ export function FooterSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.8 }}
             >
-              <h3 className={styles.linkColumnTitle}>Product</h3>
+              <h3 className={styles.linkColumnTitle}>Prodotto</h3>
               <ul className={styles.linkList}>
                 {footerLinks.Product.map((link, index) => (
                   <motion.li 
@@ -137,7 +137,7 @@ export function FooterSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 1.0 }}
             >
-              <h3 className={styles.linkColumnTitle}>Company</h3>
+              <h3 className={styles.linkColumnTitle}>Azienda</h3>
               <ul className={styles.linkList}>
                 {footerLinks.Company.map((link, index) => (
                   <motion.li 
@@ -161,7 +161,7 @@ export function FooterSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 1.2 }}
             >
-              <h3 className={styles.linkColumnTitle}>Legal</h3>
+              <h3 className={styles.linkColumnTitle}>Legale</h3>
               <ul className={styles.linkList}>
                 {footerLinks.Legal.map((link, index) => (
                   <motion.li 
@@ -189,7 +189,7 @@ export function FooterSection() {
           transition={{ duration: 0.5, delay: 1.6 }}
         >
           <div className={styles.copyright}>
-            <p>&copy; 2025 Ristowai. All rights reserved.</p>
+            <p>&copy; 2025 Ristowai. Tutti i diritti riservati.</p>
           </div>
         </motion.div>
       </div>

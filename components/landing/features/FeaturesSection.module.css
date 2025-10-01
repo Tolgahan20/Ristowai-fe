@@ -14,9 +14,9 @@
 
 .featuresGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 2.2rem 2.5rem;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem 2.8rem;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 1.5rem; /* Added horizontal padding to grid */
 }
@@ -28,8 +28,8 @@
   background: #fff;
   border-radius: 1.25rem;
   box-shadow: 0 2px 16px rgba(80,0,120,0.06);
-  padding: 1.35rem 1.6rem;
-  min-height: 90px;
+  padding: 1.8rem 2rem;
+  min-height: 140px;
 }
 
 .icon {
@@ -47,17 +47,18 @@
 }
 
 .featureTitle {
-  font-size: 1.13rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: #23272f;
-  margin-bottom: 0.18rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
 }
 
 .featureDesc {
-  font-size: 0.98rem;
+  font-size: 1rem;
   color: #6b7280;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .tabsBorder {
@@ -135,8 +136,8 @@
 .tabContentRow {
   display: flex;
   gap: 2.5rem;
-  width: 900px;
-  max-width: 900px;
+  width: 1000px;
+  max-width: 1000px;
   margin: 0 auto;
   align-items: stretch;
   justify-content: center;
@@ -150,13 +151,13 @@
 }
 
 .tabCard {
-  min-width: 420px;
-  max-width: 420px;
-  min-height: 340px;
+  min-width: 450px;
+  max-width: 450px;
+  min-height: 380px;
   background: #fff;
   border-radius: 1.3rem;
   box-shadow: 0 2px 16px rgba(160,132,238,0.06);
-  padding: 2.2rem 2.2rem 2.2rem 2rem;
+  padding: 2.5rem 2.5rem 2.5rem 2.2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -191,16 +192,16 @@
 }
 
 .tabDesc {
-  font-size: 1.13rem;
+  font-size: 1.15rem;
   color: #6b7280;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .tabImageCard {
-  flex: 1 1 420px;
-  min-width: 420px;
-  max-width: 420px;
+  flex: 1 1 450px;
+  min-width: 450px;
+  max-width: 450px;
   background: #f6edff;
   border-radius: 1.3rem;
   box-shadow: 0 2px 16px rgba(160,132,238,0.06);
@@ -208,17 +209,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  padding: 2.5rem 2rem 2rem 2rem;
   position: relative;
   box-sizing: border-box;
 }
 
 .tabImage {
   width: 100%;
-  max-width: 340px;
+  max-width: 380px;
+  height: auto;
   border-radius: 1.1rem;
   box-shadow: 0 2px 16px rgba(160,132,238,0.06);
   margin-bottom: 1.2rem;
+  object-fit: cover;
 }
 
 .tabImageCaption {
@@ -227,6 +230,194 @@
   color: #23272f;
   font-weight: 600;
   margin-top: 0.2rem;
+}
+
+/* Metrics Section Styles */
+.metricsSection {
+  margin: 3rem auto 0 auto;
+  max-width: 1200px;
+  padding: 0 1.5rem;
+}
+
+.metricsContent {
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 3rem 2.5rem;
+  border: 1px solid #f1f5f9;
+}
+
+.metricsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+.metricsTitleSection {
+  flex: 1;
+}
+
+.metricsTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #23272f;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.metricsSubtitle {
+  font-size: 1.1rem;
+  color: #6b7280;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.metricsActions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.metricsButton {
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.8rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.metricsButtonSecondary {
+  background: #f8f9fa;
+  color: #6b7280;
+  border: 1px solid #e9ecef;
+}
+
+.metricsButtonPrimary {
+  background: #7c3aed;
+  color: #fff;
+}
+
+.metricsButtonSecondary:hover {
+  background: #e9ecef;
+}
+
+.metricsButtonPrimary:hover {
+  background: #6d28d9;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1000px;
+}
+
+.metricItem {
+  text-align: left;
+}
+
+.metricValue {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #23272f;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.metricTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #23272f;
+  margin-bottom: 0.8rem;
+}
+
+.metricDescription {
+  font-size: 0.95rem;
+  color: #6b7280;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Responsive styles for metrics section */
+@media (max-width: 768px) {
+  .metricsSection {
+    padding: 0 1rem;
+    margin: 2.5rem auto 0 auto;
+  }
+  
+  .metricsContent {
+    padding: 2rem 1.5rem;
+    border-radius: 1.5rem;
+  }
+  
+  .metricsTitle {
+    font-size: 2.2rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .metricsSubtitle {
+    font-size: 1rem;
+  }
+  
+  .metricsHeader {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .metricsTitle {
+    font-size: 2rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .metricsSubtitle {
+    font-size: 1rem;
+  }
+  
+  .metricsActions {
+    align-self: stretch;
+    justify-content: center;
+  }
+  
+  .metricsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .metricValue {
+    font-size: 2.5rem;
+  }
+  
+  .metricTitle {
+    font-size: 1.1rem;
+  }
+  
+  .metricDescription {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .metricsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  
+  .metricValue {
+    font-size: 2.2rem;
+  }
+  
+  .metricsTitle {
+    font-size: 1.8rem;
+  }
+  
+  .metricsButton {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
 }
 
 /* New grid for banners/cards */
@@ -320,7 +511,8 @@
   
   .featuresGrid {
     padding: 0 1rem; /* Reduced grid padding on mobile */
-    gap: 1.5rem 1.5rem; /* Reduced gap on mobile */
+    gap: 1.8rem 1.5rem; /* Reduced gap on mobile */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
   
   .tabsRow {
@@ -366,10 +558,25 @@
   .tabLabel {
     font-size: 1rem;
   }
+  
+  .feature {
+    padding: 1.5rem 1.5rem;
+    min-height: 120px;
+  }
+  
+  .featureTitle {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .featureDesc {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
 }
 
 /* Responsive */
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .tabsBorder {
     max-width: 100%;
     padding: 2rem 1rem 2rem 1rem; /* Add horizontal padding */
@@ -378,7 +585,7 @@
     max-width: 100%;
     width: 100%;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1.5rem;
   }
   .tabCard, .tabImageCard {
     max-width: 100%;
@@ -393,8 +600,8 @@
   }
   
   .tabCard {
-    padding: 1.5rem 1.5rem 1.5rem 1.2rem; /* Reduced padding */
-    min-height: 280px; /* Reduced height */
+    padding: 1.8rem 1.5rem 1.8rem 1.5rem; /* Reduced padding */
+    min-height: 320px; /* Increased height for Italian text */
   }
   
   .tabTitle {
@@ -402,7 +609,8 @@
   }
   
   .tabDesc {
-    font-size: 1rem; /* Smaller description on mobile */
+    font-size: 1.05rem; /* Slightly smaller description on mobile */
+    line-height: 1.5;
   }
   
   .tabImageCard {
@@ -410,6 +618,6 @@
   }
   
   .tabImage {
-    max-width: 280px; /* Smaller image on mobile */
+    max-width: 320px; /* Larger image on mobile for better fit */
   }
 }

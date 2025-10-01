@@ -6,24 +6,24 @@ import styles from "./HowItWorksSection.module.css";
 const steps = [
 	{
 		title: "1",
-		stepTitle: "Create Your Account",
-		desc: "Register in seconds and access your personalized dashboard. No payment required to get started.",
+		stepTitle: "Crea il tuo account",
+		desc: "Registrati in pochi secondi e accedi alla tua dashboard personalizzata. Non è richiesto alcun pagamento per iniziare.",
 	},
 	{
 		title: "2",
-		stepTitle: "Onboard Your Restaurant (or let us do it for you)",
+		stepTitle: "A bordo del tuo ristorante (o lascia che lo facciamo noi per te)",
 		desc: (
 			<>
-				Add your venue, opening hours, staff roles, and contracts with our guided onboarding.
+				Aggiungi la tua sede, gli orari di apertura, i ruoli del personale e i contratti con la nostra procedura guidata di registrazione.
 			</>
 		),
 	},
 	{
 		title: "3",
-		stepTitle: "Unlock AI Solutions",
+		stepTitle: "Sblocca le soluzioni AI",
 		desc: (
 			<>
-				From day one, harness the full power of AI to to run your restaurant.
+				Fin dal primo giorno, sfrutta tutta la potenza dell&apos;intelligenza artificiale per gestire il tuo ristorante.
 			</>
 		),
 	},
@@ -47,9 +47,9 @@ export function HowItWorksSection() {
 					viewport={{ once: true }}
 					transition={{ duration: 0.6, delay: 0.2 }}
 				>
-					So, how does
+					Allora, come
 					<br />
-					it work?
+					funziona?
 				</motion.h2>
 				<motion.div 
 					className={styles.stepsRow}
@@ -113,7 +113,7 @@ export function HowItWorksSection() {
 							transition: { duration: 0.2 }
 						}}
 					>
-						Start your free 1-month trial
+						Inizia la tua prova gratuita di 1 mese
 					</motion.a>
 				</motion.div>
 			</div>

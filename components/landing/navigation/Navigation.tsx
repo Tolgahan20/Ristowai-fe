@@ -19,11 +19,10 @@ interface NavLink {
 }
 
 const navLinks: NavLink[] = [
-  { label: 'Features', href: '#features' },
-  { label: 'Models', href: '#models' },
-  { label: 'How it Works', href: '#how-it-works' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Vantaggi', href: '#benefits' },
+  { label: 'Come Funziona', href: '#how-it-works' },
+  { label: 'Prezzi', href: '#pricing' },
+  { label: 'Domande Frequenti', href: '#faq' },
 ];
 
 export const Navigation: React.FC<NavigationProps> = ({ 

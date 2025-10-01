@@ -10,7 +10,7 @@ export function PlayButton() {
           <polygon points="10,8 16,12 10,16" fill="currentColor" />
         </svg>
       </button>
-      <span className={styles.playText}>See how it works</span>
+      <span className={styles.playText}>Scopri come funziona</span>
     </div>
   );
 }
