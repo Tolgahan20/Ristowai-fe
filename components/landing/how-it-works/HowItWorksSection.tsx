@@ -22,7 +22,7 @@ const steps = [
 				<br />
 				Oppure lascia fare a noi:{" "}
 				<LinkButton 
-					href="mailto:beta@ristowai.com?subject=Richiesta%20Onboarding%20Locale&body=Ciao%2C%20sono%20%5BNome%20Locale%5D%20e%20mi%20servirebbe%20onboarding%20locale.%20Grazie."
+					href="mailto:info@ristowai.com?subject=Richiesta%20Onboarding%20Locale&body=Ciao%2C%20sono%20%5BNome%20Locale%5D%20e%20mi%20servirebbe%20onboarding%20locale.%20Grazie."
 					variant="ghost"
 					size="sm"
 					className={styles.onboardingButton}

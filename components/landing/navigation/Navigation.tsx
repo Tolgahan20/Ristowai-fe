@@ -168,8 +168,16 @@ export const Navigation: React.FC<NavigationProps> = ({
               Accedi
             </LinkButton>
             <LinkButton 
-              href="/auth/register" 
+              href="/beta-signup" 
               variant="primary"
+              size="sm"
+              className={styles.betaButton}
+            >
+              Beta Test
+            </LinkButton>
+            <LinkButton 
+              href="/auth/register" 
+              variant="outline"
               size="sm"
               className={styles.signUpButton}
             >
@@ -259,8 +267,23 @@ export const Navigation: React.FC<NavigationProps> = ({
                 transition={{ delay: 0.15, duration: 0.2 }}
               >
                 <LinkButton 
-                  href="/auth/register" 
+                  href="/beta-signup" 
                   variant="primary"
+                  size="md"
+                  className={styles.mobileBetaButton}
+                  onClick={closeMobileMenu}
+                >
+                  Beta Test
+                </LinkButton>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.2 }}
+              >
+                <LinkButton 
+                  href="/auth/register" 
+                  variant="outline"
                   size="md"
                   className={styles.mobileSignUpButton}
                   onClick={closeMobileMenu}
