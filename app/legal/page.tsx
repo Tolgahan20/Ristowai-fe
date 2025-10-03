@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Menu, X, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
@@ -280,9 +280,32 @@ export default function LegalPage() {
   const [activeSection, setActiveSection] = useState('privacy-policy');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
+  // Handle URL hash routing
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.substring(1); // Remove the #
+      if (hash && legalSections.some(section => section.id === hash)) {
+        setActiveSection(hash);
+      }
+    };
+
+    // Check initial hash on mount
+    handleHashChange();
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+    
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
+
   const handleSectionClick = (sectionId: string) => {
     setActiveSection(sectionId);
     setIsSidebarOpen(false); // Close sidebar on mobile after selection
+    
+    // Update URL hash
+    window.history.pushState(null, '', `#${sectionId}`);
   };
 
   const handleBackClick = () => {
