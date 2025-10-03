@@ -1,7 +1,9 @@
+@import '../landing-globals.css';
+
 .section {
   width: 100%;
-  background: #fafbfc;
-  padding: 6rem 0 5rem 0;
+  background: var(--color-bg-dark);
+  padding: var(--space-16) 0 var(--space-12) 0;
   display: flex;
   justify-content: center;
 }
@@ -10,59 +12,61 @@
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 var(--space-8);
 }
 
 .header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: var(--space-16);
 }
 
 .title {
-  font-size: 2.8rem;
-  font-weight: 800;
-  color: #23272f;
-  margin-bottom: 1.2rem;
-  letter-spacing: -0.01em;
+  font-size: var(--text-5xl);
+  font-weight: var(--font-extrabold);
+  color: var(--color-text-white);
+  margin-bottom: var(--space-4);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
 }
 
 .subtitle {
-  font-size: 1.25rem;
-  color: #6b7280;
-  margin-bottom: 2.5rem;
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--space-8);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  line-height: var(--leading-relaxed);
 }
 
 .plansGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: var(--space-8);
+  margin-bottom: var(--space-12);
 }
 
 .planCard {
-  background: #fff;
-  border: 2px solid #e5e7eb;
-  border-radius: 1.5rem;
-  padding: 2rem 1.5rem; /* Reduced padding */
+  background: rgba(255, 255, 255, 0.05);
+  border: var(--border-2) solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8) var(--space-6);
   position: relative;
-  transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
-  min-height: 420px; /* Reduced from auto to fixed shorter height */
+  transition: all var(--transition-normal);
+  min-height: 420px;
   display: flex;
   flex-direction: column;
 }
 
 .planCard:hover {
-  border-color: #7c3aed;
-  box-shadow: 0 8px 32px rgba(124,58,237,0.12);
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 32px rgba(6, 95, 70, 0.12);
   transform: translateY(-4px);
 }
 
 .planCardPopular {
-  border-color: #7c3aed;
-  box-shadow: 0 8px 32px rgba(124,58,237,0.12);
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 32px rgba(6, 95, 70, 0.12);
   transform: scale(1.02);
 }
 
@@ -72,110 +76,112 @@
 
 .popularBadge {
   position: absolute;
-  top: -12px;
+  top: calc(-1 * var(--space-3));
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
-  color: #fff;
-  font-size: 0.875rem;
-  font-weight: 700;
-  padding: 0.5rem 1.5rem;
-  border-radius: 1rem;
-  letter-spacing: 0.025em;
+  background: var(--color-primary);
+  color: var(--color-text-white);
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  padding: var(--space-2) var(--space-6);
+  border-radius: var(--radius-full);
+  letter-spacing: var(--tracking-wide);
 }
 
 .planHeader {
   text-align: center;
-  margin-bottom: 1.5rem; /* Reduced margin */
+  margin-bottom: var(--space-6);
 }
 
 .planName {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #23272f;
-  margin-bottom: 0.8rem; /* Reduced margin */
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-white);
+  margin-bottom: var(--space-3);
 }
 
 .planPrice {
-  margin-bottom: 0.8rem; /* Reduced margin */
+  margin-bottom: var(--space-3);
 }
 
 .price {
-  font-size: 2.5rem; /* Reduced from 3rem */
-  font-weight: 800;
-  color: #23272f;
-  line-height: 1;
+  font-size: var(--text-4xl);
+  font-weight: var(--font-black);
+  color: var(--color-primary);
+  line-height: var(--leading-none);
 }
 
 .period {
   display: block;
-  font-size: 1rem;
-  color: #6b7280;
-  margin-top: 0.25rem;
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: var(--space-1);
 }
 
 .planDescription {
-  font-size: 1rem;
-  color: #6b7280;
-  line-height: 1.5;
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.8);
+  line-height: var(--leading-relaxed);
 }
 
 .planFeatures {
-  margin-bottom: 1.5rem; /* Reduced margin */
-  flex: 1; /* Take remaining space */
+  margin-bottom: var(--space-6);
+  flex: 1;
 }
 
 .feature {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.375rem 0; /* Reduced padding */
-  font-size: 0.95rem; /* Slightly smaller font */
-  color: #374151;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .checkIcon {
-  width: 1.125rem; /* Slightly smaller */
-  height: 1.125rem;
-  color: #10b981;
+  width: var(--space-5);
+  height: var(--space-5);
+  color: var(--color-primary);
   flex-shrink: 0;
 }
 
 .planButton {
   width: 100%;
-  padding: 0.75rem 1.5rem; /* Reduced padding */
-  border-radius: 0.75rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border: 2px solid transparent;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  border: var(--border-2) solid transparent;
   cursor: pointer;
-  transition: all 0.18s;
+  transition: all var(--transition-normal);
   text-decoration: none;
   display: inline-block;
   text-align: center;
-  margin-top: auto; /* Push to bottom */
+  margin-top: auto;
 }
 
 .primary {
-  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
-  color: #fff;
+  background: var(--color-primary);
+  color: var(--color-text-white);
 }
 
 .primary:hover {
-  background: linear-gradient(135deg, #6d28d9 0%, #9333ea 100%);
-  box-shadow: 0 4px 16px rgba(124,58,237,0.25);
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 16px rgba(6, 95, 70, 0.25);
 }
 
 .secondary {
-  background: #fff;
-  color: #7c3aed;
-  border-color: #7c3aed;
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .secondary:hover {
-  background: #7c3aed;
-  color: #fff;
-  box-shadow: 0 4px 16px rgba(124,58,237,0.25);
+  background: var(--color-primary);
+  color: var(--color-text-white);
+  box-shadow: 0 4px 16px rgba(6, 95, 70, 0.25);
 }
 
 .footer {
@@ -183,38 +189,39 @@
 }
 
 .footerText {
-  font-size: 1rem;
-  color: #6b7280;
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.7);
+  line-height: var(--leading-relaxed);
 }
 
 .footerLink {
-  color: #7c3aed;
+  color: var(--color-primary);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: var(--font-semibold);
 }
 
 .footerLink:hover {
   text-decoration: underline;
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
   .container {
-    padding: 0 1rem;
+    padding: 0 var(--space-4);
   }
   
   .title {
-    font-size: 2.2rem;
+    font-size: var(--text-4xl);
   }
   
   .plansGrid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: var(--space-6);
   }
   
   .planCard {
-    padding: 1.5rem 1.25rem; /* Further reduced for mobile */
-    min-height: 380px; /* Shorter on mobile */
+    padding: var(--space-6) var(--space-5);
+    min-height: 380px;
   }
   
   .planCardPopular {
@@ -226,66 +233,3 @@
   }
 }
 
-.primary:hover {
-  background: linear-gradient(135deg, #6d28d9 0%, #9333ea 100%);
-  box-shadow: 0 4px 16px rgba(124,58,237,0.25);
-}
-
-.secondary {
-  background: #fff;
-  color: #7c3aed;
-  border-color: #7c3aed;
-}
-
-.secondary:hover {
-  background: #7c3aed;
-  color: #fff;
-  box-shadow: 0 4px 16px rgba(124,58,237,0.25);
-}
-
-.footer {
-  text-align: center;
-}
-
-.footerText {
-  font-size: 1rem;
-  color: #6b7280;
-}
-
-.footerLink {
-  color: #7c3aed;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.footerLink:hover {
-  text-decoration: underline;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 1rem;
-  }
-  
-  .title {
-    font-size: 2.2rem;
-  }
-  
-  .plansGrid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .planCard {
-    padding: 2rem 1.5rem;
-  }
-  
-  .planCardPopular {
-    transform: none;
-  }
-  
-  .planCardPopular:hover {
-    transform: translateY(-4px);
-  }
-}

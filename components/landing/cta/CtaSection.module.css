@@ -1,6 +1,9 @@
+@import '../landing-globals.css';
+
 .section {
   width: 100%;
-  padding: 6rem 0 0 0;
+  background: var(--color-bg-dark) !important;
+  padding: var(--space-16) 0 0 0;
   display: flex;
   justify-content: center;
   position: relative;
@@ -8,28 +11,12 @@
   margin-top: 0;
 }
 
-.section::before {
-  content: '';
-  position: absolute;
-  top: -260px; /* Move curve higher for more dramatic effect */
-  left: 50%;
-  width: 220vw; /* Make curve much wider than viewport */
-  height: 520px; /* Increase height for a deeper curve */
-  z-index: 2;
-  pointer-events: none;
-  background: transparent;
-  /* Elliptical SVG curve for top edge */
-  background-image: url("data:image/svg+xml,%3Csvg width='3160' height='520' viewBox='0 0 3160 520' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,520 Q1580,60 3160,520 L3160,0 L0,0 Z' fill='white'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  transform: translateX(-50%);
-}
 
 .container {
-  max-width: 1200px;
+  max-width: var(--container-xl);
   width: 100%;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 var(--space-8);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,105 +26,100 @@
 
 .content {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-4);
 }
 
 .badge {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 2.5rem;
+  gap: var(--space-2);
+  margin-bottom: var(--space-10);
 }
 
 .badgeText {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  font-size: 0.875rem;
-  font-weight: 700;
-  border-radius: 0.75rem;
-  padding: 0.25rem 0.875rem;
-  letter-spacing: 0.025em;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(6, 95, 70, 0.15);
+  color: var(--color-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  border-radius: var(--radius-lg);
+  padding: var(--space-1) var(--space-4);
+  letter-spacing: var(--tracking-wide);
+  border: var(--border-1) solid rgba(6, 95, 70, 0.2);
 }
 
 .badgeSeparator {
-  color: rgba(255, 255, 255, 0.5);
-  font-weight: 700;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: var(--font-bold);
 }
 
 .badgeSubtext {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.025em;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-wide);
 }
 
 .title {
-  font-size: 4.5rem;
-  font-weight: 800;
-  color: #fff;
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+  font-size: var(--text-6xl);
+  font-weight: var(--font-extrabold);
+  color: var(--color-text-white);
+  margin-bottom: var(--space-6);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
 }
 
 .subtitle {
-  font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.6;
-  margin-bottom: 3rem;
+  font-size: var(--text-xl);
+  color: rgba(255, 255, 255, 0.7);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-12);
 }
 
 .ctaButton {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 2rem;
-  padding: 1.2rem 2.5rem;
-  font-size: 1.125rem;
-  font-weight: 600;
+  gap: var(--space-3);
+  background: var(--color-primary);
+  color: var(--color-text-white);
+  border: var(--border-2) solid var(--color-primary);
+  border-radius: var(--radius-3xl);
+  padding: var(--space-5) var(--space-10);
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
   cursor: pointer;
-  transition: all 0.18s;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
 .ctaButton:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(6, 95, 70, 0.25);
 }
 
 .ctaIcon {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: var(--space-5);
+  height: var(--space-5);
   stroke-width: 2;
 }
 
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
   .container {
-    padding: 0 1rem;
+    padding: 0 var(--space-4);
   }
   
   .title {
-    font-size: 2.8rem;
+    font-size: var(--text-4xl);
   }
   
   .subtitle {
-    font-size: 1.125rem;
+    font-size: var(--text-lg);
   }
-  
-  
-  .socialIcons {
-    gap: 0.75rem;
-  }
-  
 }
 

@@ -1,23 +1,25 @@
+@import '../landing-globals.css';
+
 /* Typography Styles for Landing Page */
 
 /* Hero Headings */
 .heroTitle {
-  font-size: 3.5rem;
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: white;
+  font-size: var(--text-5xl);
+  font-weight: var(--font-extrabold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-white);
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-6);
 }
 
 .heroSubtitle {
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.5;
+  font-size: var(--text-xl);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-normal);
   color: rgba(255, 255, 255, 0.9);
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-8);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -25,22 +27,22 @@
 
 /* Section Headings */
 .sectionTitle {
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  color: #1a1a1a;
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-primary);
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: var(--space-12);
 }
 
 .sectionSubtitle {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.6;
-  color: #666666;
+  font-size: var(--text-lg);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-8);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;

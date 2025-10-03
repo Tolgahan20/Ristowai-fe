@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import { LinkButton } from '../ui';
 import styles from './Navigation.module.css';
 
 interface NavigationProps {
@@ -19,9 +20,11 @@ interface NavLink {
 }
 
 const navLinks: NavLink[] = [
-  { label: 'Vantaggi', href: '#benefits' },
-  { label: 'Come Funziona', href: '#how-it-works' },
-  { label: 'Prezzi', href: '#pricing' },
+  { label: 'Soluzioni', href: '#soluzioni' },
+  { label: 'Mercato Attuale', href: '#mercato-attuale' },
+  { label: 'Come funziona', href: '#come-funziona' },
+  { label: 'Prezzi', href: '#prezzi' },
+  { label: ' Lista d\'attesa', href: '#lista-dattesa' },
   { label: 'Domande Frequenti', href: '#faq' },
 ];
 
@@ -156,12 +159,22 @@ export const Navigation: React.FC<NavigationProps> = ({
               aria-label="Language selection"
             >
             </motion.button>
-            <a href="/auth/login" className={styles.loginButton}>
-            Accedi
-            </a>
-            <a href="/auth/register" className={styles.signUpButton}>
-            Registrati
-            </a>
+            <LinkButton 
+              href="/auth/login" 
+              variant="outline"
+              size="sm"
+              className={styles.loginButton}
+            >
+              Accedi
+            </LinkButton>
+            <LinkButton 
+              href="/auth/register" 
+              variant="primary"
+              size="sm"
+              className={styles.signUpButton}
+            >
+              Registrati
+            </LinkButton>
           </motion.div>
 
           {/* Mobile Menu Button */}
@@ -225,26 +238,36 @@ export const Navigation: React.FC<NavigationProps> = ({
             </div>
             
             <div className={styles.mobileMenuActions}>
-              <motion.a
-                href="/auth/login"
-                className={styles.mobileLoginButton}
-                onClick={closeMobileMenu}
+              <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1, duration: 0.2 }}
               >
-                Login
-              </motion.a>
-              <motion.a
-                href="/auth/register"
-                className={styles.mobileSignUpButton}
-                onClick={closeMobileMenu}
+                <LinkButton 
+                  href="/auth/login" 
+                  variant="outline"
+                  size="md"
+                  className={styles.mobileLoginButton}
+                  onClick={closeMobileMenu}
+                >
+                  Accedi
+                </LinkButton>
+              </motion.div>
+              <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.15, duration: 0.2 }}
               >
-                Sign Up
-              </motion.a>
+                <LinkButton 
+                  href="/auth/register" 
+                  variant="primary"
+                  size="md"
+                  className={styles.mobileSignUpButton}
+                  onClick={closeMobileMenu}
+                >
+                  Registrati
+                </LinkButton>
+              </motion.div>
             </div>
           </motion.div>
         )}

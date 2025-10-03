@@ -6,21 +6,20 @@ import styles from "./FooterSection.module.css";
 const footerLinks = {
   Product: [
     { label: "Soluzioni", href: "#" },
-    { label: "Extra", href: "#" },
-    { label: "Dashboard", href: "#" },
+    { label: "Prezzi", href: "#" },
+    { label: "Lista d'attesa", href: "#" },
+    { label: "FAQ", href: "#" },
   ],
   Company: [
     { label: "Chi Siamo", href: "#" },
-    { label: "Contattaci", href: "#" },
+    { label: "Contatti", href: "#" },
     { label: "Programma Beta Test", href: "#" },
-    { label: "Partner", href: "#" },
   ],
   Legal: [
-    { label: "Informativa sulla privacy", href: "#" },
-    { label: "Condizioni di Servizio", href: "#" },
-    { label: "Politica sui cookie", href: "#" },
-    { label: "Politica di Rimborso", href: "#" },
-    { label: "GDPR", href: "#" },
+    { label: "Privacy Policy", href: "#" },
+    { label: "Terms of Service", href: "#" },
+    { label: "Cookie Policy", href: "#" },
+
   ],
 };
 
@@ -28,32 +27,32 @@ export function FooterSection() {
   return (
     <motion.footer 
       className={styles.footer}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
+      initial={{ opacity: 0, backgroundColor: "#000000" }}
+      whileInView={{ opacity: 1, backgroundColor: "#000000" }}
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0 }}
+      transition={{ duration: 0.3 }}
     >
       <div className={styles.container}>
         <motion.div 
           className={styles.topSection}
-          initial={{ y: 30, opacity: 0 }}
+          initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
         >
           {/* Column 1: Brand */}
           <motion.div 
             className={styles.brandSection}
-            initial={{ y: 20, opacity: 0 }}
+            initial={{ y: 15, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
           >
             <div className={styles.logo}>
                 <Image src="/full_logo_white.svg" alt="Ristowai Logo" width={220} height={40} />
             </div>
             <p className={styles.brandDescription}>
-            Piattaforma di gestione ristoranti basata sull&apos;intelligenza artificiale. Realizzata in Italia, pensata per i ristoranti.AI-powered restaurant management platform. Built in Italy, made for restaurants.
+            Copilota AI per ristoranti. Realizzato in Italia
             </p>
             <div className={styles.socialLinks}>
               <motion.a 
@@ -101,19 +100,19 @@ export function FooterSection() {
           {/* Column 2, 3, 4: Product, Company, Legal */}
           <motion.div 
             className={styles.linksSection}
-            initial={{ y: 20, opacity: 0 }}
+            initial={{ y: 15, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.6 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
           >
             <motion.div 
               className={styles.linkColumn}
-              initial={{ y: 20, opacity: 0 }}
+              initial={{ y: 15, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.8 }}
+              transition={{ duration: 0.3, delay: 0.4 }}
             >
-              <h3 className={styles.linkColumnTitle}>Prodotto</h3>
+              <h3 className={styles.linkColumnTitle}>Link Rapidi</h3>
               <ul className={styles.linkList}>
                 {footerLinks.Product.map((link, index) => (
                   <motion.li 
@@ -121,7 +120,7 @@ export function FooterSection() {
                     initial={{ y: 10, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: 1.0 + (index * 0.05) }}
+                    transition={{ duration: 0.2, delay: 0.5 + (index * 0.02) }}
                   >
                     <a href={link.href} className={styles.link}>
                       {link.label}
@@ -132,10 +131,10 @@ export function FooterSection() {
             </motion.div>
             <motion.div 
               className={styles.linkColumn}
-              initial={{ y: 20, opacity: 0 }}
+              initial={{ y: 15, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 1.0 }}
+              transition={{ duration: 0.3, delay: 0.5 }}
             >
               <h3 className={styles.linkColumnTitle}>Azienda</h3>
               <ul className={styles.linkList}>
@@ -145,7 +144,7 @@ export function FooterSection() {
                     initial={{ y: 10, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: 1.2 + (index * 0.05) }}
+                    transition={{ duration: 0.2, delay: 0.6 + (index * 0.02) }}
                   >
                     <a href={link.href} className={styles.link}>
                       {link.label}
@@ -156,10 +155,10 @@ export function FooterSection() {
             </motion.div>
             <motion.div 
               className={styles.linkColumn}
-              initial={{ y: 20, opacity: 0 }}
+              initial={{ y: 15, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 1.2 }}
+              transition={{ duration: 0.3, delay: 0.6 }}
             >
               <h3 className={styles.linkColumnTitle}>Legale</h3>
               <ul className={styles.linkList}>
@@ -169,7 +168,7 @@ export function FooterSection() {
                     initial={{ y: 10, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: 1.4 + (index * 0.05) }}
+                    transition={{ duration: 0.2, delay: 0.7 + (index * 0.02) }}
                   >
                     <a href={link.href} className={styles.link}>
                       {link.label}
@@ -183,10 +182,10 @@ export function FooterSection() {
         
         <motion.div 
           className={styles.bottomSection}
-          initial={{ y: 20, opacity: 0 }}
+          initial={{ y: 15, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 1.6 }}
+          transition={{ duration: 0.3, delay: 0.8 }}
         >
           <div className={styles.copyright}>
             <p>&copy; 2025 Ristowai. Tutti i diritti riservati.</p>

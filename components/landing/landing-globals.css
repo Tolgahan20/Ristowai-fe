@@ -1,0 +1,337 @@
+/* Landing Page Design System Variables */
+
+:root {
+  /* ===== FONT FAMILIES ===== */
+  --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Courier New', monospace;
+
+  /* ===== COLORS ===== */
+  
+  /* Primary Colors - Dark Green Palette */
+  --color-primary: #065f46;        /* Dark green */
+  --color-primary-light: #10b981; /* Medium green */
+  --color-primary-dark: #047857;   /* Darker green */
+  --color-primary-50: rgba(6, 95, 70, 0.05);
+  --color-primary-100: rgba(6, 95, 70, 0.1);
+  --color-primary-200: rgba(6, 95, 70, 0.2);
+
+  /* Text Colors - Black/White Palette */
+  --color-text-primary: #000000;   /* Pure black */
+  --color-text-secondary: #374151;  /* Dark gray */
+  --color-text-tertiary: #6b7280;   /* Medium gray */
+  --color-text-white: #ffffff;      /* Pure white */
+  --color-text-muted: #9ca3af;      /* Light gray */
+
+  /* Background Colors */
+  --color-bg-primary: #ffffff;     /* Pure white */
+  --color-bg-secondary: #f9fafb;    /* Very light gray */
+  --color-bg-tertiary: #f3f4f6;     /* Light gray */
+  --color-bg-dark: #000000;         /* Pure black */
+  --color-bg-overlay: rgba(0, 0, 0, 0.8); /* Black overlay */
+
+  /* Border Colors */
+  --color-border-light: #e5e7eb;    /* Light gray border */
+  --color-border-medium: #d1d5db;   /* Medium gray border */
+  --color-border-dark: #374151;     /* Dark gray border */
+  --color-border-primary: #e5e7eb;  /* Primary border */
+
+  /* Status Colors */
+  --color-success: #10b981;         /* Green */
+  --color-info: #3b82f6;            /* Blue */
+  --color-warning: #f59e0b;          /* Orange */
+  --color-error: #ef4444;           /* Red */
+
+  /* ===== SPACING ===== */
+  
+  /* Base spacing unit (8px) */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  --space-32: 8rem;     /* 128px */
+
+  /* ===== TYPOGRAPHY ===== */
+  
+  /* Font Sizes */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: 1.875rem;   /* 30px */
+  --text-4xl: 2.25rem;    /* 36px */
+  --text-5xl: 3rem;       /* 48px */
+  --text-6xl: 3.75rem;    /* 60px */
+  --text-7xl: 4.5rem;    /* 72px */
+  --text-8xl: 6rem;    /* 96px */
+  --text-9xl: 7.5rem;    /* 120px */
+  --text-10xl: 9rem;    /* 144px */
+
+
+  /* Font Weights */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  --font-black: 900;
+
+  /* Line Heights */
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+
+  /* Letter Spacing */
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+
+  /* ===== BORDERS ===== */
+  
+  /* Border Radius */
+  --radius-sm: 0.375rem;   /* 6px */
+  --radius-md: 0.5rem;     /* 8px */
+  --radius-lg: 0.75rem;    /* 12px */
+  --radius-xl: 1rem;       /* 16px */
+  --radius-2xl: 1.25rem;   /* 20px */
+  --radius-3xl: 1.5rem;    /* 24px */
+  --radius-full: 9999px;
+
+  /* Border Widths */
+  --border-1: 1px;
+  --border-2: 2px;
+  --border-4: 4px;
+
+  /* ===== SHADOWS ===== */
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  /* Custom Green Shadows */
+  --shadow-green-sm: 0 2px 8px rgba(6, 95, 70, 0.03);
+  --shadow-green-md: 0 2px 16px rgba(6, 95, 70, 0.06);
+  --shadow-green-lg: 0 4px 24px rgba(6, 95, 70, 0.08);
+  --shadow-green-xl: 0 8px 32px rgba(6, 95, 70, 0.12);
+
+  /* ===== LAYOUT ===== */
+  
+  /* Container Widths */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1536px;
+
+  /* Z-Index Scale */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+
+  /* ===== TRANSITIONS ===== */
+  
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.2s ease;
+  --transition-slow: 0.3s ease;
+  --transition-slower: 0.5s ease;
+
+  /* ===== BREAKPOINTS ===== */
+  
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+/* ===== UTILITY CLASSES ===== */
+
+/* Common Section Styles */
+.section-base {
+  width: 100%;
+  padding: var(--space-16) var(--space-8);
+}
+
+.section-container {
+
+  margin: 0 auto;
+  padding: 0 var(--space-8);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.section-title {
+  font-size: var(--text-5xl);
+  font-weight: var(--font-extrabold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+  letter-spacing: var(--tracking-tight);
+}
+
+.section-subtitle {
+  font-size: var(--text-xl);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-normal);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Card Styles */
+.card-base {
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-green-md);
+  border: var(--border-1) solid var(--color-border-light);
+}
+
+.card-hover {
+  transition: all var(--transition-normal);
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-green-lg);
+}
+
+/* Button Styles */
+.btn-base {
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-lg);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-base);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-text-white);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-dark);
+}
+
+.btn-secondary {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-secondary);
+  border: var(--border-1) solid var(--color-border-medium);
+}
+
+.btn-secondary:hover {
+  background: var(--color-border-medium);
+}
+
+/* Icon Styles */
+.icon-base {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-100);
+  color: var(--color-primary);
+}
+
+.icon-sm {
+  width: var(--space-8);
+  height: var(--space-8);
+}
+
+.icon-md {
+  width: var(--space-10);
+  height: var(--space-10);
+}
+
+.icon-lg {
+  width: var(--space-12);
+  height: var(--space-12);
+}
+
+/* Grid Styles */
+.grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-8);
+}
+
+.grid-3-col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-12);
+}
+
+.grid-4-col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-8);
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+  .section-base {
+    padding: var(--space-12) var(--space-4);
+  }
+  
+  .section-container {
+    padding: 0 var(--space-4);
+  }
+  
+  .section-title {
+    font-size: var(--text-4xl);
+  }
+  
+  .section-subtitle {
+    font-size: var(--text-lg);
+  }
+  
+  .grid-responsive {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  
+  .grid-3-col {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+  
+  .grid-4-col {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: var(--text-3xl);
+  }
+  
+  .grid-4-col {
+    grid-template-columns: 1fr;
+  }
+}

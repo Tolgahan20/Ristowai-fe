@@ -51,7 +51,7 @@ export function FaqSection() {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.3 }}
     >
       <div className={styles.container}>
         <motion.div 
@@ -59,14 +59,14 @@ export function FaqSection() {
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
         >
           <motion.div 
             className={styles.breadcrumb}
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
           >
             <span className={styles.breadcrumbItem}>Domande frequenti</span>
             <span className={styles.breadcrumbSeparator}>•</span>
@@ -77,7 +77,7 @@ export function FaqSection() {
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
           >
             Hai una domanda?
           </motion.h2>
@@ -86,7 +86,7 @@ export function FaqSection() {
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.3, delay: 0.4 }}
           >
             Il nostro team di assistenza ti fornirà assistenza da suggerimenti AI, 
             per rispondere alle tue domande in modo più veloce che mai.
@@ -98,7 +98,7 @@ export function FaqSection() {
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 1.0 }}
+          transition={{ duration: 0.3, delay: 0.5 }}
         >
           {faqs.map((faq, index) => (
             <motion.div 
@@ -107,7 +107,7 @@ export function FaqSection() {
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 1.2 + (index * 0.1) }}
+              transition={{ duration: 0.3, delay: 0.6 + (index * 0.05) }}
               whileHover={{ 
                 y: -2,
                 transition: { duration: 0.2 }

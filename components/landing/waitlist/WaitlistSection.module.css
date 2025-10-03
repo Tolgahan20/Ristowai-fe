@@ -1,0 +1,221 @@
+@import '../landing-globals.css';
+
+.waitlistSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+.container {
+  background: var(--color-bg-dark);
+  border-radius: var(--radius-3xl);
+  margin: var(--space-16) auto 0 auto;
+  max-width: 1000px;
+  width: 95%;
+  padding: var(--space-16) var(--space-10) var(--space-12) var(--space-10);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  border: var(--border-1) solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.title {
+  font-size: var(--text-5xl);
+  font-weight: var(--font-extrabold);
+  color: var(--color-text-white);
+  margin-bottom: var(--space-4);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+}
+
+.subtitle {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-relaxed);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.counterCard {
+  background: rgba(6, 95, 70, 0.1);
+  border: var(--border-1) solid rgba(6, 95, 70, 0.2);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8) var(--space-12);
+  margin-bottom: var(--space-12);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.counterNumber {
+  font-size: var(--text-7xl);
+  font-weight: var(--font-black);
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-none);
+}
+
+.counterLabel {
+  font-size: var(--text-lg);
+  color: var(--color-text-white);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-wide);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.urgencyText {
+  margin-bottom: var(--space-8);
+}
+
+.urgencyMessage {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-relaxed);
+  padding: var(--space-4) var(--space-6);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg);
+  border: var(--border-1) solid rgba(255, 255, 255, 0.1);
+}
+
+.ctaSection {
+  margin-bottom: var(--space-8);
+}
+
+.joinButton {
+  background: var(--color-primary);
+  color: var(--color-text-white);
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  padding: var(--space-4) var(--space-12);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  border: var(--border-1) solid var(--color-primary);
+  outline: none;
+  cursor: pointer;
+  letter-spacing: var(--tracking-wide);
+}
+
+.joinButton:hover {
+  background: transparent;
+  color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+}
+
+.microcopy {
+  padding: var(--space-6) var(--space-8);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-xl);
+  border: var(--border-1) solid rgba(255, 255, 255, 0.08);
+  max-width: 500px;
+}
+
+.microcopyText {
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .container {
+    padding: var(--space-12) var(--space-6) var(--space-10) var(--space-6);
+  }
+  
+  .title {
+    font-size: var(--text-4xl);
+  }
+  
+  .subtitle {
+    font-size: var(--text-base);
+  }
+  
+  .counterCard {
+    padding: var(--space-6) var(--space-8);
+  }
+  
+  .counterNumber {
+    font-size: var(--text-6xl);
+  }
+  
+  .counterLabel {
+    font-size: var(--text-base);
+  }
+  
+  .urgencyMessage {
+    font-size: var(--text-base);
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    border-radius: var(--radius-2xl);
+    padding: var(--space-8) var(--space-4) var(--space-6) var(--space-4);
+  }
+  
+  .title {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-3);
+  }
+  
+  .subtitle {
+    font-size: var(--text-sm);
+  }
+  
+  .counterCard {
+    padding: var(--space-4) var(--space-6);
+    margin-bottom: var(--space-8);
+  }
+  
+  .counterNumber {
+    font-size: var(--text-5xl);
+  }
+  
+  .counterLabel {
+    font-size: var(--text-sm);
+  }
+  
+  .urgencyMessage {
+    font-size: var(--text-sm);
+    padding: var(--space-3) var(--space-4);
+  }
+  
+  .joinButton {
+    font-size: var(--text-lg);
+    padding: var(--space-3) var(--space-8);
+  }
+  
+  .microcopy {
+    padding: var(--space-4) var(--space-6);
+  }
+  
+  .microcopyText {
+    font-size: var(--text-sm);
+  }
+}

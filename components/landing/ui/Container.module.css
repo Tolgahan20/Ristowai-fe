@@ -1,0 +1,300 @@
+@import '../landing-globals.css';
+
+/* Container Component Styles using CSS Variables */
+
+/* Base Container */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+/* Container Sizes */
+.sm {
+  max-width: var(--container-sm);
+}
+
+.md {
+  max-width: var(--container-md);
+}
+
+.lg {
+  max-width: var(--container-lg);
+}
+
+.xl {
+  max-width: var(--container-xl);
+}
+
+.xl2 {
+  max-width: var(--container-2xl);
+}
+
+.full {
+  max-width: none;
+}
+
+/* Section Styles */
+.section {
+  width: 100%;
+}
+
+/* Section Padding */
+.paddingNone {
+  padding: 0;
+}
+
+.paddingSm {
+  padding: var(--space-8) 0;
+}
+
+.paddingMd {
+  padding: var(--space-12) 0;
+}
+
+.paddingLg {
+  padding: var(--space-16) 0;
+}
+
+.paddingXl {
+  padding: var(--space-20) 0;
+}
+
+/* Section Backgrounds */
+.bgTransparent {
+  background: transparent;
+}
+
+.bgPrimary {
+  background: var(--color-bg-primary);
+}
+
+.bgSecondary {
+  background: var(--color-bg-secondary);
+}
+
+.bgDark {
+  background: var(--color-text-primary);
+  color: var(--color-text-white);
+}
+
+/* Grid Styles */
+.grid {
+  display: grid;
+}
+
+.grid > * {
+  min-width: 0;
+}
+
+/* Grid Columns */
+.cols1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.cols2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.cols3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cols4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.cols5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.cols6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+/* Grid Gaps */
+.gapSm {
+  gap: var(--space-4);
+}
+
+.gapMd {
+  gap: var(--space-6);
+}
+
+.gapLg {
+  gap: var(--space-8);
+}
+
+.gapXl {
+  gap: var(--space-12);
+}
+
+/* Responsive Grid */
+.responsive {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Flex Styles */
+.flex {
+  display: flex;
+}
+
+/* Flex Direction */
+.directionRow {
+  flex-direction: row;
+}
+
+.directionColumn {
+  flex-direction: column;
+}
+
+.directionRowReverse {
+  flex-direction: row-reverse;
+}
+
+.directionColumnReverse {
+  flex-direction: column-reverse;
+}
+
+/* Flex Alignment */
+.alignStart {
+  align-items: flex-start;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+.alignEnd {
+  align-items: flex-end;
+}
+
+.alignStretch {
+  align-items: stretch;
+}
+
+.alignBaseline {
+  align-items: baseline;
+}
+
+/* Flex Justification */
+.justifyStart {
+  justify-content: flex-start;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.justifyEnd {
+  justify-content: flex-end;
+}
+
+.justifyBetween {
+  justify-content: space-between;
+}
+
+.justifyAround {
+  justify-content: space-around;
+}
+
+.justifyEvenly {
+  justify-content: space-evenly;
+}
+
+/* Flex Wrap */
+.wrap {
+  flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-3);
+  }
+  
+  .paddingSm {
+    padding: var(--space-6) 0;
+  }
+  
+  .paddingMd {
+    padding: var(--space-8) 0;
+  }
+  
+  .paddingLg {
+    padding: var(--space-12) 0;
+  }
+  
+  .paddingXl {
+    padding: var(--space-16) 0;
+  }
+  
+  .cols2,
+  .cols3,
+  .cols4,
+  .cols5,
+  .cols6 {
+    grid-template-columns: 1fr;
+  }
+  
+  .gapSm {
+    gap: var(--space-3);
+  }
+  
+  .gapMd {
+    gap: var(--space-4);
+  }
+  
+  .gapLg {
+    gap: var(--space-6);
+  }
+  
+  .gapXl {
+    gap: var(--space-8);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--space-2);
+  }
+  
+  .paddingSm {
+    padding: var(--space-4) 0;
+  }
+  
+  .paddingMd {
+    padding: var(--space-6) 0;
+  }
+  
+  .paddingLg {
+    padding: var(--space-8) 0;
+  }
+  
+  .paddingXl {
+    padding: var(--space-12) 0;
+  }
+  
+  .gapSm {
+    gap: var(--space-2);
+  }
+  
+  .gapMd {
+    gap: var(--space-3);
+  }
+  
+  .gapLg {
+    gap: var(--space-4);
+  }
+  
+  .gapXl {
+    gap: var(--space-6);
+  }
+}
+
+/* Large Screen Optimizations */
+@media (min-width: 1200px) {
+  .responsive {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { LinkButton } from '../ui';
 import styles from './TopBar.module.css';
 
 interface TopBarProps {
@@ -32,7 +33,16 @@ export const TopBar: React.FC<TopBarProps> = ({
         transition={{ duration: 0.3 }}
       >
         <p className={styles.topBarText}>
-         <span className={styles.topbarTitle}> LIMITED OFFER</span>  Sign up and receive 20% bonus discount on checkout.
+          <span className={styles.topbarTitle}>OFFERTA LIMITATA</span>
+          Unisciti al programma di beta testing per beneficiare dell&apos;accesso anticipato e prezzi ridotti.{' '}
+          <LinkButton 
+            href="/beta-signup" 
+            variant="ghost"
+            size="sm"
+            className={styles.betaLink}
+          >
+            Registrati ora
+          </LinkButton>
         </p>
         <button
           className={styles.closeButton}

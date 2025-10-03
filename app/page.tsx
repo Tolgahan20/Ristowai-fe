@@ -6,7 +6,7 @@ import { HeroSection } from '@/components/landing/hero/HeroSection';
 import { FeaturesSection } from '@/components/landing/features/FeaturesSection';
 import { MarketContextSection } from '@/components/landing/market-context/MarketContextSection';
 import { HowItWorksSection } from '@/components/landing/how-it-works/HowItWorksSection';
-import { TestimonialsSection } from '@/components/landing/testimonials/TestimonialsSection';
+import { WaitlistSection } from '@/components/landing/waitlist/WaitlistSection';
 import { PricingSection } from '@/components/landing/pricing/PricingSection';
 import { FaqSection } from '@/components/landing/faq/FaqSection';
 import { CtaSection } from '@/components/landing/cta/CtaSection';
@@ -16,7 +16,7 @@ export default function LandingPage() {
   const [topBarVisible, setTopBarVisible] = useState(true);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black">
       {/* Top Offer Bar */}
       <TopBar onClose={() => setTopBarVisible(false)} />
       
@@ -40,8 +40,8 @@ export default function LandingPage() {
       */}
       <HowItWorksSection />
 
-      {/* Testimonials Section */}
-      <TestimonialsSection />
+      {/* Waitlist Section */}
+      <WaitlistSection />
 
       {/* Pricing Section */}
       <PricingSection />
@@ -50,15 +50,10 @@ export default function LandingPage() {
       <FaqSection />
 
       {/* CTA Section */}
-      <div style={{
-        background: 'radial-gradient(ellipse at top left, #4c1d95 0%, #1e1b4b 50%, #000 100%)',
-      }}>
+    
         <CtaSection />
       <FooterSection />
 
       </div>
-
-      {/* Footer Section */}
-    </div>
   );
 }

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Zap, Sparkles, Rocket } from "lucide-react";
+import { ClipboardClock, UtensilsCrossed, Users, Contact, BadgeEuro, LayoutDashboard } from "lucide-react";
+import { Container, Badge, Button } from "../ui";
 import styles from "./HeroSection.module.css";
 import titleStyles from "./HeroTitle.module.css";
 import { HeroSubtitle } from "./HeroSubtitle";
-import { PlayButton } from "./PlayButton";
 
-const rotatingWords = ["Personale", "Costo", "Operazioni"];
-const rotatingIcons = [Zap, Sparkles, Rocket];
+
+const rotatingWords = ["Turni AI", "FoodBrain", "Staff Pro+", "HR Smart", "Marketing e recensioni", "Dashboard Manager"];
+const rotatingIcons = [ClipboardClock, UtensilsCrossed, Users, Contact, BadgeEuro, LayoutDashboard];
 
 export function HeroSection() {
   const [wordIndex, setWordIndex] = useState(0);
@@ -28,49 +29,48 @@ export function HeroSection() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <motion.div 
-        className={styles.heroContent}
-        initial={{ y: 30, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-      >
-        <motion.span 
+      <Container size="full" className={styles.heroContent}>
+        <Badge 
+          variant="success"
+          animate={true}
+          delay={0.4}
+          duration={0.6}
           className={styles.badge}
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
         >
           <b>RISTOWAI</b> &nbsp;·&nbsp; Scatena la potenza dell&apos;IA
-        </motion.span>
+        </Badge>
         
-        <motion.h1 
+        <motion.div 
           className={titleStyles.heroTitle}
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          AI che semplifica
-          <br />
-          <motion.span
-            className={titleStyles.rotatingWord}
-            key={wordIndex}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.6 }}
-          >
-            {rotatingWords[wordIndex]}
-          </motion.span>
-          <motion.span 
-            className={titleStyles.iconContainer}
-            key={`icon-${wordIndex}`}
-            initial={{ scale: 0, rotate: -180 }}
-            animate={{ scale: 1, rotate: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <IconComponent className={titleStyles.icon} />
-          </motion.span>
-        </motion.h1>
+          <div className={titleStyles.titleLine}>
+            AI che semplifica
+          </div>
+          <div className={titleStyles.titleLine}>
+            <motion.span
+              className={titleStyles.rotatingWord}
+              key={wordIndex}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.6 }}
+            >
+              {rotatingWords[wordIndex]}
+            </motion.span>
+            <motion.span 
+              className={titleStyles.iconContainer}
+              key={`icon-${wordIndex}`}
+              initial={{ scale: 0, rotate: -180 }}
+              animate={{ scale: 1, rotate: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <IconComponent className={titleStyles.icon} />
+            </motion.span>
+          </div>
+        </motion.div>
         
         <motion.div 
           style={{ marginBottom: "0.5rem" }}
@@ -82,40 +82,27 @@ export function HeroSection() {
         </motion.div>
         
         <motion.div
+          className={styles.heroButtons}
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.0 }}
         >
-          <PlayButton />
+          <Button 
+            variant="primary"
+            size="lg"
+            className={styles.primaryButton}
+          >
+            Inizia la prova gratuita di 1 mese
+          </Button>
+          <Button 
+            variant="outline"
+            size="lg"
+            className={styles.secondaryButton}
+          >
+            Scopri come funziona
+          </Button>
         </motion.div>
-      </motion.div>
-      
-      <svg 
-        className={styles.heroWave} 
-        viewBox="0 0 1440 110" 
-        fill="none" 
-        xmlns="http://www.w3.org/2000/svg" 
-        preserveAspectRatio="none"
-      >
-        {/* Desktop wave */}
-        <path
-          className={styles.wavePathDesktop}
-          d="M0,0 Q720,180 1440,0 L1440,110 L0,110 Z"
-          fill="#F7F8FA"
-        />
-        {/* Mobile wave - softer curve */}
-        <path
-          className={styles.wavePathMobile}
-          d="M0,0 Q720,120 1440,0 L1440,110 L0,110 Z"
-          fill="#F7F8FA"
-        />
-        {/* Small mobile wave - even softer */}
-        <path
-          className={styles.wavePathSmallMobile}
-          d="M0,0 Q720,100 1440,0 L1440,110 L0,110 Z"
-          fill="#F7F8FA"
-        />
-      </svg>
+      </Container>
     </motion.section>
   );
 }

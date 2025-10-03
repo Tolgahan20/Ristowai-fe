@@ -1,3 +1,5 @@
+@import '../landing-globals.css';
+
 /* Button Styles for Landing Page */
 
 /* Base Button Styles */
@@ -31,36 +33,36 @@
 
 /* Primary Button */
 .primary {
-  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
-  color: white;
+  background: var(--color-primary);
+  color: var(--color-text-white);
   padding: 0.75rem 1.5rem;
-  box-shadow: 0 4px 14px 0 rgba(139, 92, 246, 0.3);
+  box-shadow: var(--shadow-green-md);
 }
 
 .primary:hover:not(:disabled) {
-  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
-  box-shadow: 0 6px 20px 0 rgba(139, 92, 246, 0.4);
+  background: var(--color-primary-dark);
+  box-shadow: var(--shadow-green-lg);
   transform: translateY(-1px);
 }
 
 .primary:active {
   transform: translateY(0);
-  box-shadow: 0 2px 8px 0 rgba(139, 92, 246, 0.3);
+  box-shadow: var(--shadow-sm);
 }
 
 /* Secondary Button */
 .secondary {
-  background: white;
-  color: #8b5cf6;
-  border: 2px solid #8b5cf6;
+  background: var(--color-bg-primary);
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
   padding: 0.75rem 1.5rem;
 }
 
 .secondary:hover:not(:disabled) {
-  background: #8b5cf6;
-  color: white;
+  background: var(--color-primary);
+  color: var(--color-text-white);
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px 0 rgba(139, 92, 246, 0.2);
+  box-shadow: var(--shadow-green-sm);
 }
 
 .secondary:active {
@@ -70,15 +72,15 @@
 /* Outline Button */
 .outline {
   background: transparent;
-  color: #4a4a4a;
-  border: 2px solid #e5e7eb;
+  color: var(--color-text-primary);
+  border: 2px solid var(--color-border-medium);
   padding: 0.75rem 1.5rem;
 }
 
 .outline:hover:not(:disabled) {
-  background: #f9fafb;
-  border-color: #8b5cf6;
-  color: #8b5cf6;
+  background: var(--color-bg-secondary);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
   transform: translateY(-1px);
 }
 
@@ -89,28 +91,28 @@
 /* Ghost Button */
 .ghost {
   background: transparent;
-  color: #4a4a4a;
+  color: var(--color-text-primary);
   padding: 0.75rem 1.5rem;
 }
 
 .ghost:hover:not(:disabled) {
-  background: #f9fafb;
-  color: #8b5cf6;
+  background: var(--color-bg-secondary);
+  color: var(--color-primary);
 }
 
 /* Dark Button */
 .dark {
-  background: #1a1a1a;
-  color: white;
-  border: 2px solid #1a1a1a;
+  background: var(--color-text-primary);
+  color: var(--color-text-white);
+  border: 2px solid var(--color-text-primary);
   padding: 0.75rem 1.5rem;
 }
 
 .dark:hover:not(:disabled) {
-  background: #2a2a2a;
-  border-color: #2a2a2a;
+  background: var(--color-text-secondary);
+  border-color: var(--color-text-secondary);
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-md);
 }
 
 .dark:active {
@@ -119,17 +121,17 @@
 
 /* White Button */
 .white {
-  background: white;
-  color: #1a1a1a;
-  border: 2px solid white;
+  background: var(--color-text-white);
+  color: var(--color-text-primary);
+  border: 2px solid var(--color-text-white);
   padding: 0.75rem 1.5rem;
-  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-sm);
 }
 
 .white:hover:not(:disabled) {
-  background: #f9fafb;
+  background: var(--color-bg-secondary);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-md);
 }
 
 .white:active {

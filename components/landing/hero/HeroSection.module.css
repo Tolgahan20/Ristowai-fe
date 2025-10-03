@@ -1,27 +1,29 @@
+@import '../landing-globals.css';
+
+/* Ensure hero section spans full viewport */
 .heroSection {
-  min-height: 100vh; /* was 100vh, now smaller */
+  min-height: 100vh;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Updated gradient: vibrant magenta to blue, softer angle */
-  background: linear-gradient(115deg, #c471f5 0%, #6a7ff9 55%, #49a7f9 100%);
+  background: var(--color-bg-dark);
   position: relative;
   overflow: hidden;
-  
+  margin: 0;
+  padding: 0;
 }
 
 .heroContent {
   width: 100%;
   max-width: 700px;
-  padding: 0 1.5rem;
+  padding: var(--space-16) var(--space-6);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 1.5rem; /* was 2.5rem */
+  gap: var(--space-6);
   margin: 0 auto;
-  padding-top: 4rem; /* was 7rem */
-  padding-bottom: 4rem; /* was 7rem */
   position: relative;
   z-index: 1;
 }
@@ -52,27 +54,26 @@
 
 .badge {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.18);
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.95rem; /* was 1rem */
-  border-radius: 1.5rem;
-  padding: 0.25rem 1rem; /* was 0.35rem 1.25rem */
-  margin-bottom: 1rem; /* was 1.5rem */
-  letter-spacing: 0.01em;
+  color: var(--color-text-white);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+  border-radius: var(--radius-3xl);
+  padding: var(--space-1) var(--space-4);
+  margin-bottom: var(--space-4);
+  letter-spacing: var(--tracking-wide);
   backdrop-filter: blur(4px);
 }
 
 /* Mobile responsive styles */
 @media (max-width: 768px) {
   .heroContent {
-    padding-top: 2rem; /* Reduced from 4rem */
-    padding-bottom: 3rem; /* Reduced from 4rem */
-    gap: 1.2rem; /* Reduced gap */
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-12);
+    gap: var(--space-5);
   }
   
   .heroSection {
-    min-height: 90vh; /* Reduced height on mobile */
+    min-height: 90vh;
   }
   
   .wavePathDesktop {
@@ -90,13 +91,13 @@
 
 @media (max-width: 480px) {
   .heroContent {
-    padding-top: 1.5rem; /* Even less top spacing for small mobile */
-    padding-bottom: 2.5rem;
-    gap: 1rem; /* Smaller gap */
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-10);
+    gap: var(--space-4);
   }
   
   .heroSection {
-    min-height: 85vh; /* Further reduced height for small mobile */
+    min-height: 85vh;
   }
   
   .wavePathDesktop {
@@ -109,5 +110,82 @@
   
   .wavePathSmallMobile {
     display: block;
+  }
+}
+
+/* Hero Buttons */
+.heroButtons {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-6);
+}
+
+.primaryButton {
+  background: var(--color-primary);
+  color: var(--color-text-white);
+  border: var(--border-1) solid var(--color-primary);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-base);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-normal);
+}
+
+.primaryButton:hover {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-green-md);
+}
+
+.secondaryButton {
+  background: transparent;
+  color: var(--color-text-white);
+  border: var(--border-1) solid var(--color-text-white);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-base);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-normal);
+}
+
+.secondaryButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-white);
+  border-color: var(--color-text-white);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Responsive Hero Buttons */
+@media (max-width: 768px) {
+  .heroButtons {
+    flex-direction: column;
+    gap: var(--space-3);
+    width: 100%;
+  }
+  
+  .primaryButton,
+  .secondaryButton {
+    width: auto;
+    max-width: 300px;
+    padding: var(--space-3) var(--space-5);
+    font-size: var(--text-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .heroButtons {
+    gap: var(--space-2);
+  }
+  
+  .primaryButton,
+  .secondaryButton {
+    max-width: 280px;
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-sm);
   }
 }

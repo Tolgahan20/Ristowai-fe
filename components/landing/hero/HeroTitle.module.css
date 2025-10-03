@@ -1,13 +1,25 @@
+@import '../landing-globals.css';
+
 .heroTitle {
-  color: #fff;
-  font-size: 2.8rem; /* Increased from 2.5rem */
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  line-height: 1.08;
-  margin-bottom: 0.5rem;
-  display: block;
+  color: var(--color-text-white);
+  font-size: var(--text-6xl) !important;
+  font-weight: var(--font-black);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   text-shadow: 0 4px 32px rgba(80,0,120,0.13);
+}
+
+.titleLine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  min-height: 1.2em;
 }
 
 .heroTitleRow {
@@ -34,21 +46,21 @@
 .rotatingWord {
   display: inline-block;
   min-height: 1em;
-  margin-left: 0.2em;
-  margin-right: 0.2em;
+  margin-right: var(--space-3);
   vertical-align: middle;
+  white-space: nowrap;
 }
 
 .iconContainer {
   display: inline-block;
-  margin-left: 0.5rem;
   vertical-align: middle;
+  flex-shrink: 0;
 }
 
 .icon {
-  width: 2.5rem;
-  height: 2.5rem;
-  color: #fff;
+  width: var(--space-10);
+  height: var(--space-10);
+  color: var(--color-text-white);
   filter: drop-shadow(0 2px 8px rgba(80,0,120,0.2));
 }
 
@@ -60,28 +72,41 @@
 
 @media (min-width: 768px) {
   .heroTitle {
-    font-size: 5rem; /* was 5.5rem */
+    font-size: var(--text-7xl);
   }
   .heroTitleDynamic,
   .heroTitleDynamicActive {
-    font-size: 5.5rem;
+    font-size: var(--text-7xl);
   }
   .icon {
-    width: 3rem;
-    height: 3rem;
+    width: var(--space-12);
+    height: var(--space-12);
   }
   .emoji {
-    font-size: 3rem;
+    font-size: var(--text-3xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: var(--text-5xl);
+  }
+  .titleLine {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  .rotatingWord {
+    margin-right: 0;
   }
 }
 
 @media (max-width: 480px) {
   .heroTitle {
-    font-size: 3rem; /* Increased from 2rem */
+    font-size: var(--text-4xl);
   }
   .icon {
-    width: 2rem;
-    height: 2rem;
+    width: var(--space-8);
+    height: var(--space-8);
   }
 }
 

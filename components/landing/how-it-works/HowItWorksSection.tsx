@@ -1,31 +1,43 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ChevronRight, ChevronDown } from "lucide-react";
+import { Heading2, Body } from "../ui";
 import styles from "./HowItWorksSection.module.css";
 
 const steps = [
 	{
 		title: "1",
 		stepTitle: "Crea il tuo account",
-		desc: "Registrati in pochi secondi e accedi alla tua dashboard personalizzata. Non è richiesto alcun pagamento per iniziare.",
+		desc: "Registrati in meno di 1 minuto, senza carta di credito.",
 	},
 	{
 		title: "2",
-		stepTitle: "A bordo del tuo ristorante (o lascia che lo facciamo noi per te)",
+		stepTitle: "Inserisci i dati del locale",
 		desc: (
 			<>
-				Aggiungi la tua sede, gli orari di apertura, i ruoli del personale e i contratti con la nostra procedura guidata di registrazione.
+				Compila il preform guidato
+				<br />
+				(&lt;30 min).
+				<br />
+				<br />
+				Oppure lascia fare a noi:{" "}
+				<button 
+					className={styles.onboardingButton}
+					onClick={() => {
+						const subject = encodeURIComponent("Richiesta Onboarding Locale");
+						const body = encodeURIComponent("Ciao, sono [Nome Locale] e mi servirebbe onboarding locale. Grazie.");
+						window.open(`mailto:beta@ristowai.com?subject=${subject}&body=${body}`);
+					}}
+				>
+					Chiedi Onboarding
+				</button>
 			</>
 		),
 	},
 	{
 		title: "3",
-		stepTitle: "Sblocca le soluzioni AI",
-		desc: (
-			<>
-				Fin dal primo giorno, sfrutta tutta la potenza dell&apos;intelligenza artificiale per gestire il tuo ristorante.
-			</>
-		),
+		stepTitle: "Attiva la soluzione AI",
+		desc: "Scegli il modulo che ti serve e inizia subito.",
 	},
 ];
 
@@ -37,26 +49,26 @@ export function HowItWorksSection() {
 			initial={{ opacity: 0 }}
 			whileInView={{ opacity: 1 }}
 			viewport={{ once: true, margin: "-100px" }}
-			transition={{ duration: 0.8 }}
+			transition={{ duration: 0.3 }}
 		>
 			<div className={styles.container}>
-				<motion.h2 
-					className={styles.title}
+				<motion.div 
+					className={styles.header}
 					initial={{ y: 30, opacity: 0 }}
 					whileInView={{ y: 0, opacity: 1 }}
 					viewport={{ once: true }}
-					transition={{ duration: 0.6, delay: 0.2 }}
+					transition={{ duration: 0.3, delay: 0.1 }}
 				>
-					Allora, come
-					<br />
-					funziona?
-				</motion.h2>
+					<Heading2 className={styles.title}>
+						Allora, come funziona?
+					</Heading2>
+				</motion.div>
 				<motion.div 
 					className={styles.stepsRow}
 					initial={{ y: 30, opacity: 0 }}
 					whileInView={{ y: 0, opacity: 1 }}
 					viewport={{ once: true }}
-					transition={{ duration: 0.6, delay: 0.4 }}
+					transition={{ duration: 0.3, delay: 0.2 }}
 				>
 					{steps.map((step, i) => (
 						<React.Fragment key={i}>
@@ -65,7 +77,7 @@ export function HowItWorksSection() {
 								initial={{ y: 30, opacity: 0 }}
 								whileInView={{ y: 0, opacity: 1 }}
 								viewport={{ once: true }}
-								transition={{ duration: 0.5, delay: 0.6 + (i * 0.1) }}
+								transition={{ duration: 0.3, delay: 0.3 + (i * 0.05) }}
 								whileHover={{ 
 									y: -5,
 									transition: { duration: 0.2 }
@@ -80,8 +92,8 @@ export function HowItWorksSection() {
 								>
 									{step.title}
 								</motion.div>
-								<div className={styles.stepTitle}>{step.stepTitle}</div>
-								<div className={styles.desc}>{step.desc}</div>
+								<h3 className={styles.stepTitle}>{step.stepTitle}</h3>
+								<Body className={styles.desc}>{step.desc}</Body>
 							</motion.div>
 							{i < steps.length - 1 && (
 								<motion.div 
@@ -89,7 +101,7 @@ export function HowItWorksSection() {
 									initial={{ scale: 0, opacity: 0 }}
 									whileInView={{ scale: 1, opacity: 1 }}
 									viewport={{ once: true }}
-									transition={{ duration: 0.4, delay: 0.8 + (i * 0.1) }}
+									transition={{ duration: 0.3, delay: 0.4 + (i * 0.05) }}
 								>
 									<ChevronRight className={styles.arrowDesktop} />
 									<ChevronDown className={styles.arrowMobile} />
@@ -97,24 +109,6 @@ export function HowItWorksSection() {
 							)}
 						</React.Fragment>
 					))}
-				</motion.div>
-				<motion.div 
-					className={styles.ctaRow}
-					initial={{ y: 20, opacity: 0 }}
-					whileInView={{ y: 0, opacity: 1 }}
-					viewport={{ once: true }}
-					transition={{ duration: 0.6, delay: 1.0 }}
-				>
-					<motion.a 
-						href="#" 
-						className={styles.ctaButton}
-						whileHover={{ 
-							y: -2,
-							transition: { duration: 0.2 }
-						}}
-					>
-						Inizia la tua prova gratuita di 1 mese
-					</motion.a>
 				</motion.div>
 			</div>
 		</motion.section>

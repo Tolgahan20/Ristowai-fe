@@ -1,24 +1,26 @@
+@import '../landing-globals.css';
+
 .heroSubtitle {
-  color: #e0e3ea; /* more muted */
-  font-size: 1.1rem; /* Increased from 1.05rem */
-  margin-bottom: 1.1rem; /* less space below */
+  color: #e0e3ea;
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-4);
   max-width: 36rem;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.4;
+  line-height: var(--leading-normal);
   text-shadow: 0 2px 8px rgba(0,0,0,0.08);
   text-align: center;
 }
 
 @media (min-width: 768px) {
   .heroSubtitle {
-    font-size: 1.25rem;
+    font-size: var(--text-xl);
   }
 }
 
 @media (max-width: 480px) {
   .heroSubtitle {
-    font-size: 1rem; /* Ensure readability on small screens */
+    font-size: var(--text-base);
   }
 }
 

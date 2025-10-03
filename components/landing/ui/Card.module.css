@@ -1,0 +1,276 @@
+@import '../landing-globals.css';
+
+/* Card Component Styles using CSS Variables */
+
+/* Base Card Styles */
+.card {
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-xl);
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Card Variants */
+.default {
+  border: var(--border-1) solid var(--color-border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.elevated {
+  border: var(--border-1) solid var(--color-border-light);
+  box-shadow: var(--shadow-green-md);
+}
+
+.outlined {
+  border: var(--border-2) solid var(--color-border-medium);
+  box-shadow: none;
+}
+
+.filled {
+  background: var(--color-bg-secondary);
+  border: var(--border-1) solid var(--color-border-light);
+  box-shadow: none;
+}
+
+.glass {
+  background: var(--color-bg-overlay);
+  backdrop-filter: blur(10px);
+  border: var(--border-1) solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Card Sizes */
+.sm {
+  padding: var(--space-4);
+}
+
+.md {
+  padding: var(--space-6);
+}
+
+.lg {
+  padding: var(--space-8);
+}
+
+/* Interactive States */
+.hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-green-lg);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-green-lg);
+}
+
+.clickable:active {
+  transform: translateY(0);
+}
+
+/* Card Structure */
+.header {
+  margin-bottom: var(--space-4);
+}
+
+.body {
+  flex: 1;
+}
+
+.footer {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: var(--border-1) solid var(--color-border-light);
+}
+
+/* Card Content */
+.title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+  line-height: var(--leading-tight);
+}
+
+.description {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+  margin: 0;
+}
+
+/* Feature Card Specific */
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-12);
+  height: var(--space-12);
+  border-radius: var(--radius-full);
+  background: var(--color-primary-100);
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+
+/* Pricing Card Specific */
+.priceContainer {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.price {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-extrabold);
+  color: var(--color-text-primary);
+  line-height: var(--leading-none);
+}
+
+.period {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-medium);
+}
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  padding: var(--space-2) 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+}
+
+.featureItem::before {
+  content: '✓';
+  color: var(--color-primary);
+  font-weight: var(--font-bold);
+  margin-right: var(--space-3);
+  font-size: var(--text-sm);
+}
+
+.highlighted {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-green-lg);
+  position: relative;
+}
+
+.highlighted::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--space-1);
+  background: var(--color-primary);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+/* Testimonial Card Specific */
+.quote {
+  font-size: var(--text-lg);
+  font-style: italic;
+  color: var(--color-text-primary);
+  line-height: var(--leading-relaxed);
+  margin: 0 0 var(--space-6) 0;
+  text-align: center;
+}
+
+.authorContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.avatar {
+  width: var(--space-10);
+  height: var(--space-10);
+  border-radius: var(--radius-full);
+  object-fit: cover;
+}
+
+.authorInfo {
+  flex: 1;
+}
+
+.authorName {
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.authorRole {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    border-radius: var(--radius-lg);
+  }
+  
+  .sm {
+    padding: var(--space-3);
+  }
+  
+  .md {
+    padding: var(--space-4);
+  }
+  
+  .lg {
+    padding: var(--space-6);
+  }
+  
+  .title {
+    font-size: var(--text-lg);
+  }
+  
+  .price {
+    font-size: var(--text-3xl);
+  }
+  
+  .quote {
+    font-size: var(--text-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .sm {
+    padding: var(--space-2);
+  }
+  
+  .md {
+    padding: var(--space-3);
+  }
+  
+  .lg {
+    padding: var(--space-4);
+  }
+  
+  .title {
+    font-size: var(--text-base);
+  }
+  
+  .price {
+    font-size: var(--text-2xl);
+  }
+  
+  .authorContainer {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-2);
+  }
+}

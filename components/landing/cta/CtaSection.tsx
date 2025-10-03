@@ -6,25 +6,25 @@ export function CtaSection() {
   return (
     <motion.section 
       className={styles.section}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
+      initial={{ opacity: 0, backgroundColor: "#000000" }}
+      whileInView={{ opacity: 1, backgroundColor: "#000000" }}
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.3 }}
     >
       <div className={styles.container}>
         <motion.div 
           className={styles.content}
-          initial={{ y: 30, opacity: 0 }}
+          initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
         >
           <motion.div 
             className={styles.badge}
-            initial={{ y: 20, opacity: 0 }}
+            initial={{ y: 15, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
           >
             <span className={styles.badgeText}>RISTOWAI</span>
             <span className={styles.badgeSeparator}>•</span>
@@ -33,40 +33,36 @@ export function CtaSection() {
           
           <motion.h2 
             className={styles.title}
-            initial={{ y: 30, opacity: 0 }}
+            initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
           >
-            Inizia la tua prova gratuita 
-            <br />
-            1-mese
+            Inizia oggi la tua prova gratuita di 1 mese
           </motion.h2>
           
           <motion.p 
             className={styles.subtitle}
-            initial={{ y: 20, opacity: 0 }}
+            initial={{ y: 15, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.3, delay: 0.4 }}
           >
-            Sblocca il potenziale del tuo ristorante con l&apos;IA.
-            <br />
-            Risparmia ore ogni settimana, riduci i costi e aumenta i margini — tutto mentre rimani in controllo.
+            Riduci i costi fino al 20%, aumenta i margini e risparmia tempo prezioso — senza cambiare i sistemi che già usi. Nessun pagamento richiesto.
           </motion.p>
           
           <motion.button 
             className={styles.ctaButton}
-            initial={{ y: 20, opacity: 0 }}
+            initial={{ y: 15, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 1.0 }}
+            transition={{ duration: 0.3, delay: 0.5 }}
             whileHover={{ 
               y: -3,
               transition: { duration: 0.2 }
             }}
           >
-            Inizia la tua prova gratuita di 1 mese
+            Inizia gratis ora
             <motion.svg 
               className={styles.ctaIcon} 
               viewBox="0 0 24 24" 
