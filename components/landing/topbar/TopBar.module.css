@@ -86,43 +86,6 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .topBar {
-    padding: var(--space-1) var(--space-10) var(--space-1) var(--space-3);
-    font-size: var(--text-xs);
-  }
-  
-  .betaLink {
-    padding: var(--space-1) var(--space-2);
-  }
-  
-  .topBarText {
-    font-size: var(--text-xs);
-    text-align: center;
-    width: 100%;
-  }
-  
-  .closeButton {
-    right: var(--space-3);
-  }
-}
-
-@media (max-width: 480px) {
-  .topBar {
-    padding: var(--space-1) var(--space-8) var(--space-1) var(--space-2);
-    font-size: var(--text-xs);
-  }
-  
-  .betaLink {
-    padding: var(--space-1) var(--space-2);
-    font-size: var(--text-xs);
-  }
-  
-  .topBarText {
-    font-size: var(--text-xs);
-    text-align: center;
-    width: 100%;
-  }
-  
-  .closeButton {
-    right: var(--space-2);
+    display: none;
   }
 }

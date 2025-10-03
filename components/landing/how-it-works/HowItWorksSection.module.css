@@ -100,28 +100,10 @@
 }
 
 .onboardingButton {
-  background: var(--color-primary);
-  border: var(--border-1) solid var(--color-primary);
-  color: var(--color-text-white);
-  font-size: var(--text-sm);
-  font-weight: var(--font-semibold);
-  padding: var(--space-3) var(--space-6);
-  border-radius: var(--radius-lg);
-  cursor: pointer;
-  transition: all var(--transition-normal);
-  text-decoration: none;
-  display: inline-block;
   margin-top: var(--space-3);
-  box-shadow: var(--shadow-sm);
-  letter-spacing: var(--tracking-wide);
-}
-
-.onboardingButton:hover {
-  background: transparent;
+  display: inline-block;
   color: var(--color-primary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--color-primary);
+  text-decoration: underline;
 }
 
 /* Responsive Design */
@@ -204,5 +186,17 @@
   
   .arrowContainer {
     margin: var(--space-2) 0;
+  }
+  
+  .onboardingButton {
+    margin-top: var(--space-2);
+  }
+}
+
+@media (max-width: 480px) {
+  .onboardingButton {
+    display: flex;
+    align-items: center;
+    margin-top: var(--space-2);
   }
 }

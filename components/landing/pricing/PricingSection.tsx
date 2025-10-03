@@ -52,7 +52,7 @@ const plans = [
 export function PricingSection() {
   return (
     <motion.section 
-      id="pricing" 
+      id="prezzi" 
       className={styles.section}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}

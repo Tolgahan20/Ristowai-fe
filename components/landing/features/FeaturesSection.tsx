@@ -171,7 +171,7 @@ export function FeaturesSection() {
   const content = tabContent[activeTab];
 
   return (
-    <div id="benefits" className={styles.featuresSection}>
+    <div id="soluzioni" className={styles.featuresSection}>
       <Heading2
         className={styles.title}
         animate={true}

@@ -25,6 +25,94 @@
   backdrop-filter: blur(10px);
 }
 
+/* Desktop-specific layout */
+@media (min-width: 1024px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 600px;
+    padding: var(--space-12) var(--space-8);
+  }
+  
+  .header {
+    margin-bottom: var(--space-8);
+  }
+  
+  .title {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-3);
+  }
+  
+  .subtitle {
+    font-size: var(--text-base);
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .counterCard {
+    margin-bottom: var(--space-8);
+    padding: var(--space-4) var(--space-6);
+  }
+  
+  .counterNumber {
+    font-size: var(--text-5xl);
+    margin-bottom: var(--space-1);
+  }
+  
+  .counterLabel {
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .content {
+    align-items: center;
+    text-align: center;
+    max-width: 500px;
+  }
+  
+  .urgencyText {
+    margin-bottom: var(--space-6);
+  }
+  
+  .urgencyMessage {
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.6);
+    padding: 0;
+    background: transparent;
+    border: none;
+  }
+  
+  .ctaSection {
+    margin-bottom: var(--space-6);
+  }
+  
+  .joinButton {
+    font-size: var(--text-base);
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-md);
+    box-shadow: none;
+  }
+  
+  .joinButton:hover {
+    background: var(--color-primary-dark);
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .microcopy {
+    padding: 0;
+    background: transparent;
+    border: none;
+    max-width: none;
+  }
+  
+  .microcopyText {
+    font-size: var(--text-xs);
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
 .header {
   text-align: center;
   margin-bottom: var(--space-12);
@@ -49,15 +137,15 @@
 }
 
 .counterCard {
-  background: rgba(6, 95, 70, 0.1);
-  border: var(--border-1) solid rgba(6, 95, 70, 0.2);
-  border-radius: var(--radius-2xl);
-  padding: var(--space-8) var(--space-12);
+  background: transparent;
+  border: var(--border-1) solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-8);
   margin-bottom: var(--space-12);
   text-align: center;
   position: relative;
-  overflow: hidden;
 }
+
 
 .counterNumber {
   font-size: var(--text-7xl);
@@ -89,15 +177,16 @@
 }
 
 .urgencyMessage {
-  font-size: var(--text-lg);
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: var(--font-medium);
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: var(--font-normal);
   line-height: var(--leading-relaxed);
-  padding: var(--space-4) var(--space-6);
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: var(--radius-lg);
-  border: var(--border-1) solid rgba(255, 255, 255, 0.1);
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  border: none;
 }
+
 
 .ctaSection {
   margin-bottom: var(--space-8);
@@ -120,27 +209,29 @@
 }
 
 .joinButton:hover {
-  background: transparent;
-  color: var(--color-primary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-xl);
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
+
 .microcopy {
-  padding: var(--space-6) var(--space-8);
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: var(--radius-xl);
-  border: var(--border-1) solid rgba(255, 255, 255, 0.08);
+  padding: var(--space-4) 0;
+  background: transparent;
+  border-radius: 0;
+  border: none;
   max-width: 500px;
 }
 
 .microcopyText {
-  font-size: var(--text-base);
-  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.5);
   font-weight: var(--font-normal);
-  line-height: var(--leading-relaxed);
+  line-height: var(--leading-normal);
   margin: 0;
 }
+
 
 /* Responsive Design */
 @media (max-width: 900px) {

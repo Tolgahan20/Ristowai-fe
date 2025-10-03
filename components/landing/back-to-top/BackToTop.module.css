@@ -1,0 +1,48 @@
+@import '../landing-globals.css';
+
+.backToTopButton {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  width: var(--space-12);
+  height: var(--space-12);
+  background: white;
+  border: var(--border-1) solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-full);
+  color: black;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-fixed);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all var(--transition-normal);
+}
+
+.backToTopButton:hover {
+  background: #f8f9fa;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.backToTopButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Desktop - hide the button */
+@media (min-width: 769px) {
+  .backToTopButton {
+    display: none;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .backToTopButton {
+    bottom: var(--space-4);
+    right: var(--space-4);
+    width: var(--space-10);
+    height: var(--space-10);
+  }
+}

@@ -11,6 +11,7 @@ import { PricingSection } from '@/components/landing/pricing/PricingSection';
 import { FaqSection } from '@/components/landing/faq/FaqSection';
 import { CtaSection } from '@/components/landing/cta/CtaSection';
 import { FooterSection } from '@/components/landing/footer/FooterSection';
+import { BackToTop } from '@/components/landing/back-to-top/BackToTop';
 
 export default function LandingPage() {
   const [topBarVisible, setTopBarVisible] = useState(true);
@@ -40,20 +41,23 @@ export default function LandingPage() {
       */}
       <HowItWorksSection />
 
-      {/* Waitlist Section */}
-      <WaitlistSection />
+      
 
       {/* Pricing Section */}
       <PricingSection />
-
+{/* Waitlist Section */}
+<WaitlistSection />
       {/* FAQ Section */}
       <FaqSection />
 
       {/* CTA Section */}
-    
-        <CtaSection />
+      <CtaSection />
+      
+      {/* Footer Section */}
       <FooterSection />
 
-      </div>
+      {/* Back to Top Button - Mobile Only */}
+      <BackToTop />
+    </div>
   );
 }

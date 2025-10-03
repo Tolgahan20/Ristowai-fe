@@ -67,7 +67,7 @@
 /* Mobile responsive styles */
 @media (max-width: 768px) {
   .heroContent {
-    padding-top: var(--space-8);
+    padding-top: var(--space-12);
     padding-bottom: var(--space-12);
     gap: var(--space-5);
   }
@@ -91,7 +91,7 @@
 
 @media (max-width: 480px) {
   .heroContent {
-    padding-top: var(--space-6);
+    padding-top: var(--space-10);
     padding-bottom: var(--space-10);
     gap: var(--space-4);
   }

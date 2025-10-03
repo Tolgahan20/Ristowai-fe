@@ -23,6 +23,34 @@
   height: 4.5rem;
 }
 
+/* Mobile responsive navigation */
+@media (max-width: 768px) {
+  .navigation {
+    height: 3.5rem;
+    top: var(--space-8);
+  }
+  
+  .navigationWithTopBar {
+    top: 0;
+  }
+  
+  .navigationScrolled {
+    height: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navigation {
+    height: 3rem;
+    top: var(--space-6);
+  }
+  
+  .navigationScrolled {
+    padding-top: var(--space-2);
+    height: 3.5rem;
+  }
+}
+
 .navigationWithTopBar {
   top: 0; /* When top bar is closed, navigation goes to top */
 }
@@ -189,7 +217,7 @@
   display: none;
   background: rgba(255, 255, 255, 0.1);
   border: var(--border-1) solid rgba(255, 255, 255, 0.2);
-  color: var(--color-text-secondary);
+color: white;
   cursor: pointer;
   padding: var(--space-3);
   border-radius: var(--radius-lg);
@@ -225,7 +253,7 @@
   display: block;
   height: 3px;
   width: 100%;
-  background-color: var(--color-text-secondary);
+  background-color: var(--color-primary);
   border-radius: var(--radius-sm);
   transition: all var(--transition-slow);
   transform-origin: center;
@@ -256,25 +284,25 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.98);
+  background: var(--color-bg-dark);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  padding: 0;
+  padding: var(--space-5) 0 var(--space-8) 0 !important;
   z-index: var(--z-modal);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-top: var(--space-24);
+  padding-top: var(--space-32);
 }
 
 .mobileMenuClose {
   position: absolute;
   top: var(--space-8);
   right: var(--space-8);
-  background: var(--color-bg-secondary);
-  border: var(--border-1) solid var(--color-border-light);
-  color: var(--color-text-primary);
+  background: rgba(255, 255, 255, 0.1);
+  border: var(--border-1) solid rgba(255, 255, 255, 0.2);
+  color: var(--color-text-white);
   cursor: pointer;
   padding: var(--space-3);
   border-radius: var(--radius-lg);
@@ -285,8 +313,8 @@
 }
 
 .mobileMenuClose:hover {
-  background: var(--color-bg-tertiary);
-  border-color: var(--color-border-medium);
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
   transform: scale(1.05);
 }
 
@@ -299,7 +327,7 @@
 }
 
 .mobileMenuLink {
-  color: var(--color-text-primary);
+  color: var(--color-text-white);
   text-decoration: none;
   font-weight: var(--font-semibold);
   font-size: var(--text-xl);
@@ -325,14 +353,15 @@
   padding: 0;
   margin-top: 0;
   width: 100%;
-  max-width: 240px;
+  max-width: 280px;
+  align-items: center;
 }
 
 .mobileLoginButton {
-  background: var(--color-bg-secondary);
-  color: var(--color-text-primary);
-  border: var(--border-1) solid var(--color-border-light);
-  padding: var(--space-3) var(--space-6);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-white);
+  border: var(--border-1) solid rgba(255, 255, 255, 0.2);
+  padding: var(--space-3) var(--space-8);
   border-radius: var(--radius-lg);
   font-weight: var(--font-semibold);
   font-size: var(--text-base);
@@ -341,11 +370,12 @@
   transition: all var(--transition-normal);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  width: 100%;
 }
 
 .mobileLoginButton:hover {
-  background: var(--color-bg-tertiary);
-  border-color: var(--color-border-medium);
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
   transform: translateY(-1px);
 }
 
@@ -353,7 +383,7 @@
   background: var(--color-primary);
   color: var(--color-text-white);
   border: none;
-  padding: var(--space-3) var(--space-6);
+  padding: var(--space-3) var(--space-8);
   border-radius: var(--radius-lg);
   font-weight: var(--font-semibold);
   font-size: var(--text-base);
@@ -361,6 +391,7 @@
   text-align: center;
   transition: all var(--transition-normal);
   box-shadow: var(--shadow-green-md);
+  width: 100%;
 }
 
 .mobileSignUpButton:hover {
@@ -410,7 +441,7 @@
   }
   
   .navContainer {
-    padding: 0 var(--space-4);
+    padding: var(--space-1) var(--space-4) var(--space-8) 0 !important;
     grid-template-columns: auto 1fr auto;
   }
   

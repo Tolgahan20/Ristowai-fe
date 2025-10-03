@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ChevronRight, ChevronDown } from "lucide-react";
-import { Heading2, Body } from "../ui";
+import { Heading2, Body, LinkButton } from "../ui";
 import styles from "./HowItWorksSection.module.css";
 
 const steps = [
@@ -21,16 +21,14 @@ const steps = [
 				<br />
 				<br />
 				Oppure lascia fare a noi:{" "}
-				<button 
+				<LinkButton 
+					href="mailto:beta@ristowai.com?subject=Richiesta%20Onboarding%20Locale&body=Ciao%2C%20sono%20%5BNome%20Locale%5D%20e%20mi%20servirebbe%20onboarding%20locale.%20Grazie."
+					variant="ghost"
+					size="sm"
 					className={styles.onboardingButton}
-					onClick={() => {
-						const subject = encodeURIComponent("Richiesta Onboarding Locale");
-						const body = encodeURIComponent("Ciao, sono [Nome Locale] e mi servirebbe onboarding locale. Grazie.");
-						window.open(`mailto:beta@ristowai.com?subject=${subject}&body=${body}`);
-					}}
 				>
 					Chiedi Onboarding
-				</button>
+				</LinkButton>
 			</>
 		),
 	},
@@ -44,7 +42,7 @@ const steps = [
 export function HowItWorksSection() {
 	return (
 		<motion.section 
-			id="how-it-works" 
+			id="come-funziona" 
 			className={styles.sectionWrap}
 			initial={{ opacity: 0 }}
 			whileInView={{ opacity: 1 }}

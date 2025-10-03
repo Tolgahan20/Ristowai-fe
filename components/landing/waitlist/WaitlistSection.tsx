@@ -12,7 +12,7 @@ export function WaitlistSection() {
 
   return (
     <motion.section 
-      id="waitlist" 
+      id="lista-dattesa" 
       className={styles.waitlistSection}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}

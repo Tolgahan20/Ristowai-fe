@@ -72,7 +72,7 @@ const marketData = [
 export function MarketContextSection() {
   return (
     <motion.section 
-      id="market-context" 
+      id="mercato-attuale" 
       className={styles.marketContextSection}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
