@@ -5,25 +5,33 @@ import styles from "./FooterSection.module.css";
 
 const footerLinks = {
   Product: [
-    { label: "Soluzioni", href: "#" },
-    { label: "Prezzi", href: "#" },
-    { label: "Lista d'attesa", href: "#" },
-    { label: "FAQ", href: "#" },
+    { label: "Soluzioni", href: "#soluzioni" },
+    { label: "Mercato Attuale", href: "#mercato-attuale" },
+    { label: "Come funziona", href: "#come-funziona" },
+    { label: "Prezzi", href: "#prezzi" },
+    { label: "Lista d'attesa", href: "#lista-dattesa" },
+    { label: "FAQ", href: "#faq" },
   ],
   Company: [
     { label: "Chi Siamo", href: "#" },
-    { label: "Contatti", href: "#" },
-    { label: "Programma Beta Test", href: "#" },
+    { label: "Contatti", href: "/contact" },
+    { label: "Programma Beta Test", href: "/beta-signup" },
   ],
   Legal: [
     { label: "Privacy Policy", href: "#" },
     { label: "Terms of Service", href: "#" },
     { label: "Cookie Policy", href: "#" },
-
   ],
 };
 
 export function FooterSection() {
+  const handleLinkClick = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <motion.footer 
       className={styles.footer}
@@ -122,7 +130,17 @@ export function FooterSection() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.2, delay: 0.5 + (index * 0.02) }}
                   >
-                    <a href={link.href} className={styles.link}>
+                    <a 
+                      href={link.href} 
+                      className={styles.link}
+                      onClick={(e) => {
+                        if (link.href.startsWith('#')) {
+                          e.preventDefault();
+                          handleLinkClick(link.href);
+                        }
+                        // For external links, let the browser handle navigation normally
+                      }}
+                    >
                       {link.label}
                     </a>
                   </motion.li>
@@ -146,7 +164,17 @@ export function FooterSection() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.2, delay: 0.6 + (index * 0.02) }}
                   >
-                    <a href={link.href} className={styles.link}>
+                    <a 
+                      href={link.href} 
+                      className={styles.link}
+                      onClick={(e) => {
+                        if (link.href.startsWith('#')) {
+                          e.preventDefault();
+                          handleLinkClick(link.href);
+                        }
+                        // For external links, let the browser handle navigation normally
+                      }}
+                    >
                       {link.label}
                     </a>
                   </motion.li>
@@ -170,7 +198,17 @@ export function FooterSection() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.2, delay: 0.7 + (index * 0.02) }}
                   >
-                    <a href={link.href} className={styles.link}>
+                    <a 
+                      href={link.href} 
+                      className={styles.link}
+                      onClick={(e) => {
+                        if (link.href.startsWith('#')) {
+                          e.preventDefault();
+                          handleLinkClick(link.href);
+                        }
+                        // For external links, let the browser handle navigation normally
+                      }}
+                    >
                       {link.label}
                     </a>
                   </motion.li>
