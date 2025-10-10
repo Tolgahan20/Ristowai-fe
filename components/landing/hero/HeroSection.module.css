@@ -2,7 +2,7 @@
 
 /* Ensure hero section spans full viewport */
 .heroSection {
-  min-height: 100vh;
+  min-height: auto;
   width: 100%;
   display: flex;
   align-items: center;
@@ -11,12 +11,12 @@
   position: relative;
   overflow: hidden;
   margin: 0;
-  padding: 0;
+  padding: var(--space-20) 0;
 }
 
 .heroContent {
   width: 100%;
-  max-width: 700px;
+  max-width: 1200px;
   padding: var(--space-16) var(--space-6);
   display: flex;
   flex-direction: column;
@@ -187,5 +187,34 @@
     max-width: 280px;
     padding: var(--space-2) var(--space-4);
     font-size: var(--text-sm);
+  }
+}
+
+/* Dashboard Mockup Styles */
+.dashboardMockup {
+  width: 1500px;
+  margin-top: var(--space-8);
+  position: relative;
+  margin-left: 200px;
+  z-index: 1;
+}
+
+.dashboardImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive Dashboard Mockup */
+@media (max-width: 768px) {
+  .dashboardMockup {
+    margin-top: var(--space-6);
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboardMockup {
+    margin-top: var(--space-4);
   }
 }

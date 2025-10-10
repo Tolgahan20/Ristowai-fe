@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ClipboardClock, UtensilsCrossed, Users, Contact, BadgeEuro, LayoutDashboard } from "lucide-react";
 import { Container, Badge, Button } from "../ui";
 import styles from "./HeroSection.module.css";
@@ -101,6 +102,22 @@ export function HeroSection() {
           >
             Scopri come funziona
           </Button>
+        </motion.div>
+
+        <motion.div
+          className={styles.dashboardMockup}
+          initial={{ y: 40, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+        >
+          <Image
+            src="/images/full_w_bg.png"
+            alt="Ristowai Dashboard Mockup"
+            width={1200}
+            height={800}
+            className={styles.dashboardImage}
+            priority
+          />
         </motion.div>
       </Container>
     </motion.section>

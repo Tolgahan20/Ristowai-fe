@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import Lottie from "lottie-react";
 import { Heading2, Body } from "../ui";
 import styles from "./FeaturesSection.module.css";
+
+// Import animation data
+import smartShiftsAnimation from "../../../public/animations/smart_shifts.json";
+import foodBrainAnimation from "../../../public/animations/food_brain.json";
+import staffProAnimation from "../../../public/animations/staff_pro.json";
+import hrSmartAnimation from "../../../public/animations/hr_smart.json";
+import marketingReviewsAnimation from "../../../public/animations/marketing_reviews.json";
+import managerDashboardAnimation from "../../../public/animations/manager_dashboard.json";
 
 const tabs = [
   { label: <>Smart Shifts</>, key: "shift" },
@@ -21,7 +29,7 @@ const tabContent: Record<
     title: string;
     desc: string;
     features: string[];
-    image: string;
+    animation: object;
     imageBg: string;
     imageAlt: string;
   }
@@ -39,8 +47,7 @@ const tabContent: Record<
       "Alert legali",
       "Export Payroll",
     ],
-    image:
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?w=500&h=350&fit=crop",
+    animation: smartShiftsAnimation,
     imageBg: "rgba(243, 232, 255, 0.1)",
     imageAlt: "Interfaccia Smart Shifts",
   },
@@ -55,8 +62,7 @@ const tabContent: Record<
       "Esperimenti Piatti/Drink",
       "Suggerimenti Pricing",
     ],
-    image:
-      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&h=350&fit=crop",
+    animation: foodBrainAnimation,
     imageBg: "rgba(220, 252, 231, 0.1)",
     imageAlt: "Analisi Menu FoodBrain",
   },
@@ -73,8 +79,7 @@ const tabContent: Record<
       "Checklist & Manutenzioni",
       "Regolamenti & Dress Code",
     ],
-    image:
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&h=350&fit=crop",
+    animation: staffProAnimation,
     imageBg: "rgba(254, 243, 199, 0.1)",
     imageAlt: "Gestione Staff Pro",
   },
@@ -91,8 +96,7 @@ const tabContent: Record<
       "Portale HR Smart",
       "Gestione Certificati",
     ],
-    image:
-      "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=500&h=350&fit=crop",
+    animation: hrSmartAnimation,
     imageBg: "rgba(224, 231, 255, 0.1)",
     imageAlt: "HR Smart Dashboard",
   },
@@ -106,8 +110,7 @@ const tabContent: Record<
       "Rafforzamento Brand con suggerimenti social",
       "Auto-risposta recensioni con analisi critiche e alert",
     ],
-    image:
-      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=350&fit=crop",
+    animation: marketingReviewsAnimation,
     imageBg: "rgba(252, 231, 243, 0.1)",
     imageAlt: "Marketing e Reviews",
   },
@@ -120,8 +123,7 @@ const tabContent: Record<
       "KPI per modulo acquistato o bundle",
       "Agenda intelligente con alert scadenze/priorità",
     ],
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=350&fit=crop",
+    animation: managerDashboardAnimation,
     imageBg: "rgba(240, 253, 244, 0.1)",
     imageAlt: "Dashboard Manager",
   },
@@ -249,19 +251,20 @@ export function FeaturesSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: 0.6 }} // Reduced delay from 1.4 to 1.0
           >
-            <Image
-              src={content.image}
-              alt={content.imageAlt}
-              width={400}
-              height={300}
-              className={styles.tabImage}
-            />
+            <div className={styles.animationContainer}>
+              <Lottie
+                animationData={content.animation}
+                className={styles.tabImage}
+                loop={true}
+                autoplay={true}
+              />
+            </div>
             <div className={styles.tabImageCaption}>
               {activeTab === "shift" && (
                 <span>
                   <b>Pianificazione Intelligente</b>
                   <br />
-                  <span style={{ color: "#6b7280", fontWeight: 400 }}>
+                  <span style={{ color: "rgba(255, 255, 255, 0.7)", fontWeight: 400 }}>
                     Ottimizza i turni automaticamente
                   </span>
                 </span>
@@ -270,7 +273,7 @@ export function FeaturesSection() {
                 <span>
                   <b>Analisi Menu AI</b>
                   <br />
-                  <span style={{ color: "#6b7280", fontWeight: 400 }}>
+                  <span style={{ color: "rgba(255, 255, 255, 0.7)", fontWeight: 400 }}>
                     Pricing ottimizzato per ogni piatto
                   </span>
                 </span>
@@ -279,7 +282,7 @@ export function FeaturesSection() {
                 <span>
                   <b>Checklist Digitali</b>
                   <br />
-                  <span style={{ color: "#6b7280", fontWeight: 400 }}>
+                  <span style={{ color: "rgba(255, 255, 255, 0.7)", fontWeight: 400 }}>
                     Gestione asset e manutenzione
                   </span>
                 </span>
@@ -288,7 +291,7 @@ export function FeaturesSection() {
                 <span>
                   <b>HR Automatizzato</b>
                   <br />
-                  <span style={{ color: "#6b7280", fontWeight: 400 }}>
+                  <span style={{ color: "rgba(255, 255, 255, 0.7)", fontWeight: 400 }}>
                     Conformità e documentazione
                   </span>
                 </span>
@@ -297,7 +300,7 @@ export function FeaturesSection() {
                 <span>
                   <b>Marketing Automatico</b>
                   <br />
-                  <span style={{ color: "#6b7280", fontWeight: 400 }}>
+                  <span style={{ color: "rgba(255, 255, 255, 0.7)", fontWeight: 400 }}>
                     Gestione recensioni e campagne
                   </span>
                 </span>
@@ -306,7 +309,7 @@ export function FeaturesSection() {
                 <span>
                   <b>Dashboard Manager</b>
                   <br />
-                  <span style={{ color: "#6b7280", fontWeight: 400 }}>
+                  <span style={{ color: "rgba(255, 255, 255, 0.7)", fontWeight: 400 }}>
                     KPI e reportistica in tempo reale
                   </span>
                 </span>
