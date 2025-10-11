@@ -13,7 +13,7 @@ const footerLinks = {
     { label: "FAQ", href: "#faq" },
   ],
   Company: [
-    { label: "Chi Siamo", href: "#" },
+    { label: "Chi Siamo", href: "/about" },
     { label: "Contatti", href: "/contact" },
     { label: "Programma Beta Test", href: "/beta-signup" },
   ],

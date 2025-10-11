@@ -209,12 +209,15 @@
 @media (max-width: 768px) {
   .dashboardMockup {
     margin-top: var(--space-6);
-    max-width: 100%;
+    width: 100%;
+    margin-left: 0;
   }
 }
 
 @media (max-width: 480px) {
   .dashboardMockup {
     margin-top: var(--space-4);
+    width: 100%;
+    margin-left: 0;
   }
 }

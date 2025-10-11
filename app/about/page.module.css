@@ -1,0 +1,287 @@
+.aboutPage {
+  min-height: 100vh;
+  background: #000000;
+  padding: var(--space-20) 0;
+  padding-top: 120px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+/* Hero Section */
+.heroSection {
+  text-align: center;
+  margin-bottom: var(--space-20);
+  padding-top: var(--space-12);
+}
+
+.mainTitle {
+  font-size: var(--text-6xl);
+  font-weight: var(--font-extrabold);
+  color: var(--color-text-white);
+  letter-spacing: var(--tracking-tight);
+  margin: 0;
+}
+
+/* Vision Section */
+.visionSection {
+  margin-bottom: var(--space-20);
+}
+
+.sectionTitle {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-white);
+  margin-bottom: var(--space-8);
+  letter-spacing: var(--tracking-tight);
+}
+
+.visionContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.visionText {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+.tagline {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-primary);
+  font-style: italic;
+  text-align: center;
+  margin: var(--space-4) 0;
+  padding: var(--space-6) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Founder Section */
+.founderSection {
+  margin-bottom: var(--space-16);
+  padding: var(--space-12) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.founderContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.founderName {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-white);
+  margin: 0;
+  letter-spacing: var(--tracking-tight);
+}
+
+.founderRole {
+  font-size: var(--text-lg);
+  font-weight: var(--font-medium);
+  color: var(--color-primary);
+  margin: 0 0 var(--space-6) 0;
+}
+
+.founderBio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.founderBio p {
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+/* Shared Vision Section */
+.sharedVisionSection {
+  margin-bottom: var(--space-16);
+  padding: var(--space-12) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sharedVisionContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.sharedVisionContent p {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+/* Team Links Section */
+.teamLinksSection {
+  margin: var(--space-16) 0;
+  padding: var(--space-12) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.teamLinks {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.teamMember {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+  min-width: 250px;
+}
+
+.memberName {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-white);
+}
+
+.memberTitle {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: var(--space-3);
+}
+
+.memberLinks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: var(--font-medium);
+  transition: all var(--transition-normal);
+  width: fit-content;
+  padding: var(--space-1) 0;
+}
+
+.socialLink:hover {
+  color: var(--color-primary-light);
+  transform: translateX(4px);
+}
+
+.socialLink svg {
+  flex-shrink: 0;
+}
+
+/* Advisors Section */
+.advisorsSection {
+  margin-top: var(--space-12);
+  padding-top: var(--space-8);
+  text-align: center;
+}
+
+.advisorsText {
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+  margin: 0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .aboutPage {
+    padding: var(--space-12) 0;
+  }
+
+  .container {
+    padding: 0 var(--space-4);
+  }
+
+  .heroSection {
+    margin-bottom: var(--space-12);
+    padding-top: var(--space-8);
+  }
+
+  .mainTitle {
+    font-size: var(--text-5xl);
+  }
+
+  .sectionTitle {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-6);
+  }
+
+  .tagline {
+    font-size: var(--text-xl);
+    padding: var(--space-4) 0;
+  }
+
+  .visionSection,
+  .founderSection,
+  .sharedVisionSection {
+    margin-bottom: var(--space-12);
+  }
+
+  .founderSection {
+    padding: var(--space-8) 0;
+  }
+
+  .founderName {
+    font-size: var(--text-2xl);
+  }
+
+  .founderRole {
+    font-size: var(--text-base);
+  }
+
+  .teamLinks {
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .teamMember {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainTitle {
+    font-size: var(--text-4xl);
+  }
+
+  .sectionTitle {
+    font-size: var(--text-2xl);
+  }
+
+  .visionText,
+  .sharedVisionContent p {
+    font-size: var(--text-base);
+  }
+
+  .tagline {
+    font-size: var(--text-lg);
+  }
+
+  .founderBio p {
+    font-size: var(--text-sm);
+  }
+}
+
