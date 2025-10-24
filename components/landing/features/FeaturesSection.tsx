@@ -13,7 +13,7 @@ import marketingReviewsAnimation from "../../../public/animations/marketing_revi
 import managerDashboardAnimation from "../../../public/animations/manager_dashboard.json";
 
 const tabs = [
-  { label: <>Smart Shifts</>, key: "shift" },
+  { label: <>Turni AI</>, key: "shift" },
   { label: <>FoodBrain</>, key: "food" },
   { label: <>Staff Pro</>, key: "staff" },
   { label: <>HR Smart</>, key: "hr" },
@@ -37,7 +37,7 @@ const tabContent: Record<
   shift: {
     badge: "Turni AI",
     badgeColor: "#e9d8fd",
-    title: "Smart Shifts",
+    title: "Turni AI",
     desc: "Turni pronti in pochi secondi, senza errori e sempre in regola.",
     features: [
       "<30 sec Output",

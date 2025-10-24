@@ -30,13 +30,13 @@
   overflow-y: auto;
   background: var(--background);
   transition: margin-left 0.3s ease;
-  margin-left: 280px;
-  width: calc(100% - 280px);
+  margin-left: 220px;
+  width: calc(100% - 220px);
 }
 
 .contentExpanded {
-  margin-left: 80px;
-  width: calc(100% - 80px);
+  margin-left: 70px;
+  width: calc(100% - 70px);
 }
 
 /* Mobile styles */

@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from 'react';
-import { Navbar } from './Navbar';
+import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
+import { Navbar, navigationLinks } from './Navbar';
 import { Sidebar } from './Sidebar';
 import styles from './DashboardLayout.module.css';
 
@@ -12,6 +13,16 @@ interface DashboardLayoutProps {
 export function DashboardLayout({ children }: DashboardLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [activeSection, setActiveSection] = useState('smart-shifts');
+  const pathname = usePathname();
+
+  // Update active section based on pathname
+  useEffect(() => {
+    const currentLink = navigationLinks.find(link => link.href === pathname);
+    if (currentLink) {
+      setActiveSection(currentLink.id);
+    }
+  }, [pathname]);
 
   return (
     <div className={styles.layout}>
@@ -20,6 +31,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
         onMenuClick={() => setSidebarOpen(true)}
         onToggleCollapse={() => setSidebarCollapsed(!sidebarCollapsed)}
         sidebarCollapsed={sidebarCollapsed}
+        onSectionChange={setActiveSection}
       />
       
       {/* Content area below navbar */}
@@ -37,6 +49,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
           isOpen={sidebarOpen}
           isCollapsed={sidebarCollapsed}
           onClose={() => setSidebarOpen(false)}
+          activeSection={activeSection}
         />
         
         {/* Main content */}

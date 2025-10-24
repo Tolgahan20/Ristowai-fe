@@ -1,0 +1,176 @@
+.container {
+  width: 100%;
+}
+
+/* Loading State */
+.loadingState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-2xl);
+  gap: var(--spacing-lg);
+}
+
+.loadingSpinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--muted);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Empty State */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-2xl);
+  gap: var(--spacing-md);
+  text-align: center;
+  min-height: 400px;
+}
+
+.emptyIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-full);
+  background: var(--accent);
+  color: var(--primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.emptyDescription {
+  max-width: 400px;
+  color: var(--muted-foreground);
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+}
+
+.headerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.headerLabel {
+  color: var(--muted-foreground);
+  text-transform: uppercase;
+  font-weight: var(--font-semibold);
+  letter-spacing: 0.05em;
+}
+
+/* Venue Grid */
+.venueGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+/* Venue Card */
+.venueCard {
+  transition: all 0.2s ease;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+
+.venueCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary);
+}
+
+.cardContent {
+  padding: var(--spacing-lg);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-md);
+}
+
+.venueName {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex: 1;
+}
+
+.venueIcon {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.cardActions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+/* Venue Info */
+.venueInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--muted-foreground);
+}
+
+.infoIcon {
+  flex-shrink: 0;
+  color: var(--muted-foreground);
+}
+
+/* Delete Item */
+.deleteItem {
+  color: var(--destructive);
+}
+
+.deleteItem:hover {
+  background: var(--destructive);
+  color: var(--destructive-foreground);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .venueGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: stretch;
+  }
+
+  .headerInfo {
+    text-align: center;
+  }
+}
+

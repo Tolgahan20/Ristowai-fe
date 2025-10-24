@@ -1,6 +1,6 @@
 /* Sidebar Styles */
 .sidebar {
-  width: 280px;
+  width: 220px;
   height: calc(100vh - 64px); /* Subtract navbar height */
   border-right: 1px solid var(--border);
   background: var(--card);
@@ -16,7 +16,7 @@
 }
 
 .sidebarCollapsed {
-  width: 80px;
+  width: 70px;
 }
 
 
@@ -106,46 +106,24 @@
 }
 
 .navLink:hover {
-  background: rgba(5, 150, 105, 0.08);
-  color: var(--brand-primary);
-  transform: translateX(2px);
-  border-color: rgba(5, 150, 105, 0.2);
+  background: var(--accent);
+  color: var(--foreground);
 }
 
 .navLinkActive {
-  background: var(--brand-primary);
-  color: white;
-  border-color: var(--brand-primary);
-  box-shadow: 0 6px 20px rgba(5, 150, 105, 0.3), 0 2px 4px rgba(5, 150, 105, 0.2);
+  background: var(--accent);
+  color: var(--foreground);
   font-weight: var(--font-semibold);
-  transform: translateX(2px);
 }
 
 .navLinkActive:hover {
-  background: var(--brand-primary-dark);
-  transform: translateX(2px);
-  box-shadow: 0 8px 25px rgba(5, 150, 105, 0.4), 0 3px 6px rgba(5, 150, 105, 0.3);
-}
-
-.navLinkActive::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 0 3px 3px 0;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  background: var(--accent);
+  color: var(--foreground);
 }
 
 .navIcon {
   flex-shrink: 0;
-  transition: all 0.3s ease;
-}
-
-.navLink:hover .navIcon {
-  transform: scale(1.1);
+  transition: all 0.2s ease;
 }
 
 .navText {

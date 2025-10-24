@@ -42,7 +42,7 @@ export function WaitlistSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.3, delay: 0.2 }}
         >
-          <div className={styles.counterNumber}>321</div>
+          <div className={styles.counterNumber}>327</div>
           <div className={styles.counterLabel}>locali già in lista</div>
         </motion.div>
 

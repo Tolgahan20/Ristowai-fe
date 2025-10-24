@@ -160,7 +160,7 @@ export function PricingSection() {
         >
           <Body className={styles.footerText}>
             Tutti i piani includono le nostre funzionalità principali. Hai bisogno di qualcosa di personalizzato?{" "}
-            <a href="#contact" className={styles.footerLink}>Contattaci il nostro team di vendite</a>
+            <a href="#contact" className={styles.footerLink}>Contatta il nostro team vendite</a>
           </Body>
         </motion.div>
       </div>

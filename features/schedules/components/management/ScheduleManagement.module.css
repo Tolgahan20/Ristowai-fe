@@ -1,0 +1,106 @@
+.container {
+  padding: var(--spacing-xl);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.content {
+  background: var(--background);
+  border-radius: var(--radius-lg);
+  min-height: calc(100vh - 64px - var(--spacing-2xl));
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-2xl);
+  gap: var(--spacing-lg);
+}
+
+.headerInfo {
+  flex: 1;
+}
+
+.title {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--foreground);
+  margin-bottom: var(--spacing-xs);
+}
+
+.subtitle {
+  color: var(--muted-foreground);
+  font-size: var(--text-sm);
+}
+
+/* Venue Selector */
+.venueSelector {
+  min-width: 250px;
+}
+
+.venueSelectorTrigger {
+  width: 100%;
+}
+
+/* Onboarding State */
+.onboardingState,
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-4xl);
+  text-align: center;
+  gap: var(--spacing-lg);
+  background: var(--card);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-xl);
+  margin: var(--spacing-4xl) auto;
+  max-width: 700px;
+}
+
+.onboardingIcon,
+.emptyIcon {
+  color: var(--muted-foreground);
+}
+
+.onboardingDescription,
+.emptyDescription {
+  color: var(--muted-foreground);
+  max-width: 500px;
+}
+
+.onboardingActions {
+  margin-top: var(--spacing-xl);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-lg);
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .venueSelector {
+    width: 100%;
+  }
+
+  .title {
+    font-size: var(--text-2xl);
+  }
+
+  .onboardingState,
+  .emptyState {
+    padding: var(--spacing-2xl);
+    margin: var(--spacing-2xl) var(--spacing-lg);
+  }
+}
+

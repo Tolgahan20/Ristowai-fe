@@ -1,179 +1,167 @@
-import { useState, useCallback } from 'react';
-import type { VenueFormData, CreateVenueRequest, UpdateVenueRequest, VenueResponseDto } from '../types';
+"use client";
+
+import { useState, useEffect, useCallback } from 'react';
+import type { VenueFormData } from './use-venue-management';
 import { timeToMinutes, minutesToTime } from '../types';
 
 interface UseVenueFormProps {
-  initialData?: VenueResponseDto;
-  onSubmit: (data: CreateVenueRequest | UpdateVenueRequest) => Promise<void>;
-  onCancel?: () => void;
+  initialData?: VenueFormData;
+  onSubmit: (data: VenueFormData) => void;
 }
 
-interface FormErrors {
-  [key: string]: string;
-}
-
-export function useVenueForm({ initialData, onSubmit, onCancel }: UseVenueFormProps) {
+export function useVenueForm({ initialData, onSubmit }: UseVenueFormProps) {
   const [formData, setFormData] = useState<VenueFormData>({
-    name: initialData?.name || '',
-    timezone: initialData?.timezone || 'Europe/Rome',
-    address: initialData?.address || '',
-    phone: initialData?.phone || '',
-    email: initialData?.email || '',
-    openingTime: initialData ? minutesToTime(initialData.openingMinute) : '06:00',
-    closingTime: initialData ? minutesToTime(initialData.closingMinute) : '22:00',
-    sector: initialData?.sector || '',
-    currency: initialData?.currency || 'EUR',
-    locale: initialData?.locale || 'it-IT',
-    managerHourlyValue: initialData?.managerHourlyValue || 25,
-    weeklySchedulingHours: initialData?.weeklySchedulingHours || 4,
-    typicalOvertimeCost: initialData?.typicalOvertimeCost || 200,
-    isActive: initialData?.isActive ?? true,
+    name: '',
+    timezone: 'Europe/Rome',
+    address: '',
+    phone: '',
+    email: '',
+    openingTime: '09:00',
+    closingTime: '22:00',
+    sector: '',
+    managerHourlyValue: undefined,
+    weeklySchedulingHours: undefined,
+    typicalOvertimeCost: undefined,
+    isActive: true,
   });
 
-  const [errors, setErrors] = useState<FormErrors>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState<Partial<Record<keyof VenueFormData, string>>>({});
+  const [touched, setTouched] = useState<Partial<Record<keyof VenueFormData, boolean>>>({});
 
-  const validateForm = useCallback((data: VenueFormData): FormErrors => {
-    const newErrors: FormErrors = {};
+  // Initialize form data when initialData changes
+  useEffect(() => {
+    if (initialData) {
+      setFormData(initialData);
+    }
+  }, [initialData]);
 
-    // Required fields
-    if (!data.name.trim()) {
+  // Validation
+  const validate = useCallback((data: VenueFormData): Partial<Record<keyof VenueFormData, string>> => {
+    const newErrors: Partial<Record<keyof VenueFormData, string>> = {};
+
+    if (!data.name || data.name.trim().length === 0) {
       newErrors.name = 'Venue name is required';
-    } else if (data.name.length < 2) {
-      newErrors.name = 'Venue name must be at least 2 characters';
     }
 
-    if (!data.timezone.trim()) {
+    if (!data.timezone) {
       newErrors.timezone = 'Timezone is required';
     }
 
-    // Validate email if provided
-    if (data.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
-      newErrors.email = 'Please enter a valid email address';
+    if (!data.openingTime) {
+      newErrors.openingTime = 'Opening time is required';
     }
 
-    // Validate phone if provided
-    if (data.phone && data.phone.length < 10) {
-      newErrors.phone = 'Please enter a valid phone number';
+    if (!data.closingTime) {
+      newErrors.closingTime = 'Closing time is required';
     }
 
-    // Validate time format
-    const timeRegex = /^([01]?[0-9]|2[0-3]):[0-5][0-9]$/;
-    if (!timeRegex.test(data.openingTime)) {
-      newErrors.openingTime = 'Please enter a valid opening time (HH:MM)';
-    }
-    if (!timeRegex.test(data.closingTime)) {
-      newErrors.closingTime = 'Please enter a valid closing time (HH:MM)';
-    }
-
-    // Validate time range
     if (data.openingTime && data.closingTime) {
-      const openingMinutes = timeToMinutes(data.openingTime);
-      const closingMinutes = timeToMinutes(data.closingTime);
-      
-      if (openingMinutes >= closingMinutes) {
+      const openMinutes = timeToMinutes(data.openingTime);
+      const closeMinutes = timeToMinutes(data.closingTime);
+      if (openMinutes >= closeMinutes) {
         newErrors.closingTime = 'Closing time must be after opening time';
       }
     }
 
-    // Validate hourly rate
-    if (data.managerHourlyValue && (data.managerHourlyValue < 0 || data.managerHourlyValue > 1000)) {
-      newErrors.managerHourlyValue = 'Please enter a valid hourly rate (0-1000)';
+    if (data.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+      newErrors.email = 'Invalid email format';
     }
 
-    // Validate weekly hours
-    if (data.weeklySchedulingHours && (data.weeklySchedulingHours < 0 || data.weeklySchedulingHours > 168)) {
-      newErrors.weeklySchedulingHours = 'Please enter valid weekly hours (0-168)';
+    if (data.managerHourlyValue !== undefined && data.managerHourlyValue < 0) {
+      newErrors.managerHourlyValue = 'Manager hourly value must be positive';
     }
 
-    // Validate overtime cost
-    if (data.typicalOvertimeCost && (data.typicalOvertimeCost < 0 || data.typicalOvertimeCost > 10000)) {
-      newErrors.typicalOvertimeCost = 'Please enter a valid overtime cost (0-10000)';
+    if (data.weeklySchedulingHours !== undefined && data.weeklySchedulingHours < 0) {
+      newErrors.weeklySchedulingHours = 'Weekly scheduling hours must be positive';
+    }
+
+    if (data.typicalOvertimeCost !== undefined && data.typicalOvertimeCost < 1) {
+      newErrors.typicalOvertimeCost = 'Overtime cost multiplier must be at least 1';
     }
 
     return newErrors;
   }, []);
 
-  const handleInputChange = useCallback((field: keyof VenueFormData, value: any) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-    
-    // Clear error for this field when user starts typing
-    if (errors[field]) {
-      setErrors(prev => {
-        const newErrors = { ...prev };
-        delete newErrors[field];
-        return newErrors;
-      });
-    }
-  }, [errors]);
+  // Validate on data change
+  useEffect(() => {
+    const newErrors = validate(formData);
+    setErrors(newErrors);
+  }, [formData, validate]);
 
-  const handleSubmit = useCallback(async () => {
-    const formErrors = validateForm(formData);
+  const isValid = Object.keys(errors).length === 0;
+
+  // Handlers
+  const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value, type } = e.target;
     
-    if (Object.keys(formErrors).length > 0) {
-      setErrors(formErrors);
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'number' ? (value ? parseFloat(value) : undefined) : value,
+    }));
+
+    setTouched(prev => ({
+      ...prev,
+      [name]: true,
+    }));
+  }, []);
+
+  const handleAddressChange = useCallback((address: string) => {
+    setFormData(prev => ({
+      ...prev,
+      address,
+    }));
+
+    setTouched(prev => ({
+      ...prev,
+      address: true,
+    }));
+  }, []);
+
+  const handleSwitchChange = useCallback((name: keyof VenueFormData, checked: boolean) => {
+    setFormData(prev => ({
+      ...prev,
+      [name]: checked,
+    }));
+  }, []);
+
+  const handleSelectChange = useCallback((name: keyof VenueFormData, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [name]: value,
+    }));
+  }, []);
+
+  const handleSubmit = useCallback((e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Mark all fields as touched
+    const allTouched: Partial<Record<keyof VenueFormData, boolean>> = {};
+    Object.keys(formData).forEach((key) => {
+      allTouched[key as keyof VenueFormData] = true;
+    });
+    setTouched(allTouched);
+
+    // Validate
+    const validationErrors = validate(formData);
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
       return;
     }
 
-    setIsSubmitting(true);
-    setErrors({});
-
-    try {
-      // Convert form data to API format
-      const { openingTime, closingTime, ...restData } = formData;
-      const submitData = {
-        ...restData,
-        openingMinute: timeToMinutes(openingTime),
-        closingMinute: timeToMinutes(closingTime),
-      };
-
-      await onSubmit(submitData);
-    } catch (error: any) {
-      // Handle validation errors from API
-      if (error?.response?.data?.errors) {
-        setErrors(error.response.data.errors);
-      }
-    } finally {
-      setIsSubmitting(false);
-    }
-  }, [formData, validateForm, onSubmit]);
-
-  const handleCancel = useCallback(() => {
-    if (onCancel) {
-      onCancel();
-    }
-  }, [onCancel]);
-
-  const resetForm = useCallback(() => {
-    setFormData({
-      name: initialData?.name || '',
-      timezone: initialData?.timezone || 'Europe/Rome',
-      address: initialData?.address || '',
-      phone: initialData?.phone || '',
-      email: initialData?.email || '',
-      openingTime: initialData ? minutesToTime(initialData.openingMinute) : '06:00',
-      closingTime: initialData ? minutesToTime(initialData.closingMinute) : '22:00',
-      sector: initialData?.sector || '',
-      currency: initialData?.currency || 'EUR',
-      locale: initialData?.locale || 'it-IT',
-      managerHourlyValue: initialData?.managerHourlyValue || 25,
-      weeklySchedulingHours: initialData?.weeklySchedulingHours || 4,
-      typicalOvertimeCost: initialData?.typicalOvertimeCost || 200,
-      isActive: initialData?.isActive ?? true,
-    });
-    setErrors({});
-  }, [initialData]);
-
-  const isValid = Object.keys(validateForm(formData)).length === 0;
+    // Submit
+    onSubmit(formData);
+  }, [formData, onSubmit, validate]);
 
   return {
     formData,
     errors,
-    isSubmitting,
+    touched,
     isValid,
-    handleInputChange,
+    handleChange,
+    handleAddressChange,
+    handleSwitchChange,
+    handleSelectChange,
     handleSubmit,
-    handleCancel,
-    resetForm,
+    setFormData,
   };
 }

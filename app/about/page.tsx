@@ -5,12 +5,13 @@ import { Linkedin, Globe } from "lucide-react";
 import { Navigation } from "@/components/landing";
 import { FooterSection } from "@/components/landing/footer/FooterSection";
 import styles from "./page.module.css";
+import '../landing-page.css';
 
 export default function AboutPage() {
   return (
     <>
       <Navigation topBarVisible={false} />
-      <div className={styles.aboutPage}>
+      <div className={`landing-page ${styles.aboutPage}`}>
         <div className={styles.container}>
         {/* Hero Section */}
         <section className={styles.heroSection}>

@@ -12,12 +12,13 @@ import { FaqSection } from '@/components/landing/faq/FaqSection';
 import { CtaSection } from '@/components/landing/cta/CtaSection';
 import { FooterSection } from '@/components/landing/footer/FooterSection';
 import { BackToTop } from '@/components/landing/back-to-top/BackToTop';
+import './landing-page.css';
 
 export default function LandingPage() {
   const [topBarVisible, setTopBarVisible] = useState(true);
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="landing-page min-h-screen bg-black">
       {/* Top Offer Bar */}
       <TopBar onClose={() => setTopBarVisible(false)} />
       

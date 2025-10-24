@@ -16,7 +16,7 @@ export default function LoginPage() {
           <Title 
             color="white"
           >
-            Smart Shifts
+            Turni AI
           </Title>
           <Body 
             size="large"

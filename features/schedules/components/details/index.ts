@@ -1,0 +1,2 @@
+export { ScheduleDetails } from './ScheduleDetails';
+

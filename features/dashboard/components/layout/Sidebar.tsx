@@ -22,13 +22,21 @@ interface SidebarProps {
   isOpen: boolean;
   isCollapsed: boolean;
   onClose: () => void;
+  activeSection: string;
 }
 
-const navigationItems = [
+// Navigation items for Smart Shifts section
+const smartShiftsItems = [
   {
     name: 'Overview',
     href: '/dashboard',
     icon: Home,
+    badge: null,
+  },
+  {
+    name: 'Schedules',
+    href: '/dashboard/schedules',
+    icon: Calendar,
     badge: null,
   },
   {
@@ -43,12 +51,7 @@ const navigationItems = [
     icon: UserStar,
     badge: null,
   },
-  {
-    name: 'Schedules',
-    href: '/dashboard/schedules',
-    icon: Calendar,
-    badge: { text: 'New', variant: 'default' as const },
-  },
+
   {
     name: 'Time Tracking',
     href: '/dashboard/time-tracking',
@@ -61,22 +64,83 @@ const navigationItems = [
     icon: MapPin,
     badge: null,
   },
+];
+
+// Navigation items for other sections (placeholder for now)
+const foodbrainItems = [
   {
-    name: 'Analytics',
-    href: '/dashboard/analytics',
-    icon: BarChart3,
+    name: 'Menu Management',
+    href: '/dashboard/foodbrain',
+    icon: Home,
     badge: null,
   },
   {
-    name: 'Settings',
-    href: '/dashboard/settings',
+    name: 'Recipes',
+    href: '/dashboard/foodbrain/recipes',
+    icon: BarChart3,
+    badge: null,
+  },
+];
+
+const staffProItems = [
+  {
+    name: 'Team Overview',
+    href: '/dashboard/staff-pro',
+    icon: Home,
+    badge: null,
+  },
+  {
+    name: 'Performance',
+    href: '/dashboard/staff-pro/performance',
+    icon: BarChart3,
+    badge: null,
+  },
+];
+
+const hrSmartItems = [
+  {
+    name: 'HR Dashboard',
+    href: '/dashboard/hr-smart',
+    icon: Home,
+    badge: null,
+  },
+  {
+    name: 'Documents',
+    href: '/dashboard/hr-smart/documents',
     icon: Settings,
     badge: null,
   },
 ];
 
-export function Sidebar({ isOpen, isCollapsed, onClose }: SidebarProps) {
+const marketingItems = [
+  {
+    name: 'Campaigns',
+    href: '/dashboard/marketing',
+    icon: Home,
+    badge: null,
+  },
+  {
+    name: 'Reviews',
+    href: '/dashboard/marketing/reviews',
+    icon: BarChart3,
+    badge: null,
+  },
+];
+
+// Map sections to their navigation items
+const sectionNavigationMap: Record<string, typeof smartShiftsItems> = {
+  'smart-shifts': smartShiftsItems,
+  'foodbrain': foodbrainItems,
+  'staff-pro': staffProItems,
+  'hr-smart': hrSmartItems,
+  'marketing': marketingItems,
+};
+
+export function Sidebar({ isOpen, isCollapsed, onClose, activeSection }: SidebarProps) {
   const pathname = usePathname();
+  
+  // Get navigation items based on active section
+  const navigationItems = sectionNavigationMap[activeSection] || smartShiftsItems;
 
   return (
     <aside className={`${styles.sidebar} ${isOpen ? styles.sidebarOpen : ''} ${isCollapsed ? styles.sidebarCollapsed : ''}`}>
@@ -114,10 +178,10 @@ export function Sidebar({ isOpen, isCollapsed, onClose }: SidebarProps) {
                   )}
                   {!isCollapsed && item.badge && (
                     <Badge 
-                      variant={item.badge.variant}
+                      variant="default"
                       className={styles.navBadge}
                     >
-                      {item.badge.text}
+                      New
                     </Badge>
                   )}
                 </Link>

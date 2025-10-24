@@ -1,0 +1,158 @@
+.container {
+  padding: var(--spacing-xl);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.formCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.cardContent {
+  padding: var(--spacing-2xl);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+}
+
+/* Header */
+.formHeader {
+  margin-bottom: var(--spacing-lg);
+}
+
+.formTitle {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--foreground);
+  margin-bottom: var(--spacing-sm);
+}
+
+.formDescription {
+  color: var(--muted-foreground);
+  font-size: var(--text-sm);
+}
+
+/* Sections */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  padding-bottom: var(--spacing-xl);
+  border-bottom: 1px solid var(--border);
+}
+
+.section:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
+}
+
+.sectionIcon {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.sectionTitle {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--foreground);
+  margin: 0;
+}
+
+.sectionDescription {
+  color: var(--muted-foreground);
+  font-size: var(--text-sm);
+  margin-top: calc(var(--spacing-sm) * -1);
+}
+
+/* Form Groups */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.formGroup label {
+  font-weight: var(--font-medium);
+  color: var(--foreground);
+  font-size: var(--text-sm);
+}
+
+.errorText {
+  color: var(--destructive);
+  font-size: var(--text-xs);
+}
+
+/* Switch */
+.switchContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+}
+
+.switchCaption {
+  color: var(--muted-foreground);
+  font-size: var(--text-xs);
+  margin-top: var(--spacing-xs);
+}
+
+/* Time Inputs */
+.timeInputsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+}
+
+/* Form Actions */
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-md);
+  padding-top: var(--spacing-xl);
+  margin-top: var(--spacing-lg);
+  border-top: 1px solid var(--border);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-lg);
+  }
+
+  .cardContent {
+    padding: var(--spacing-lg);
+  }
+
+  .formTitle {
+    font-size: var(--text-xl);
+  }
+
+  .sectionTitle {
+    font-size: var(--text-base);
+  }
+
+  .timeInputsRow {
+    grid-template-columns: 1fr;
+  }
+
+  .formActions {
+    flex-direction: column-reverse;
+  }
+
+  .formActions button {
+    width: 100%;
+  }
+}

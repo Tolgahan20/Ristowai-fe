@@ -1,0 +1,2 @@
+export { VenueDetails } from './VenueDetails';
+

@@ -14,7 +14,7 @@ export default function RegisterPage() {
           <Title 
             color="white"
           >
-            Smart Shifts
+            Turni AI
           </Title>
           <Body 
             size="large"
@@ -38,7 +38,7 @@ export default function RegisterPage() {
             <Body 
               color="muted"
             >
-              Start your journey with Smart Shifts
+              Start your journey with Ristowai
             </Body>
           </div>
 

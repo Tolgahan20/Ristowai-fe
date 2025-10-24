@@ -1,0 +1,3 @@
+/* Landing Page Styles - Import this only in landing pages */
+@import '../components/landing/landing-globals.css';
+
